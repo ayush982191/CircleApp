@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.carousel-item-content {
+    position: relative;
+  }
+  
+  .carousel-text-overlay {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to change the distance from the bottom */
+    left: 20px; /* Adjust this value to change the distance from the left */
+    color: white;
+  }
+  
+  .carousel-text-overlay h2,
+  .carousel-text-overlay p {
+    margin: 0;
+  }
