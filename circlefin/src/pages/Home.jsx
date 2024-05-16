@@ -6,22 +6,13 @@ import JoinUs from '../components/JoinUs'
 import farmer3 from "../assets/farmer3.jpg"
 import Cfarmer1 from "../assets/Cfarmer1.jpg"
 import Cfarmer2 from "../assets/Cfarmer2.jpg"
-import Cfarmer3 from "../assets/Cfarmer3.jpg" 
-// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-// import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-// import MaximizeIcon from "@material-ui/icons/Maximize";
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import Cfarmer3 from "../assets/Cfarmer3.jpg"  
 
 
 
 
 const Home = () => {
-  const responsive = {
-    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
-    tablet: { breakpoint: { max: 1024, min: 464 }, items: 1 }
-  };
+ 
 
   // const CustomDot = ({ onMove, index, onClick, active }) => {
   //   return (
