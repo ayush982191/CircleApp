@@ -6,9 +6,7 @@ import JoinUs from '../components/JoinUs'
 import farmer3 from "../assets/farmer3.jpg"
 import Cfarmer1 from "../assets/Cfarmer1.jpg"
 import Cfarmer2 from "../assets/Cfarmer2.jpg"
-import Cfarmer3 from "../assets/Cfarmer3.jpg"
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Cfarmer3 from "../assets/Cfarmer3.jpg" 
 // import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 // import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 // import MaximizeIcon from "@material-ui/icons/Maximize";
@@ -101,63 +99,7 @@ const Home = () => {
        
 
       </div>
-      <div>
-      <Carousel
-          responsive={responsive}
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={2000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          containerClass="carousel-container"
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-          showDots={true}
-        >
-          
-          <div>
-            <div className="carousel-item-content">
-              <img
-                src={Cfarmer1}
-                alt="image 1"
-                className="w-[100vw] h-[100vh]"
-              />
-              <div className="carousel-text-overlay">
-                <h2>Image 1 Text</h2>
-                <p>Description of Image 1</p>
-              </div>
-            </div>
-          </div>
- 
-          <div>
-            <div className="carousel-item-content">
-              <img
-                src={Cfarmer2}
-                alt="image 2"
-                className="w-[100vw] h-[100vh]"
-              />
-              <div className="carousel-text-overlay">
-                <h2>Image 2 Text</h2>
-                <p>Description of Image 2</p>
-              </div>
-            </div>
-          </div>
- 
-          <div>
-            <div className="carousel-item-content">
-              <img
-                src={Cfarmer3}
-                alt="image 3"
-                className="w-[100vw] h-[100vh]"
-              />
-              <div className="carousel-text-overlay">
-                <h2>Image 3 Text</h2>
-                <p>Description of Image 3</p>
-              </div>
-            </div>
-          </div>
-        </Carousel>
-      </div>
+    
 
 
 
