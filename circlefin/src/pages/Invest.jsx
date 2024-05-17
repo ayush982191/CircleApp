@@ -30,7 +30,7 @@ const Invest = () => {
     <div>
        <div className='flex justify-center mt-5     '>
           <form action="" className='border-2 p-5 border-gray-200 rounded-md'>
-            <h1 className='font-bold text-4xl my-5'>P2P Investor Application Form</h1>
+            <h1 className='font-bold text-4xl p-5 rounded-md text-white bg-blue-600'>P2P Investor Application Form</h1>
           <div className="mb-5 p-2 sm:flex sm:justify-between sm:w-96 sm:items-center">
           <label htmlFor="name" className="block mb-2 font-bold text-gray-900 dark:text-white sm:mb-0">Name:</label>
           <input type="text" id="name" name="name" value={investerFormDate.name} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" required />
