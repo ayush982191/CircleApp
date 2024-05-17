@@ -9,12 +9,12 @@ const Navbar = () => {
         <img src={logo} className='w-40' alt="Logo Image" />
       </div>
       <div>
-        <ul className='flex gap-3 font-bold  ' >
+        <ul className='flex gap-10 font-bold  ' >
           
-        <li><Link to="/aboutus" >About Us</Link></li>
-          <li><Link to="/invest" >Invest</Link></li>
-          <li><Link to="/loan" >Loans</Link></li>
-          
+        <li className='text-gray-600 p-2 hover:text-black hover:bg-green-100 hover:rounded-md ' ><Link to="/" >Home</Link></li>
+          <li className='text-gray-600 p-2 hover:text-black hover:bg-green-100 hover:rounded-md ' ><Link to="/invest" >Invest</Link></li>
+          <li className='text-gray-600 p-2 hover:text-black hover:bg-green-100 hover:rounded-md ' ><Link to="/borrow" >Borrow</Link></li>
+          <li className='text-gray-600 p-2 hover:text-black hover:bg-green-100 hover:rounded-md ' ><Link to="/aboutus" >About Us</Link></li>
         </ul>
 
       </div>

@@ -6,6 +6,9 @@ import Navbar from './components/Navbar'
 import Aboutus from './pages/Aboutus'
 import Invest from './pages/Invest'
 import Loans from './pages/Loans'
+// import Borrow from './components/Borrow'
+import Borrow from './pages/Borrow'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -18,9 +21,10 @@ function App() {
    <Routes>
     <Route path='/' element={<Home/>} />
     <Route path='/invest' element={<Invest/>} />
-    <Route path='/loan' element={<Loans/>} />
+    <Route path='/borrow' element={<Borrow/>} />
     <Route path='/aboutus' element={<Aboutus/>} />
    </Routes>
+   <Footer/>
    </BrowserRouter>
    </>
   )

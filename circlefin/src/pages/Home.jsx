@@ -90,6 +90,10 @@ const Home = () => {
        
 
       </div>
+      <div className='mt-5'>
+        <h1 className='font-bold text-4xl text-center'>Grow Your business</h1>
+        <p className='mx-[10vh] '>Get the money you need to handle tough times or grow your business with our different types of loans. Whether you need money for your team, day-to-day operations, equipment, or to buy property, we've got you covered</p>
+      </div>
     
 
 
