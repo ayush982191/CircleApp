@@ -50,17 +50,18 @@ const Home = () => {
 
   return (
     <div className=' mb-20 text-xs sm:text-base '>
-      <div className='bg-green-50 sm:flex sm:justify-around ' >
-        <div className='ml-5 mt-5 flex flex-col justify-center' >
-          <h1 className='text-5xl font-bold text-center' >A way to back and uplift individuals</h1>
-          <p className='mt-5 mb-5' >Back reliable Indians</p>
-          <p className='' >Create impact and earn returns seamlessly with just a few clicks</p>
-        </div>
-        <div>
-          <img src={farmImage} alt="" className=' h-50' />
-        </div>
-
+         <div className='relative bg-green-50'>
+      <video className='absolute top-0 left-0 w-full h-full object-cover' autoPlay loop muted playsInline>
+        <source src="https://rangde-p2p-gen.s3.ap-south-1.amazonaws.com/videos/Video-Final-Homepage-Desktop.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className='relative z-10 flex flex-col justify-center items-center min-h-screen text-white'>
+        <h1 className='text-5xl font-bold text-center'>Cultivating Financial Growth</h1>
+        <p className='mt-5 mb-5 text-center max-w-2xl'>Empowering India's Agri-Sectors with Smart Finance, Driving Prosperity for Farmers and Agri-SMEs through Technology-Enabled Solutions</p>
       </div>
+      <div className='absolute inset-0 bg-black opacity-50'></div>
+    </div>
+
       <div className='mx-10'>
         <h1 className='font-extrabold text-5xl mt-10 mb-10' >Join Us In The <span className='text-blue-500' >Revolution</span></h1>
       </div>
