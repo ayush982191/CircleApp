@@ -11,6 +11,8 @@ import Borrow from './pages/Borrow'
 import Footer from './components/Footer'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
+import Statistics from './pages/Statistics'
+import ContactUs from "./pages/ContactUs"
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
     <Route path='/invest' element={<Invest/>} />
     <Route path='/borrow' element={<Borrow/>} />
     <Route path='/aboutus' element={<Aboutus/>} />
+    <Route path='/statistics' element={<Statistics/>} />
+    <Route path='/contactus' element={<ContactUs/>}  />
    </Routes>
    <Footer/>
    </BrowserRouter>
