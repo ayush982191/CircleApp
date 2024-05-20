@@ -12,7 +12,8 @@ import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { FcAcceptDatabase } from "react-icons/fc";
 import { FaHandsHelping } from "react-icons/fa";
-import objectiveImg from "../assets/objectiveImage.png"
+import objectiveImg from "../assets/objectiveImage.svg"
+import HeroImage from "../assets/HeroSectionImage.jpeg"
 
 const Home = () => {
 
@@ -66,14 +67,14 @@ const Home = () => {
       <div className='absolute inset-0 bg-black opacity-50'></div>
     </div> */}
     <div className='relative bg-green-50'>
-  <img src={droneGirl} className='h-full w-full object-cover' alt="Drone and girl in field" />
+  <img src={HeroImage} className='h-full w-full object-cover' alt="Drone and girl in field" />
 
   <div className='absolute inset-0 ml-[5vw] mt-[30vw] text-white z-10'>
     <h1 className='text-5xl font-semibold  '>Cultivating Financial Growth</h1>
     <p className='mt-5 mb-5  max-w-2xl'>Empowering India's Agri-Sectors with Smart Finance, Driving Prosperity for Farmers and Agri-SMEs through Technology-Enabled Solutions</p>
   </div>
   
-  <div className='absolute inset-0 bg-black opacity-50'></div>
+  <div className='absolute inset-0 bg-black opacity-20'></div>
 </div>
 
 
