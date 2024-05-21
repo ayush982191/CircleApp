@@ -3,10 +3,9 @@ import farmerImg2 from "../assets/farmerImages/farmerImg2.jpg"
 import farmerImg3 from "../assets/farmerImages/farmerImg3.jpg"
 import farmerImg4 from "../assets/farmerImages/farmerImg4.jpg"
 import farmerImg5 from "../assets/farmerImages/farmerImg5.jpg"
-
 import farmerImg6 from "../assets/farmerImages/farmerImg6.jpg"
 
-
+import { GrRestroomWomen } from "react-icons/gr";
 
 
 
@@ -187,13 +186,13 @@ export const farmerLoanTypes = [
 ];
 
 export const farmerFilter =  [
-  { id: 'geography', label: 'Geography', subOptions: ['North India', 'South India', 'East India', 'West India'] },
-  { id: 'type-of-farming', label: 'Farming Type', subOptions: ['Crop Farming', 'Livestock Farming'] },
-  { id: 'farm-size', label: 'Farm Size', subOptions: ['Small/Medium (less than 10 acres)', 'Large (more than 10 acres)'] },
-  { id: 'primary-crops-grown', label: 'Primary Crops', subOptions: ['Food Crops (Wheat, Rice, Maize, Pulses, Vegetables/Fruits)', 'Cash Crops (Cotton, Sugarcane, Oilseeds, Tobacco)'] },
-  { id: 'use-of-farming-technology', label: 'Farming Technology', subOptions: ['Modern (Drones, IoT Devices, Precision Farming, Drip Irrigation)', 'Traditional (None)'] },
-  { id: 'annual-income-from-farming', label: 'Annual Income', subOptions: ['Less than ₹5,00,000', 'More than ₹5,00,000'] },
-  { id: 'loan-amount-required', label: 'Loan Amount', subOptions: ['Less than ₹50,000', 'More than ₹50,000'] },
+  { id: 'geography',icon: "", label: 'Geography', subOptions: ['North India', 'South India', 'East India', 'West India'] },
+  { id: 'type-of-farming',icon: "", label: 'Farming Type', subOptions: ['Crop Farming', 'Livestock Farming'] },
+  { id: 'farm-size',icon: "", label: 'Farm Size', subOptions: ['Small/Medium (less than 10 acres)', 'Large (more than 10 acres)'] },
+  { id: 'primary-crops-grown',icon: "", label: 'Primary Crops', subOptions: ['Food Crops', 'Cash Crops'] },
+  { id: 'use-of-farming-technology',icon: "", label: 'Farming Technology', subOptions: ['Modern (Drones, IoT Devices, Precision Farming, Drip Irrigation)', 'Traditional (None)'] },
+  { id: 'annual-income-from-farming',icon: "", label: 'Annual Income', subOptions: ['Less than ₹5,00,000', 'More than ₹5,00,000'] },
+  { id: 'loan-amount-required',icon: "", label: 'Loan Amount', subOptions: ['Less than ₹50,000', 'More than ₹50,000'] },
 ];
 
 export const merchantFilter = [
@@ -210,7 +209,7 @@ export const farmerImageArray  = [
   farmerImg1,farmerImg2,farmerImg3,farmerImg4,farmerImg5,farmerImg6
 ];
 
-export const farmerMoneyBorrower = [
+export const farmerProfiles = [
   {
     "Name":"Ravi Kumar",
     "state": "Assam",
@@ -226,11 +225,11 @@ export const farmerMoneyBorrower = [
     "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
     "Modern (E-commerce, ONDC Platform, Digital Payments)": "ONDC Platform",
     "Traditional (None)": "Yes",
-    "Less than ₹50,00,000": 400000,
-    "More than ₹50,00,000": 80000000,
+    "Less than ₹50,00,000": true,
+    "More than ₹50,00,000": false,
     "Less than ₹1,00,000": 800,
     "More than ₹1,00,000": 15000000,
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },
   {
     "Name":"Anand Saruke",
@@ -247,11 +246,11 @@ export const farmerMoneyBorrower = [
     "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
     "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
     "Traditional (None)": "Yes",
-    "Less than ₹50,00,000": 350000,
-    "More than ₹50,00,000": 85000000,
+    "Less than ₹50,00,000": true,
+    "More than ₹50,00,000": false,
     "Less than ₹1,00,000": 350,
-    "More than ₹1,00,000": 17000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 17000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },  {
     "Name":"Ravi Kumar",
     "state": "Uttar Pradesh",
@@ -270,8 +269,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 400000,
     "More than ₹50,00,000": 95000000,
     "Less than ₹1,00,000": 900,
-    "More than ₹1,00,000": 18000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 18000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },
   {
     "Name":"Anand Sahu",
@@ -291,8 +290,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 300000,
     "More than ₹50,00,000": 75000000,
     "Less than ₹1,00,000": 750,
-    "More than ₹1,00,000": 15000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 15000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },{
     "Name":"Harsh Golccha",
     "state": "Maharashtra",
@@ -311,8 +310,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 350000,
     "More than ₹50,00,000": 85000000,
     "Less than ₹1,00,000": 350,
-    "More than ₹1,00,000": 17000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 17000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },
   {
     "Name":"Ayush Kumar",
@@ -332,8 +331,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 300000,
     "More than ₹50,00,000": 75000000,
     "Less than ₹1,00,000": 300,
-    "More than ₹1,00,000": 16000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 16000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   }, {
     "Name":"Ankit Kumar",
     "state": "Bihar",
@@ -352,8 +351,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 400000,
     "More than ₹50,00,000": 95000000,
     "Less than ₹1,00,000": 400,
-    "More than ₹1,00,000": 14000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 14000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },
   {
     "Name":"Rahul Kumar",
@@ -373,8 +372,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 350000,
     "More than ₹50,00,000": 85000000,
     "Less than ₹1,00,000": 350,
-    "More than ₹1,00,000": 16000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 16000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },{
     "Name":"ShashiRanjan Prasad",
     "state": "West Bengal",
@@ -393,8 +392,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 450000,
     "More than ₹50,00,000": 90000000,
     "Less than ₹1,00,000": 450,
-    "More than ₹1,00,000": 18000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 18000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },
   {
     "Name":"Lokesh Kumar",
@@ -403,6 +402,7 @@ export const farmerMoneyBorrower = [
     "South India": false,
     "East India": true,
     "West India": false,
+
     "Cash Crop Trader": true,
     "Food Grains & Lentils Trader": false,
     "Small/Medium (annual revenue less than ₹1 crore)": 6500000,
@@ -414,8 +414,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 300000,
     "More than ₹50,00,000": 75000000,
     "Less than ₹1,00,000": 300,
-    "More than ₹1,00,000": 15000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 15000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },{
     "Name":"Hritik Kumar",
     "state": "Tamil Nadu",
@@ -434,8 +434,8 @@ export const farmerMoneyBorrower = [
     "Less than ₹50,00,000": 400000,
     "More than ₹50,00,000": 90000000,
     "Less than ₹1,00,000": 400,
-    "More than ₹1,00,000": 16000000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "More than ₹1,00,000": 16000000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   },
   {
     "Name":"Shubham Kumar",
@@ -444,23 +444,22 @@ export const farmerMoneyBorrower = [
     "South India": true,
     "East India": false,
     "West India": false,
-    "Cash Crop Trader": false,
-    "Food Grains & Lentils Trader": true,
-    "Small/Medium (annual revenue less than ₹1 crore)": 7200000,
-    "Large (annual revenue more than ₹1 crore)": 148000000,
-    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Rice",
-    "Perishable Goods (Fruits, Vegetables, Spices)": "Fruits",
-    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
-    "Traditional (None)": "Yes",
-    "Less than ₹50,00,000": 380000,
-    "More than ₹50,00,000": 85000000,
-    "Less than ₹1,00,000": 380,
-    "More than ₹1,00,000": 15500000
-    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+    "Crop Farming" : true,
+
+    // "Cash Crop Trader": false,
+    // "Food Grains & Lentils Trader": true,
+    // "Small/Medium (annual revenue less than ₹1 crore)": 7200000,
+    // "Large (annual revenue more than ₹1 crore)": 148000000,
+    // "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Rice",
+    // "Perishable Goods (Fruits, Vegetables, Spices)": "Fruits",
+    // "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    // "Traditional (None)": "Yes",
+    // "Less than ₹50,00,000": 380000,
+    // "More than ₹50,00,000": 85000000,
+    // "Less than ₹1,00,000": 380,
+    // "More than ₹1,00,000": 15500000,
+    "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   }
-  
-
-
 ]
 
 
@@ -487,3 +486,10 @@ const fdata = [
     
   
 ]
+
+export const agriCompanies = ["Greenfield Agro", "AgroFresh Ventures", "Bharat Agro", "EcoFarms", 
+"AgriBoost Solutions", "Krishi Services", "Harvest Growers", "AgroWave", 
+"FarmGate Products", "Nature's Best", "Organic Fields", "AgriCo India", 
+"FarmFresh Produce", "PureHarvest", "Kisan Connect", "Rural Roots", 
+"Green Harvest", "AgriTech Innovations", "FarmRise", "CropCare", 
+"FreshFarms", "GreenAgri", "PureAgri", "HarvestHub"];

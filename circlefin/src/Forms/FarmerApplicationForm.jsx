@@ -73,7 +73,7 @@ const FarmerApplicationForm = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       // Handle form submission here
-      console.log(farmerFormData);
+      // console.log(farmerFormData);
     };
   
     const nextStep = () => {

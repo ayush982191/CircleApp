@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../assets/logo.svg"
+// import logo from "../assets/logo.svg"
 import Navbar from '../components/Navbar'
 import farmImage from "../assets/farmImage1.png"
 import JoinUs from '../components/JoinUs'
@@ -14,6 +14,13 @@ import { FcAcceptDatabase } from "react-icons/fc";
 import { FaHandsHelping } from "react-icons/fa";
 import objectiveImg from "../assets/objectiveImage.svg"
 import HeroImage from "../assets/HeroSectionImage.jpeg"
+import farmer4 from "../assets/farmer4.jpg"
+import farmer from "../assets/farmer.png"
+import chartPie from "../assets/logos/chartPie.svg"
+import earthLeaf from  "../assets/logos/earthLeaf.svg"
+import bankNotes from  "../assets/logos/bankNotes.svg"
+
+
 
 const Home = () => {
 
@@ -136,14 +143,107 @@ const Home = () => {
   <img src={objectiveImg} alt="" />
 </div>
 {/* <h1>---------------------------------------</h1> */}
-      <div className='mx-10 mt-10 sm:flex sm:justify-between'>
+      {/* <div className='mx-10 mt-10 sm:flex sm:justify-between'>
         <JoinUs about={"Why"} detail={"Access to formal credit is unavailable for 86% of India's eligible population. You have the power to make a difference"} />
         <JoinUs about={"Who"} detail={"Provide accessible loans to farmers, artisans, and entrepreneurs at affordable rates. Empower advancement while earning returns"} />
         <JoinUs about={"How"} detail={"Select the recipients you wish to support from our pool of verified beneficiaries. Monitor your investment and receive repayments"} />
+      </div> */}
+
+{/* --------------------------------------------------------------------------------------------------  */}
+{/* <div>
+<div>
+          <img src={farmer4} className=' rounded-md h-96 w-52 ' alt="" />
+        </div>
+  <div>
+    <p>At CircleFin, our assessment model provides a comprehensive understanding of the agricultural SME sector. We consider crucial parameters:</p>
+    <div>
+      <div>
+      <img src="" alt="" /><h1>Enviro</h1>
+      </div>
+      <div>
+        <p>Operational Enviroment</p>
+      </div>
+    
+    </div>
+  </div>
+</div> */}
+{/* ----------------------------------------------------------------------------------------------------------------- */}
+{/* -----------------------------------------------------------------------------------------------------------------*/}
+
+
+
+
+
+{/* ----------------------------------------------------------------------------------------------------------------- */}
+<div>
+
+
+<div className="flex flex-col items-center justify-start  pt-16">
+    <div className="text-center mb-8">
+      <h1 className="text-3xl my-2 md:text-5xl lg:text-3xl font-bold">
+        Agricultural focused assessment reveal clarity over legacy accounting appraisal
+      </h1>
+    </div>
+    <div className=" flex gap-5 items-center">
+      <div>
+      <img src={farmer} alt="farmer page" className="w-[30rem]" />
       </div>
 
+      <div className='w-[30rem]'>
+       
+      <div className='my-2 flex gap-4 items-start'>
+        <img src={earthLeaf} alt="" />
+        <div className=''>
+          <h3 className='text-2xl font-semibold'>Environmental Factors</h3>
+          <p><i>Operational Environment: </i>Examining geographic and weather conditions, we assess their impact on agricultural operations.</p>
+        </div>
+      </div>
 
-      <div className='mx-10 mt-10 md:flex md:justify-evenly  '>
+      <div className='my-2 flex gap-4 items-start'>
+        <img src={bankNotes} alt="" />
+        <div className=''>
+          <h3 className='text-2xl font-semibold'>Financial Aspects</h3>
+          {/* <p>Operational Environment: Examining geographic and weather conditions, we assess their impact on agricultural operations.</p> */}
+        <p><i>Market Trends and Price Forecasts:</i> Examining trends and forecasts to provide a better understanding of the financial environments facing agri-SMEs.</p>
+        Product Demand: To improve economic viability, match support with market dynamics.
+        </div>
+      </div>
+      <div className='my-2 flex gap-4 items-start'>
+        <img src={chartPie} alt="" />
+        <div className=''>
+          <h3 className='text-2xl font-semibold'>Measures of Business Viability</h3>
+          {/* <p>Operational Environment: Examining geographic and weather conditions, we assess their impact on agricultural operations.</p> */}
+       <p><i>Agri-SME Experience:</i> Assessing their background in the sector to provide specialized assistance.</p>
+        <p><i>Size:</i> Modifying aid in accordance with the scope of the undertaking</p>
+        <p><i>Team:</i> Evaluating collective skills to make sure they are in line with strategic objectives.</p>
+        <p><i>Market Opportunity:</i> Examining growth prospects in order to make well-informed decisions.</p>
+        </div>
+      </div>
+      </div>
+     
+    </div>
+  </div>
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div className='mx-10 mt-10 md:flex md:justify-evenly  '>
         <div>
           <img src={farmer3} className=' rounded-md h-96 ' alt="" />
         </div>
@@ -155,7 +255,7 @@ const Home = () => {
             <button className='bg-lime-500 text-white w-96 rounded-md h-10 mt-10 hover:bglime-700 font-bold '>Start Inversting</button>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
@@ -167,7 +267,7 @@ const Home = () => {
 
 
       </div>
-      <div>
+      {/* <div>
         <div className='mt-5'>
           <h1 className='font-bold text-4xl my-5 text-lime-600 text-center'>Grow Your business</h1>
           <p className='mx-[10vh] '>Get the money you need to handle tough times or grow your business with our different types of loans. Whether you need money for your team, day-to-day operations, equipment, or to buy property, we've got you covered</p>
@@ -206,7 +306,7 @@ const Home = () => {
 
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 

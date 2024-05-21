@@ -27,7 +27,7 @@ const Invest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log(investerFormDate);
+    // console.log(investerFormDate);
   };
   const filters = [
     { id: 'all', filter: 'all', iconClass: 'icon-all', label: 'All' },

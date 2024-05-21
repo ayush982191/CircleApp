@@ -3,9 +3,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./ShowCarousel.css";
+import { GrRestroomWomen } from "react-icons/gr";
+
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
-const ShowCarousel = ({ filters }) => {
+const ShowCarousel = ({ filters , setCriteria }) => {
   const [activeFilter, setActiveFilter] = useState(null);
 
   const settings = {
@@ -51,7 +53,7 @@ const ShowCarousel = ({ filters }) => {
   const handleFilterClick = (filterId) => {
     setActiveFilter(filterId === activeFilter ? null : filterId);
   };
-  const showFilterProduct = () =>{}
+ 
 
   return (
     <section className="mt-10 ml-10 mr-10 filter-section pt-1">
@@ -59,12 +61,14 @@ const ShowCarousel = ({ filters }) => {
         <Slider ref={sliderRef} {...settings}>
           {filters.map((filter) => (
             <div key={filter.id} className="slick-slide">
-              <div>
+              <div className='flex flex-col items-center'>
+              <GrRestroomWomen className='text-4xl'/>
                 <div
-                  className={`border-2 h-20 p-2 flex justify-center items-center gap-2 cursor-pointer ${activeFilter === filter.id ? 'border-gray-500' : 'border-gray-300'}`}
+                  className={` h-20 flex justify-center items-center gap-2 cursor-pointer`}
                   id={filter.id}
                   onClick={() => handleFilterClick(filter.id)}
                 >
+                  
                   <p>{filter.label}</p>
                   <IoIosArrowDropdownCircle
                     className={`transition-transform duration-300 ${activeFilter === filter.id ? 'transform rotate-180' : ''}`}
@@ -73,7 +77,7 @@ const ShowCarousel = ({ filters }) => {
                 {activeFilter === filter.id && (
                   <div className="dropdown flex flex-col items-center mt-2">
                     {filter.subOptions.map((subOption, idx) => (
-                      <div key={idx} onClick={showFilterProduct} className="dropdown-item m-1 hover:text-lime-400 cursor-pointer" >
+                      <div key={idx} onClick={()=>setCriteria(subOption)} className="dropdown-item m-1 hover:text-lime-400 cursor-pointer" >
                         {subOption}
                       </div>
                     ))}
