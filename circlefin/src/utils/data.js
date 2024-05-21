@@ -186,13 +186,13 @@ export const farmerLoanTypes = [
 ];
 
 export const farmerFilter =  [
-  { id: 'geography',icon: "", label: 'Geography', subOptions: ['North India', 'South India', 'East India', 'West India'] },
-  { id: 'type-of-farming',icon: "", label: 'Farming Type', subOptions: ['Crop Farming', 'Livestock Farming'] },
-  { id: 'farm-size',icon: "", label: 'Farm Size', subOptions: ['Small/Medium (less than 10 acres)', 'Large (more than 10 acres)'] },
-  { id: 'primary-crops-grown',icon: "", label: 'Primary Crops', subOptions: ['Food Crops', 'Cash Crops'] },
-  { id: 'use-of-farming-technology',icon: "", label: 'Farming Technology', subOptions: ['Modern (Drones, IoT Devices, Precision Farming, Drip Irrigation)', 'Traditional (None)'] },
-  { id: 'annual-income-from-farming',icon: "", label: 'Annual Income', subOptions: ['Less than ₹5,00,000', 'More than ₹5,00,000'] },
-  { id: 'loan-amount-required',icon: "", label: 'Loan Amount', subOptions: ['Less than ₹50,000', 'More than ₹50,000'] },
+  { id: 'geography',icon: "", label: 'Geography', subOptions: ['North-India', 'South-India', 'East-India', 'West-India'] },
+  { id: 'type-of-farming',icon: "", label: 'Farming Type', subOptions: ['Crop-Farming', 'Livestock-Farming'] },
+  { id: 'farm-size',icon: "", label: 'Farm Size', subOptions: ['less than 10 acres', 'more than 10 acres'] },
+  { id: 'primary-crops-grown',icon: "", label: 'Primary Crops', subOptions: ['Food-Crops', 'Cash-Crops'] },
+  { id: 'use-of-farming-technology',icon: "", label: 'Farming Technology', subOptions: ['Modern', 'Traditional'] },
+  { id: 'annual-income-from-farming',icon: "", label: 'Annual Income', subOptions: ['Less than 5,00,000', 'More than 5,00,000'] },
+  { id: 'loan-amount-required',icon: "", label: 'Loan Amount', subOptions: ['Less than 50,000', 'More than 50,000'] },
 ];
 
 export const merchantFilter = [
@@ -461,6 +461,276 @@ export const farmerProfiles = [
     "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
   }
 ]
+
+const tempFarmerProfiles = [
+   {
+    "name": "Ravi Kumar",
+    "Tenure": 6,
+    "State": "Bihar",
+    "Amount-Required": 12000,
+    "North-India": false,
+    "South-India": false,
+    "East-India": true,
+    "West-India": false,
+    "Crop-Farming": false,
+    "Livestock-Farming": true,
+    "less than 10 acres": false,
+    "more Than 10 acres": true,
+    "Food-crops": true,
+    "Cash crops": false,
+
+    "Modern": true,
+    "precision": false,
+    "Traditional": false,
+
+    "less than ₹5,00,000": true,
+    "More than ₹5,00,000": false,
+    "less than 50,000": false,
+    "more than 50,000": true
+   },{
+    "name": "Amit Sharma",
+    "Tenure": 4,
+    "State": "Uttar Pradesh",
+    "Amount-Required": 15000,
+    "North-India": true,
+    "South-India": false,
+    "East-India": false,
+    "West-India": false,
+    "Crop-Farming": true,
+    "Livestock-Farming": false,
+    "less than 10 acres": true,
+    "more Than 10 acres": false,
+    "Food-crops": false,
+    "Cash crops": true,
+
+    "Modern": false,
+    "precision": true,
+    "Traditional": false,
+
+    "less than ₹5,00,000": false,
+    "More than ₹5,00,000": true,
+    "less than 50,000": false,
+    "more than 50,000": true
+},{
+  "name": "Sunita Reddy",
+  "Tenure": 3,
+  "State": "Tamil Nadu",
+  "Amount-Required": 20000,
+  "North-India": false,
+  "South-India": true,
+  "East-India": false,
+  "West-India": false,
+  "Crop-Farming": false,
+  "Livestock-Farming": true,
+  "less than 10 acres": true,
+  "more Than 10 acres": false,
+  "Food-crops": true,
+  "Cash crops": false,
+
+  "Modern": true,
+  "precision": false,
+  "Traditional": true,
+
+  "less than ₹5,00,000": true,
+  "More than ₹5,00,000": false,
+  "less than 50,000": true,
+  "more than 50,000": false
+},{
+  "name": "Ravi Patel",
+  "Tenure": 7,
+  "State": "Gujarat",
+  "Amount-Required": 25000,
+  "North-India": false,
+  "South-India": false,
+  "East-India": false,
+  "West-India": true,
+  "Crop-Farming": true,
+  "Livestock-Farming": false,
+  "less than 10 acres": false,
+  "more Than 10 acres": true,
+  "Food-crops": false,
+  "Cash crops": true,
+
+  "Modern": false,
+  "precision": false,
+  "Traditional": true,
+
+  "less than ₹5,00,000": false,
+  "More than ₹5,00,000": true,
+  "less than 50,000": false,
+  "more than 50,000": true
+}
+,{
+  "name": "Meera Das",
+  "Tenure": 5,
+  "State": "Odisha",
+  "Amount-Required": 18000,
+  "North-India": false,
+  "South-India": false,
+  "East-India": true,
+  "West-India": false,
+  "Crop-Farming": false,
+  "Livestock-Farming": true,
+  "less than 10 acres": true,
+  "more Than 10 acres": false,
+  "Food-crops": true,
+  "Cash crops": false,
+
+  "Modern": true,
+  "precision": false,
+  "Traditional": false,
+
+  "less than ₹5,00,000": true,
+  "More than ₹5,00,000": false,
+  "less than 50,000": false,
+  "more than 50,000": true
+},{
+  "name": "Sanjay Kumar",
+  "Tenure": 8,
+  "State": "Maharashtra",
+  "Amount-Required": 22000,
+  "North-India": false,
+  "South-India": false,
+  "East-India": false,
+  "West-India": true,
+  "Crop-Farming": true,
+  "Livestock-Farming": false,
+  "less than 10 acres": false,
+  "more Than 10 acres": true,
+  "Food-crops": true,
+  "Cash crops": true,
+
+  "Modern": true,
+  "precision": true,
+  "Traditional": false,
+
+  "less than ₹5,00,000": false,
+  "More than ₹5,00,000": true,
+  "less than 50,000": false,
+  "more than 50,000": true
+}
+,{
+  "name": "Anjali Singh",
+  "Tenure": 9,
+  "State": "Punjab",
+  "Amount-Required": 16000,
+  "North-India": true,
+  "South-India": false,
+  "East-India": false,
+  "West-India": false,
+  "Crop-Farming": false,
+  "Livestock-Farming": true,
+  "less than 10 acres": true,
+  "more Than 10 acres": false,
+  "Food-crops": true,
+  "Cash crops": false,
+
+  "Modern": true,
+  "precision": false,
+  "Traditional": true,
+
+  "less than ₹5,00,000": true,
+  "More than ₹5,00,000": false,
+  "less than 50,000": false,
+  "more than 50,000": true
+},
+{
+  "name": "Rajesh Nair",
+  "Tenure": 2,
+  "State": "Kerala",
+  "Amount-Required": 14000,
+  "North-India": false,
+  "South-India": true,
+  "East-India": false,
+  "West-India": false,
+  "Crop-Farming": true,
+  "Livestock-Farming": false,
+  "less than 10 acres": true,
+  "more Than 10 acres": false,
+  "Food-crops": false,
+  "Cash crops": true,
+
+  "Modern": false,
+  "precision": true,
+  "Traditional": false,
+
+  "less than ₹5,00,000": true,
+  "More than ₹5,00,000": false,
+  "less than 50,000": true,
+  "more than 50,000": false
+},{
+  "name": "Vijay Rao",
+  "Tenure": 10,
+  "State": "Karnataka",
+  "Amount-Required": 30000,
+  "North-India": false,
+  "South-India": true,
+  "East-India": false,
+  "West-India": false,
+  "Crop-Farming": false,
+  "Livestock-Farming": true,
+  "less than 10 acres": false,
+  "more Than 10 acres": true,
+  "Food-crops": true,
+  "Cash crops": false,
+
+  "Modern": true,
+  "precision": true,
+  "Traditional": false,
+
+  "less than ₹5,00,000": false,
+  "More than ₹5,00,000": true,
+  "less than 50,000": false,
+  "more than 50,000": true
+},{
+  "name": "Priya Thakur",
+  "Tenure": 1,
+  "State": "Madhya Pradesh",
+  "Amount-Required": 25000,
+  "North-India": false,
+  "South-India": false,
+  "East-India": false,
+  "West-India": true,
+  "Crop-Farming": true,
+  "Livestock-Farming": false,
+  "less than 10 acres": true,
+  "more Than 10 acres": false,
+  "Food-crops": false,
+  "Cash crops": true,
+
+  "Modern": false,
+  "precision": false,
+  "Traditional": true,
+
+  "less than ₹5,00,000": true,
+  "More than ₹5,00,000": false,
+  "less than 50,000": true,
+  "more than 50,000": false
+}
+
+
+
+
+
+
+  
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const fdata = [
