@@ -198,7 +198,7 @@ const MerchantApplicationForm = () => {
       <input
         type="text"
         id="aadharNumber"
-        name="aadharNumber"
+        name="aadhaarNumber"
         value={formData.aadhaarNumber}
         onChange={handleChange}
         className="mt-1 p-2 w-full border-gray-300 rounded-md"
@@ -220,7 +220,7 @@ const MerchantApplicationForm = () => {
       <input
         type="text"
         id="pancardNumber"
-        name="pancardNumber"
+        name="panNumber"
         value={formData.panNumber}
         onChange={handleChange}
         className="mt-1 p-2 w-full border-gray-300 rounded-md"

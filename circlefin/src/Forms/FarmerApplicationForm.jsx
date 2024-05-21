@@ -107,10 +107,7 @@ const FarmerApplicationForm = () => {
           </div>
 
           {currentPage === 1 && (
-<>
-
-
-
+<> 
 
   <div className="mb-4">
     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
@@ -126,12 +123,7 @@ const FarmerApplicationForm = () => {
       placeholder="Full Name"
        
     />
-  </div>
-
-
-
-
-
+  </div> 
 
   <div className="mb-5">
     <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
@@ -147,9 +139,7 @@ const FarmerApplicationForm = () => {
        
     />
   </div>
-
-
-
+ 
   <div className="mb-5">
     <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
       Gender:<span className='text-red-500' >*</span>
@@ -166,6 +156,7 @@ const FarmerApplicationForm = () => {
       <option value="other">Other</option>
     </select>
   </div>
+
   <div className="mb-5">
     <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700">
       Contact Number:<span className='text-red-500' >*</span>
@@ -186,16 +177,12 @@ const FarmerApplicationForm = () => {
       </button> 
     </div>
   </div>
+
   <div>
   { showOptBox && <OtpBox type={"Mobile"} /> }
   </div>
 
-
-
-
-
-
-
+ 
 
 
   <div className="mb-5">
@@ -262,6 +249,7 @@ const FarmerApplicationForm = () => {
     </div>
   </div>
   {showAadharOtpBox && <OtpBox type={"Aadhar"}  />}
+
   <div className="mb-5">
     <label htmlFor="pancardNumber"
      className="block text-sm font-medium text-gray-700 sm:mb-0">
@@ -271,7 +259,7 @@ const FarmerApplicationForm = () => {
       <input
         type="text"
         id="pancardNumber"
-        name="pancardNumber"
+        name="panCardNumber"
         value={farmerFormData.panCardNumber}
         onChange={handleChange}
         className="mt-1 p-2 w-full border-gray-300 rounded-md"
@@ -332,39 +320,99 @@ const FarmerApplicationForm = () => {
     </div>
 
     <div className="mb-5">
-      <label htmlFor="soilType" className="block text-sm font-medium text-gray-700 sm:mb-0">Soil Type:<span className='text-red-500' >*</span></label>
-      <input type="text" id="soilType" name="soilType" value={farmerFormData.soilType} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Soil Type"   />
-    </div>
+  <label htmlFor="soilType" className="block text-sm font-medium text-gray-700 sm:mb-0">Soil Type:<span className='text-red-500'>*</span></label>
+  <select id="soilType" name="soilType" value={farmerFormData.soilType} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
+    <option value="">Select Soil Type</option>
+    <option value="Alluvial Soil">Alluvial Soil</option>
+    <option value="Black Cotton Soil">Black Cotton Soil</option>
+    <option value="Red & Yellow Soil">Red & Yellow Soil</option>
+    <option value="Laterite Soil">Laterite Soil</option>
+    <option value="Mountainous or Forest Soil">Mountainous or Forest Soil</option>
+    <option value="Arid or Desert Soil">Arid or Desert Soil</option>
+    <option value="Saline and Alkaline Soil">Saline and Alkaline Soil</option>
+    <option value="Peaty and Marshy Soil">Peaty and Marshy Soil</option>
+  </select>
+</div>
 
-    <div className="mb-5">
-      <label htmlFor="waterSource" className="block text-sm font-medium text-gray-700 sm:mb-0">Water Source:<span className='text-red-500' >*</span></label>
-      <input type="text" id="waterSource" name="waterSource" value={farmerFormData.waterSource} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Water Source"   />
-    </div>
 
-    <div className="mb-5">
-      <label htmlFor="primaryCrops" className="block text-sm font-medium text-gray-700 sm:mb-0">Primary Crops Grown:<span className='text-red-500' >*</span></label>
-      <div className="block w-60">
-        <label className="block">
-          <input type="checkbox" name="primaryCrops" value="Wheat" checked={farmerFormData.primaryCrops.includes('Wheat')} onChange={handleChange} /> Wheat
-        </label>
-        <label className="block">
-          <input type="checkbox" name="primaryCrops" value="Rice" checked={farmerFormData.primaryCrops.includes('Rice')} onChange={handleChange} /> Rice
-        </label>
-        <label className="block">
-          <input type="checkbox" name="primaryCrops" value="Maize" checked={farmerFormData.primaryCrops.includes('Maize')} onChange={handleChange} /> Maize
-        </label>
-      </div>
-    </div>
+<div className="mb-5">
+  <label htmlFor="waterSource" className="block text-sm font-medium text-gray-700 sm:mb-0">Water Source:<span className='text-red-500'>*</span></label>
+  <select id="waterSource" name="waterSource" value={farmerFormData.waterSource} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
+    <option value="">Select Water Source</option>
+    <option value="Surface Water">Surface Water</option>
+    <option value="Groundwater">Groundwater</option>
+    <option value="Rainwater Harvesting">Rainwater Harvesting</option>
+    <option value="Canals and Channels">Canals and Channels</option>
+    <option value="Recycled or Reclaimed Water">Recycled or Reclaimed Water</option>
+    <option value="Desalinated Water">Desalinated Water</option>
+    <option value="Springs">Springs</option>
+    <option value="Dams and Reservoirs">Dams and Reservoirs</option>
+    <option value="Melting Snow and Glacial Runoff">Melting Snow and Glacial Runoff</option>
+    <option value="Community Managed Tanks">Community Managed Tanks</option>
+  </select>
+</div>
 
-    <div className="mb-5">
-      <label htmlFor="cropRotation" className="block text-sm font-medium text-gray-700 sm:mb-0">Crop Rotation Practices:<span className='text-red-500' >*</span></label>
-      <select id="cropRotation" name="cropRotation" value={farmerFormData.cropRotation} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </div>
+<div>
+<label htmlFor="PrimaryCropsGrown" className="block text-sm font-medium text-gray-700 sm:mb-0">Primary Crops Grown:<span className='text-red-500'>*</span></label>
+<div className="mb-5 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
-    <div className="mb-5">
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Wheat" checked={farmerFormData.primaryCrops.includes('Wheat')} onChange={handleChange} /> Wheat
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Rice" checked={farmerFormData.primaryCrops.includes('Rice')} onChange={handleChange} /> Rice
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Maize" checked={farmerFormData.primaryCrops.includes('Maize')} onChange={handleChange} /> Maize
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Pulses and Millets" checked={farmerFormData.primaryCrops.includes('Pulses and Millets')} onChange={handleChange} /> Pulses and Millets
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Jute" checked={farmerFormData.primaryCrops.includes('Jute')} onChange={handleChange} /> Jute
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Cotton" checked={farmerFormData.primaryCrops.includes('Cotton')} onChange={handleChange} /> Cotton
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Sugarcane" checked={farmerFormData.primaryCrops.includes('Sugarcane')} onChange={handleChange} /> Sugarcane
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Oilseeds" checked={farmerFormData.primaryCrops.includes('Oilseeds')} onChange={handleChange} /> Oilseeds
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Tobacco" checked={farmerFormData.primaryCrops.includes('Tobacco')} onChange={handleChange} /> Tobacco
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Vegetables and Fruits" checked={farmerFormData.primaryCrops.includes('Vegetables and Fruits')} onChange={handleChange} /> Vegetables and Fruits
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Corn" checked={farmerFormData.primaryCrops.includes('Corn')} onChange={handleChange} /> Corn
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="Soybean" checked={farmerFormData.primaryCrops.includes('Soybean')} onChange={handleChange} /> Soybean
+  </label>
+  <label className="block">
+    <input type="checkbox" name="primaryCrops" value="None" checked={farmerFormData.primaryCrops.includes('None')} onChange={handleChange} /> None
+  </label>
+</div>
+</div>
+
+
+
+<div className="mb-5">
+  <label htmlFor="farmingTechnology" className="block text-sm font-medium text-gray-700 sm:mb-0">Use of Farming Technology:<span className='text-red-500'>*</span></label>
+  <select id="farmingTechnology" name="farmingTechnology" value={farmerFormData.farmingTechnology} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
+    <option value="">Select Farming Technology</option>
+    <option value="Drones">Drones</option>
+    <option value="IoT devices">IoT devices</option>
+    <option value="Precision farming">Precision farming</option>
+    <option value="Drip irrigation">Drip irrigation</option>
+    <option value="None">None</option>
+  </select>
+</div>
+
+    {/* <div className="mb-5">
       <label htmlFor="farmingTechnology" className="block text-sm font-medium text-gray-700 sm:mb-0">Use of Farming Technology:<span className='text-red-500' >*</span></label>
       <div className="block w-60">
         <label className="block">
@@ -377,9 +425,9 @@ const FarmerApplicationForm = () => {
           <input type="checkbox" name="farmingTechnology" value="Drip Irrigation" checked={farmerFormData.farmingTechnology.includes('Drip Irrigation')} onChange={handleChange} /> Drip Irrigation
         </label>
       </div>
-    </div>
+    </div> */}
 
-    <div className="mb-5">
+    {/* <div className="mb-5">
       <label htmlFor="livestockTypes" className="block text-sm font-medium text-gray-700 sm:mb-0">Livestock Types:<span className='text-red-500' >*</span></label>
       <div className="block w-60">
         <label className="block">
@@ -392,7 +440,88 @@ const FarmerApplicationForm = () => {
           <input type="checkbox" name="livestockTypes" value="Horse" checked={farmerFormData.livestockTypes.includes('Horse')} onChange={handleChange} /> Horse
         </label>
       </div>
-    </div>
+    </div> */}
+    {/* //------------------ */}
+    {/* <div>
+  <label htmlFor="livestockTypes" className="block text-sm font-medium text-gray-700 sm:mb-0">Livestock Types:<span className='text-red-500'>*</span></label>
+  <div className="mb-5 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <select id="livestockTypes" name="livestockTypes" value={farmerFormData.livestockTypes} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
+      <option value="">Select</option>
+       <option value="Cattle">Cattle</option>
+      <option value="Buffalo">Buffalo</option>
+      <option value="Mithun">Mithun</option>
+      <option value="Yak">Yak</option>
+      <option value="Sheep">Sheep</option>
+      <option value="Goat">Goat</option>
+      <option value="Pig">Pig</option>
+      <option value="Horse">Horse</option>
+      <option value="Pony">Pony</option>
+      <option value="Mule">Mule</option>
+      <option value="Donkey">Donkey</option>
+      <option value="Camel">Camel</option>
+      <option value="Dog">Dog</option>
+      <option value="Rabbit">Rabbit</option>
+      <option value="Elephant">Elephant</option>
+      <option value="None">None</option>
+    </select>
+  </div>
+</div> */}
+<div>
+  <label htmlFor="LivestockTypes" className="block text-sm font-medium text-gray-700 sm:mb-0">Livestock Types:<span className='text-red-500'>*</span></label>
+  <div className="mb-5 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Cattle" checked={farmerFormData.livestockTypes.includes('Cattle')} onChange={handleChange} /> Cattle
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Buffalo" checked={farmerFormData.livestockTypes.includes('Buffalo')} onChange={handleChange} /> Buffalo
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Mithun" checked={farmerFormData.livestockTypes.includes('Mithun')} onChange={handleChange} /> Mithun
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Yak" checked={farmerFormData.livestockTypes.includes('Yak')} onChange={handleChange} /> Yak
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Sheep" checked={farmerFormData.livestockTypes.includes('Sheep')} onChange={handleChange} /> Sheep
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Goat" checked={farmerFormData.livestockTypes.includes('Goat')} onChange={handleChange} /> Goat
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Pig" checked={farmerFormData.livestockTypes.includes('Pig')} onChange={handleChange} /> Pig
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Horse" checked={farmerFormData.livestockTypes.includes('Horse')} onChange={handleChange} /> Horse
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Pony" checked={farmerFormData.livestockTypes.includes('Pony')} onChange={handleChange} /> Pony
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Mule" checked={farmerFormData.livestockTypes.includes('Mule')} onChange={handleChange} /> Mule
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Donkey" checked={farmerFormData.livestockTypes.includes('Donkey')} onChange={handleChange} /> Donkey
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Camel" checked={farmerFormData.livestockTypes.includes('Camel')} onChange={handleChange} /> Camel
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Dog" checked={farmerFormData.livestockTypes.includes('Dog')} onChange={handleChange} /> Dog
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Rabbit" checked={farmerFormData.livestockTypes.includes('Rabbit')} onChange={handleChange} /> Rabbit
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="Elephant" checked={farmerFormData.livestockTypes.includes('Elephant')} onChange={handleChange} /> Elephant
+    </label>
+    <label className="block">
+      <input type="checkbox" name="livestockTypes" value="None" checked={farmerFormData.livestockTypes.includes('None')} onChange={handleChange} /> None
+    </label>
+  </div>
+</div>
+
+
+
     </>
 
 )}
@@ -428,10 +557,10 @@ const FarmerApplicationForm = () => {
       <input type="file" id="khasraKhatauni" name="khasraKhatauni" onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md"   />
     </div>
 
-    <div className="mb-5  flex ">
+    <div className="mb-5  flex gap-2">
       
       <input type="checkbox" id="declaration" name="declaration" checked={farmerFormData.declaration} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block"   />
-      <label htmlFor="declaration" className="block text-sm font-medium text-gray-700 sm:mb-0">I declare the above information is correct:</label>
+      <label htmlFor="declaration" className="block text-sm font-medium text-gray-700 sm:mb-0">By submitting this form, I declare that the information provided is accurate and complete to the best of my knowledge</label>
     </div>
     <div className='flex justify-center'>
     <button onSubmit={handleSubmit} className='ml-2 bg-green-500 text-white p-2 rounded-lg hover:bg-green-600' >Submit From</button>

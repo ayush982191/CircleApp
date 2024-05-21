@@ -1,4 +1,16 @@
-const farmerLoanTypes = [
+import farmerImg1 from "../assets/farmerImages/farmerImg1.jpg"
+import farmerImg2 from "../assets/farmerImages/farmerImg2.jpg"
+import farmerImg3 from "../assets/farmerImages/farmerImg3.jpg"
+import farmerImg4 from "../assets/farmerImages/farmerImg4.jpg"
+import farmerImg5 from "../assets/farmerImages/farmerImg5.jpg"
+
+import farmerImg6 from "../assets/farmerImages/farmerImg6.jpg"
+
+
+
+
+
+export const farmerLoanTypes = [
     {
       "Product": "Short-term Crop Advances",
       "Interest Rate": "16-18% per annum",
@@ -74,7 +86,7 @@ const farmerLoanTypes = [
     }
   ]
   
-const merchantLoanTypes = [
+ export const merchantLoanTypes = [
     {
       "Product": "Invoice Financing",
       "Interest Rate": "16-18% per annum",
@@ -173,3 +185,305 @@ const merchantLoanTypes = [
     { state: "Delhi", nameLocal: "दिल्ली", randomNo: Math.floor(Math.random() * 20) + 1 },
     { state: "Puducherry", nameLocal: "புதுச்சேரி", randomNo: Math.floor(Math.random() * 20) + 1 }
 ];
+
+export const farmerFilter =  [
+  { id: 'geography', label: 'Geography', subOptions: ['North India', 'South India', 'East India', 'West India'] },
+  { id: 'type-of-farming', label: 'Farming Type', subOptions: ['Crop Farming', 'Livestock Farming'] },
+  { id: 'farm-size', label: 'Farm Size', subOptions: ['Small/Medium (less than 10 acres)', 'Large (more than 10 acres)'] },
+  { id: 'primary-crops-grown', label: 'Primary Crops', subOptions: ['Food Crops (Wheat, Rice, Maize, Pulses, Vegetables/Fruits)', 'Cash Crops (Cotton, Sugarcane, Oilseeds, Tobacco)'] },
+  { id: 'use-of-farming-technology', label: 'Farming Technology', subOptions: ['Modern (Drones, IoT Devices, Precision Farming, Drip Irrigation)', 'Traditional (None)'] },
+  { id: 'annual-income-from-farming', label: 'Annual Income', subOptions: ['Less than ₹5,00,000', 'More than ₹5,00,000'] },
+  { id: 'loan-amount-required', label: 'Loan Amount', subOptions: ['Less than ₹50,000', 'More than ₹50,000'] },
+];
+
+export const merchantFilter = [
+  { id: 'geography', label: 'Geography', subOptions: ['North India', 'South India', 'East India', 'West India'] },
+  { id: 'type-of-merchant', label: 'Merchant Type', subOptions: ['Cash Crop Trader', 'Food Grains & Lentils Trader'] },
+  { id: 'business-size', label: 'Business Size', subOptions: ['Small/Medium (annual revenue less than ₹1 crore)', 'Large (annual revenue more than ₹1 crore)'] },
+  { id: 'primary-goods-traded', label: 'Primary Goods Traded', subOptions: ['Non-Perishable Goods (Grains, Lentils, Dry Fruits)', 'Perishable Goods (Fruits, Vegetables, Spices)'] },
+  { id: 'use-of-technology', label: 'Use of Technology', subOptions: ['Modern (E-commerce, ONDC Platform, Digital Payments)', 'Traditional (None)'] },
+  { id: 'annual-revenue', label: 'Annual Revenue', subOptions: ['Less than ₹50,00,000', 'More than ₹50,00,000'] },
+  { id: 'loan-amount-required', label: 'Loan Amount Required', subOptions: ['Less than ₹1,00,000', 'More than ₹1,00,000'] },
+];
+
+export const farmerImageArray  = [
+  farmerImg1,farmerImg2,farmerImg3,farmerImg4,farmerImg5,farmerImg6
+];
+
+export const farmerMoneyBorrower = [
+  {
+    "Name":"Ravi Kumar",
+    "state": "Assam",
+    "North India": false,
+    "South India": false,
+    "East India": true,
+    "West India": false,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 7000000,
+    "Large (annual revenue more than ₹1 crore)": 140000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Lentils",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "ONDC Platform",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 400000,
+    "More than ₹50,00,000": 80000000,
+    "Less than ₹1,00,000": 800,
+    "More than ₹1,00,000": 15000000,
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },
+  {
+    "Name":"Anand Saruke",
+    "state": "Gujarat",
+    "North India": false,
+    "South India": false,
+    "East India": false,
+    "West India": true,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 8000000,
+    "Large (annual revenue more than ₹1 crore)": 160000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 350000,
+    "More than ₹50,00,000": 85000000,
+    "Less than ₹1,00,000": 350,
+    "More than ₹1,00,000": 17000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },  {
+    "Name":"Ravi Kumar",
+    "state": "Uttar Pradesh",
+    "North India": true,
+    "South India": false,
+    "East India": false,
+    "West India": false,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 9000000,
+    "Large (annual revenue more than ₹1 crore)": 180000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "Digital Payments",
+    "Traditional (None)": "None",
+    "Less than ₹50,00,000": 400000,
+    "More than ₹50,00,000": 95000000,
+    "Less than ₹1,00,000": 900,
+    "More than ₹1,00,000": 18000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },
+  {
+    "Name":"Anand Sahu",
+    "state": "Rajasthan",
+    "North India": false,
+    "South India": false,
+    "East India": false,
+    "West India": true,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 6000000,
+    "Large (annual revenue more than ₹1 crore)": 130000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 300000,
+    "More than ₹50,00,000": 75000000,
+    "Less than ₹1,00,000": 750,
+    "More than ₹1,00,000": 15000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },{
+    "Name":"Harsh Golccha",
+    "state": "Maharashtra",
+    "North India": false,
+    "South India": false,
+    "East India": false,
+    "West India": true,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 8000000,
+    "Large (annual revenue more than ₹1 crore)": 160000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 350000,
+    "More than ₹50,00,000": 85000000,
+    "Less than ₹1,00,000": 350,
+    "More than ₹1,00,000": 17000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },
+  {
+    "Name":"Ayush Kumar",
+    "state": "Haryana",
+    "North India": false,
+    "South India": false,
+    "East India": false,
+    "West India": true,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 7000000,
+    "Large (annual revenue more than ₹1 crore)": 150000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 300000,
+    "More than ₹50,00,000": 75000000,
+    "Less than ₹1,00,000": 300,
+    "More than ₹1,00,000": 16000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  }, {
+    "Name":"Ankit Kumar",
+    "state": "Bihar",
+    "North India": false,
+    "South India": false,
+    "East India": true,
+    "West India": false,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 6000000,
+    "Large (annual revenue more than ₹1 crore)": 130000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Lentils",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "None",
+    "Less than ₹50,00,000": 400000,
+    "More than ₹50,00,000": 95000000,
+    "Less than ₹1,00,000": 400,
+    "More than ₹1,00,000": 14000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },
+  {
+    "Name":"Rahul Kumar",
+    "state": "Madhya Pradesh",
+    "North India": false,
+    "South India": false,
+    "East India": false,
+    "West India": true,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 7000000,
+    "Large (annual revenue more than ₹1 crore)": 140000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 350000,
+    "More than ₹50,00,000": 85000000,
+    "Less than ₹1,00,000": 350,
+    "More than ₹1,00,000": 16000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },{
+    "Name":"ShashiRanjan Prasad",
+    "state": "West Bengal",
+    "North India": false,
+    "South India": false,
+    "East India": true,
+    "West India": false,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 8000000,
+    "Large (annual revenue more than ₹1 crore)": 170000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "Digital Payments",
+    "Traditional (None)": "None",
+    "Less than ₹50,00,000": 450000,
+    "More than ₹50,00,000": 90000000,
+    "Less than ₹1,00,000": 450,
+    "More than ₹1,00,000": 18000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },
+  {
+    "Name":"Lokesh Kumar",
+    "state": "Odisha",
+    "North India": false,
+    "South India": false,
+    "East India": true,
+    "West India": false,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 6500000,
+    "Large (annual revenue more than ₹1 crore)": 140000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 300000,
+    "More than ₹50,00,000": 75000000,
+    "Less than ₹1,00,000": 300,
+    "More than ₹1,00,000": 15000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },{
+    "Name":"Hritik Kumar",
+    "state": "Tamil Nadu",
+    "North India": false,
+    "South India": true,
+    "East India": false,
+    "West India": false,
+    "Cash Crop Trader": false,
+    "Food Grains & Lentils Trader": true,
+    "Small/Medium (annual revenue less than ₹1 crore)": 7500000,
+    "Large (annual revenue more than ₹1 crore)": 155000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Rice",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Fruits",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 400000,
+    "More than ₹50,00,000": 90000000,
+    "Less than ₹1,00,000": 400,
+    "More than ₹1,00,000": 16000000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  },
+  {
+    "Name":"Shubham Kumar",
+    "state": "Karnataka",
+    "North India": false,
+    "South India": true,
+    "East India": false,
+    "West India": false,
+    "Cash Crop Trader": false,
+    "Food Grains & Lentils Trader": true,
+    "Small/Medium (annual revenue less than ₹1 crore)": 7200000,
+    "Large (annual revenue more than ₹1 crore)": 148000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Rice",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Fruits",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 380000,
+    "More than ₹50,00,000": 85000000,
+    "Less than ₹1,00,000": 380,
+    "More than ₹1,00,000": 15500000
+    // "image" : farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]
+  }
+  
+
+
+]
+
+
+const fdata = [
+  {
+    "state" : "Punjab",
+    "North India": false,
+    "South India": false,
+    "East India": false,
+    "West India": false,
+    "Cash Crop Trader": true,
+    "Food Grains & Lentils Trader": false,
+    "Small/Medium (annual revenue less than ₹1 crore)": 7000000,
+    "Large (annual revenue more than ₹1 crore)": 150000000,
+    "Non-Perishable Goods (Grains, Lentils, Dry Fruits)": "Grains",
+    "Perishable Goods (Fruits, Vegetables, Spices)": "Vegetables",
+    "Modern (E-commerce, ONDC Platform, Digital Payments)": "E-commerce",
+    "Traditional (None)": "Yes",
+    "Less than ₹50,00,000": 350000,
+    "More than ₹50,00,000": 85000000,
+    "Less than ₹1,00,000": 1000,
+    "More than ₹1,00,000": 20000000
+  }
+    
+  
+]
