@@ -115,8 +115,8 @@ const Statistics = () => {
 
      <div className='mx-10 flex flex-wrap  justify-evenly gap-5' >
         {
-          agriCompanies.map((company)=>(
-            <div className='p-7 rounded-xl w-[15rem] bg-lime-200'>
+          agriCompanies.map((company,idx)=>(
+            <div key={idx} className='p-7 rounded-xl w-[15rem] bg-lime-200'>
               <h1 className='text-center'>{company}</h1>
               <p className='text-center'>₹ {randomNo()}</p>
 

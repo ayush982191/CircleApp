@@ -30,7 +30,8 @@ const InvestInFarmers = () => {
   // };
   
   const showFilterData = (criteria) => {
-    // console.log("criteria=",criteria)
+    console.log(criteria)
+
     let newData = [];  
     if(criteria){
       newData = data.filter((prop)=>{
@@ -57,7 +58,9 @@ const InvestInFarmers = () => {
 
   return (
     <div>
-      <ShowCarousel filters={farmerFilter} setCriteria={setCriteria}  />
+      <div className='h-64'  >
+      <ShowCarousel filters={farmerFilter} setCriteria={setCriteria} type={"farmer"}  />
+      </div>
       
       {/* <h1>Farming</h1> */}
       <div className='flex gap-10 flex-wrap justify-aroundfy mx-5'>

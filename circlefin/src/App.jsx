@@ -13,6 +13,7 @@ import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import Statistics from './pages/Statistics'
 import ContactUs from "./pages/ContactUs"
+import SingleFarmerDetails from './components/SingleFarmerDetails'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <Route path='/aboutus' element={<Aboutus/>} />
     <Route path='/statistics' element={<Statistics/>} />
     <Route path='/contactus' element={<ContactUs/>}  />
+    <Route path='/farmer/:id' element={<SingleFarmerDetails/>} />
    </Routes>
    <Footer/>
    </BrowserRouter>

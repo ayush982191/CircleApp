@@ -1,78 +1,37 @@
 import React, { useState } from 'react';
-import OtpBox from '../components/OtpBox';
 import FarmerApplicationForm from '../Forms/FarmerApplicationForm';
 import MerchantApplicationForm from '../Forms/MerchantApplicationForm';
- 
- 
+
 const Borrow = () => {
-    const [user, setUser] = useState("");
+    const [selectedForm, setSelectedForm] = useState("farmer");
 
-    const [merchantFormData, setMerchantFormData] = useState({
-      fullName: '',
-      businessName: '',
-      businessType: '',
-      businessSubcategory: '',
-      businessAddress: '',
-      contactNumber: '',
-      emailAddress: '',
-      panNumber: '',
-      aadhaarNumber: '',
-      gstin: '',
-      accountAggregatorConsent: false,
-      yearsInBusiness: '',
-      annualRevenue: '',
-      primaryCommoditiesTraded: '',
-      averageMonthlyTransactions: '',
-      existingLoans: '',
-      currentOutstandingLoanAmount: '',
-      monthlyEMI: '',
-      goodsAndSalesTaxConsent: false,
-      ondcTransactionDataConsent: false,
-      requestedLoanAmount: '',
-      loanPurpose: '',
-      repaymentPeriodPreference: '',
-      aadhaarVerificationConsent: false
-    });
- 
-
-    const showForm = (person) => {
-        setUser(person);
+    const selectForm = (formType) => {
+        setSelectedForm(formType);
     }
-    const handleSubmit = () => { };
 
-    return ( 
-
+    return (
         <>
-            <div className='mt-20'>
-                {
-                    user === "" ? <h1 className='font-bold text-5xl'>Loan Application For</h1> : null
-                }
-                <div className='flex justify-around mt-10 mb-10'>
+            <div className='mt-24 text-center'>
+                <h1 className='font-bold text-3xl mb-6'>Loan Application For</h1>
+                <div className='flex justify-around'>
                     <button
-                        className='font-bold text-3xl px-4 py-2 focus:border-b-4 focus:border-black'
-                        onClick={() => showForm("farmer")}
+                        className={`font-bold text-lg px-28 py-2 rounded-full focus:outline-none transition duration-300 ${selectedForm === "farmer" ? 'bg-lime-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+                        onClick={() => selectForm("farmer")}
                     >
                         Farmer
                     </button>
                     <button
-                        className='font-bold text-3xl px-4 py-2 focus:border-b-4 focus:border-black'
-                        onClick={() => showForm("merchant")}
+                        className={`font-bold text-lg px-28 py-2 rounded-full focus:outline-none transition duration-300 ${selectedForm === "merchant" ? 'bg-lime-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+                        onClick={() => selectForm("merchant")}
                     >
                         Merchant
                     </button>
                 </div>
-                <hr className='border-b border-black' />
+                <hr className='border-b border-black mt-6' />
             </div>
-            <div>
-                {
-                    user === "merchant" ?
-                    // <ShowMerchantApplicationForm merchantFormData={merchantFormData} setMerchantFormData={setMerchantFormData}  /> 
-                        //  : <ShowFarmerApplicationForm farmerFormData={farmerFormData} setfarmerFormData={setfarmerFormData} />
-                       
-                        <MerchantApplicationForm/>:
-                         <FarmerApplicationForm/> 
-                        
-                }
+            <div className="mt-10">
+                {selectedForm === "farmer" && <FarmerApplicationForm />}
+                {selectedForm === "merchant" && <MerchantApplicationForm />}
             </div>
         </>
     );

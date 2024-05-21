@@ -205,7 +205,7 @@ const MerchantApplicationForm = () => {
         placeholder="Aadhar Number"
         required
       />
-      <button type="button" onClick={()=>setShowAadharOtpBox(!showAadharOtpBox)} className="ml-2 bg-green-600 text-white p-2 rounded-lg">
+      <button type="button" onClick={()=>setShowAadharOtpBox(!showAadharOtpBox)} className="ml-2 bg-lime-600 text-white p-2 rounded-lg">
         Verify
       </button>
     </div>
@@ -227,7 +227,7 @@ const MerchantApplicationForm = () => {
         placeholder="pancard Number"
         required
       />
-      <button type="button" onClick={()=>setShowPanOtpBox(!showPanOtpBox)} className="ml-2 bg-green-600 text-white p-2 rounded-lg">
+      <button type="button" onClick={()=>setShowPanOtpBox(!showPanOtpBox)} className="ml-2 bg-lime-600 text-white p-2 rounded-lg">
         Verify
       </button>
     </div>

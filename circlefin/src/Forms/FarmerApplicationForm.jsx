@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import OtpBox from '../components/OtpBox';
+import { Link } from 'react-router-dom';
 
 const FarmerApplicationForm = () => {
     const [currentPage, setcurrentPage] = useState(1);
@@ -77,14 +78,14 @@ const FarmerApplicationForm = () => {
     };
   
     const nextStep = () => {
-      setcurrentPage((prevStep) => Math.min(prevStep + 1, 4));
+      setcurrentPage((prevStep) => Math.min(prevStep + 1, 9));
     };
   
     const prevStep = () => {
       setcurrentPage((prevStep) => Math.max(prevStep - 1, 1));
     };
   
-    const progressPercentage = (currentPage / 4) * 100;
+    const progressPercentage = (currentPage / 8) * 100;
   return (
     <>
     <div>
@@ -95,7 +96,7 @@ const FarmerApplicationForm = () => {
       <div className="relative pt-1">
             <div className="flex mb-2 items-center justify-between">
               <div className="text-right">
-                <span className="text-xs font-semibold inline-block text-lime-700">Step {currentPage} of 4</span>
+                <span className="text-xs font-semibold inline-block text-lime-700">Step {currentPage} of 8</span>
               </div>
             </div>
             <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-lime-200">
@@ -107,7 +108,9 @@ const FarmerApplicationForm = () => {
           </div>
 
           {currentPage === 1 && (
+
 <> 
+  <h2 className="text-xl font-semibold mb-3">Personal Information</h2>
 
   <div className="mb-4">
     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
@@ -172,7 +175,7 @@ const FarmerApplicationForm = () => {
         placeholder="Contact Number"
          
       />
-      <button type="button" onClick={()=>setShowOtpBox(!showOptBox)} className="ml-2 bg-green-600 text-white p-2 rounded-lg">
+      <button type="button" onClick={()=>setShowOtpBox(!showOptBox)} className="ml-2 bg-lime-600 text-white p-2 rounded-lg">
         Verify
       </button> 
     </div>
@@ -226,6 +229,8 @@ const FarmerApplicationForm = () => {
 )}
           {currentPage === 2 && (
 <> 
+<h2 className="text-xl font-semibold mb-3">Additional Information</h2>
+
   <div className="mb-5">
     <label
      htmlFor="aadharNumber"
@@ -243,7 +248,7 @@ const FarmerApplicationForm = () => {
         placeholder="Aadhar Number"
          
       />
-      <button type="button" onClick={()=>setShowAadharOtpBox(!showAadharOtpBox)} className="ml-2 bg-green-600 text-white p-2 rounded-lg">
+      <button type="button" onClick={()=>setShowAadharOtpBox(!showAadharOtpBox)} className="ml-2 bg-lime-600 text-white p-2 rounded-lg">
         Verify
       </button>
     </div>
@@ -266,7 +271,7 @@ const FarmerApplicationForm = () => {
         placeholder="pancard Number"
          
       />
-      <button type="button" onClick={()=>setShowPanOtpBox(!showPanOtpBox)} className="ml-2 bg-green-600 text-white p-2 rounded-lg">
+      <button type="button" onClick={()=>setShowPanOtpBox(!showPanOtpBox)} className="ml-2 bg-lime-600 text-white p-2 rounded-lg">
         Verify
       </button>
     </div>
@@ -275,9 +280,10 @@ const FarmerApplicationForm = () => {
 </>
 )}
 
-
 {currentPage === 3 && (
 <>
+<h2 className="text-xl font-semibold mb-3">Additional Information</h2>
+
        <div className="mb-5  ">
                       <label htmlFor="landStatus" className="block text-sm font-medium text-gray-700 sm:mb-0">Land Status:<span className='text-red-500' >*</span></label>
                       <select id="landStatus" name="landStatus" value={farmerFormData.landStatus} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
@@ -526,8 +532,356 @@ const FarmerApplicationForm = () => {
 
 )}
 
-
+{/* -------------------------------------------------- */}
 {currentPage === 4 && (
+  <>
+   <div className="mb-5">
+  <label htmlFor="applicantName" className="block text-sm font-medium text-gray-700">Name of the Firm / Applicant</label>
+  <input
+    type="text"
+    id="applicantName"
+    name="applicantName"
+    value={farmerFormData.fullName}
+    readOnly
+    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+  />
+</div>
+
+<div className="mb-5">
+  <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years ITR</label>
+  <div className="flex items-center mt-1">
+    <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
+      <option value="year1">Year-1</option>
+    </select>
+    <button className="text-blue-500 mr-2">view</button>
+    <input type="file" className="hidden" id="uploadITR1" />
+    <label htmlFor="uploadITR1" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+  </div>
+  <div className="flex items-center mt-1">
+    <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
+      <option value="year2">Year-2</option>
+    </select>
+    <button className="text-blue-500 mr-2">view</button>
+    <input type="file" className="hidden" id="uploadITR2" />
+    <label htmlFor="uploadITR2" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+  </div>
+</div>
+
+<div className="mb-5">
+  <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years Financials</label>
+  <div className="flex items-center mt-1">
+    <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
+      <option value="year1">Year-1</option>
+    </select>
+    <button className="text-blue-500 mr-2">view</button>
+    <input type="file" className="hidden" id="uploadFinancial1" />
+    <label htmlFor="uploadFinancial1" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+  </div>
+  <div className="flex items-center mt-1">
+    <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
+      <option value="year2">Year-2</option>
+    </select>
+    <button className="text-blue-500 mr-2">view</button>
+    <input type="file" className="hidden" id="uploadFinancial2" />
+    <label htmlFor="uploadFinancial2" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+  </div>
+</div>
+
+<div className="mb-5">
+  <label className="block text-sm font-medium text-gray-700">Upload previous 12 months Bank Statement</label>
+  <div className="flex items-center mt-1">
+    <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
+      <option value="consolidateStatement">Consolidate statement</option>
+    </select>
+    <button className="text-blue-500 mr-2">view</button>
+    <input type="file" className="hidden" id="uploadBankStatement" />
+    <label htmlFor="uploadBankStatement" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+  </div>
+</div>
+
+<div className="mb-5">
+  <label className="block text-sm font-medium text-gray-700">OR</label>
+  <label className="block text-sm font-medium text-gray-700">Use netbanking to provide Bank Statements</label>
+  <div className="flex items-center mt-1">
+    <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
+      <option value="hdfcBank">HDFC Bank Ltd.</option>
+    </select>
+    <button className="p-2  bg-lime-500 text-white rounded-md">Login</button>
+  </div>
+</div>
+
+ 
+
+
+
+  </>
+)}
+  {/* --------------------------------------------- */}
+
+  {currentPage === 5 && (
+            <>
+            <div className="mb-5">
+  <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700">Maximum Approved Loan Amount</label>
+  <input
+    type="text"
+    id="loanAmount"
+    name="loanAmount"
+    value="1,00,000"
+    readOnly
+    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+  />
+  <input type="range" min="0" max="100000" value="100000" className="w-full mt-2" />
+</div>
+
+<div className="mb-5">
+  <label htmlFor="tenor" className="block text-sm font-medium text-gray-700">Tenor (In Months)</label>
+  <input
+    type="text"
+    id="tenor"
+    name="tenor"
+    value="6"
+    readOnly
+    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+  />
+  <input type="range" min="1" max="60" value="6" className="w-full mt-2" />
+</div>
+
+<div className="mb-5">
+  <label htmlFor="interestRate" className="block text-sm font-medium text-gray-700">Rate of Interest</label>
+  <input
+    type="text"
+    id="interestRate"
+    name="interestRate"
+    value="15% per annum"
+    readOnly
+    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+  />
+</div>
+
+<div className="mb-5">
+  <label htmlFor="processingFees" className="block text-sm font-medium text-gray-700">Processing Fees</label>
+  <input
+    type="text"
+    id="processingFees"
+    name="processingFees"
+    value="2000"
+    readOnly
+    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+  />
+</div>
+
+<div className="mb-5">
+  <label htmlFor="emiAmount" className="block text-sm font-medium text-gray-700">EMI Amount</label>
+  <input
+    type="text"
+    id="emiAmount"
+    name="emiAmount"
+    value="4,707"
+    readOnly
+    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+  />
+</div>
+
+<div className="mb-5">
+  <label htmlFor="firstEmiDate" className="block text-sm font-medium text-gray-700">First EMI Date (Tentative)</label>
+  <input
+    type="text"
+    id="firstEmiDate"
+    name="firstEmiDate"
+    placeholder="DD/MM/YYYY"
+    className="mt-1 p-2 w-full border-gray-300 rounded-md"
+  />
+</div>
+
+ 
+
+            </>)}
+
+ { 
+  currentPage ===6 && (
+    <>
+    
+    <div className="mb-5">
+  <h2 className="text-lg font-semibold text-lime-600 text-center">Key Fact Statement</h2>
+  <table className="min-w-full mt-4 border-collapse">
+    <thead>
+      <tr>
+        <th className="border border-gray-300 p-2 text-left">Particulars</th>
+        <th className="border border-gray-300 p-2 text-left">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-gray-300 p-2">Loan Amount</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="1,00,000"
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">Tenor</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="6 Months"
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">Interest Rate</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="15% p.a."
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">APR</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="20% p.a."
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">Penal Charges</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="2% p.a."
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">Bounce Charges</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="500 + GST"
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">EMI Amount</td>
+        <td className="border border-gray-300 p-2">
+          <input
+            type="text"
+            value="4,707"
+            readOnly
+            className="w-full border-0 bg-transparent"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="mb-5 text-center">
+  <Link to="#" className="text-blue-500">Click to view Key Fact Statement</Link>
+</div>
+
+ 
+
+    </>
+  )
+ }
+
+{
+  currentPage === 7 && (
+    <>
+      <div className="mb-5">
+        {/* Repayment Bank Details */}
+        <h3 className="text-lg font-semibold text-lime-600 mb-4">Repayment Bank Details</h3>
+        <div className="">
+          <div className="mb-3">
+            <label htmlFor="bankName" className="block text-sm font-medium text-gray-700">Bank Name:</label>
+            <input
+              type="text"
+              id="bankName"
+              name="bankName"
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="branchName" className="block text-sm font-medium text-gray-700">Branch Name:</label>
+            <input
+              type="text"
+              id="branchName"
+              name="branchName"
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="accountNumber" className="block text-sm font-medium text-gray-700">Account Number:</label>
+            <input
+              type="text"
+              id="accountNumber"
+              name="accountNumber"
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="ifscCode" className="block text-sm font-medium text-gray-700">IFSC Code:</label>
+            <input
+              type="text"
+              id="ifscCode"
+              name="ifscCode"
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="accountType" className="block text-sm font-medium text-gray-700">Account Type:</label>
+            <select
+              id="accountType"
+              name="accountType"
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            >
+              <option value="Savings">Savings</option>
+              <option value="Current">Current</option>
+            </select>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="accountName" className="block text-sm font-medium text-gray-700">Account Name:</label>
+            <input
+              type="text"
+              id="accountName"
+              name="accountName"
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+
+
+
+
+{currentPage === 8 && (
             <>
               {/* Page 3 fields */}
               
@@ -563,7 +917,7 @@ const FarmerApplicationForm = () => {
       <label htmlFor="declaration" className="block text-sm font-medium text-gray-700 sm:mb-0">By submitting this form, I declare that the information provided is accurate and complete to the best of my knowledge</label>
     </div>
     <div className='flex justify-center'>
-    <button onSubmit={handleSubmit} className='ml-2 bg-green-500 text-white p-2 rounded-lg hover:bg-green-600' >Submit From</button>
+    <button onSubmit={handleSubmit} className='ml-2 bg-lime-500 text-white p-2 rounded-lg hover:bg-lime-600' >Submit From</button>
     </div>
 
 
@@ -576,13 +930,13 @@ const FarmerApplicationForm = () => {
                 Previous
               </button>
             )}
-            {currentPage < 4 && (
-              <button type="button" onClick={nextStep} className="bg-green-600 text-white p-2 rounded-lg">
+            {currentPage < 8 && (
+              <button type="button" onClick={nextStep} className="bg-lime-600 text-white p-2 rounded-lg">
                 Next
               </button>
             )}
             {/* {currentPage === 3 && (
-              <button onClick={handleSubmit} className="bg-green-500 text-white p-2 rounded-lg">
+              <button onClick={handleSubmit} className="bg-lime-500 text-white p-2 rounded-lg">
                 Submit Form
               </button>
             )} */}

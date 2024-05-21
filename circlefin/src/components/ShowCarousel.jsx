@@ -1,14 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./ShowCarousel.css";
 import { GrRestroomWomen } from "react-icons/gr";
+import { farmerCarouselIconArray } from '../utils/data';
 
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
-const ShowCarousel = ({ filters , setCriteria }) => {
+const ShowCarousel = ({ filters , setCriteria,type }) => {
+  const [caroselLogo,setCarouselLogo] = useState([]);
+
   const [activeFilter, setActiveFilter] = useState(null);
+
+  useEffect(()=>{
+    if(type == "farmer"){
+      setCarouselLogo(farmerCarouselIconArray);
+    }
+
+  },[])
 
   const settings = {
     dots: false,
@@ -59,12 +69,16 @@ const ShowCarousel = ({ filters , setCriteria }) => {
     <section className="mt-10 ml-10 mr-10 filter-section pt-1">
       <div className="icon-filter-wrapper relative">
         <Slider ref={sliderRef} {...settings}>
-          {filters.map((filter) => (
+          {filters.map((filter,idx) => (
             <div key={filter.id} className="slick-slide">
               <div className='flex flex-col items-center'>
-              <GrRestroomWomen className='text-4xl'/>
+               <div>
+                {/* ----------------------------------------- */}
+                <img src={caroselLogo[0]} className='w-[5rem]' alt="" />
+                {/* ------------------------------------------ */}
+               </div>
                 <div
-                  className={` h-20 flex justify-center items-center gap-2 cursor-pointer`}
+                  className={` h-10 flex justify-center items-center gap-2 cursor-pointer`}
                   id={filter.id}
                   onClick={() => handleFilterClick(filter.id)}
                 >
