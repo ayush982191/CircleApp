@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { farmerProfiles } from '../utils/data';
 
 const SingleFarmerDetails = () => {
@@ -92,10 +92,10 @@ const SingleFarmerDetails = () => {
             </div>
           </div>
           <div className='mt-10'>
-            <form action="" className='flex gap-4' >
+            <div action="" className='flex gap-4' >
               <input type="text" onChange={handleChange} value={investedAmount} placeholder='&nbsp; Enter Amount' className='w-[20rem] h-[2.5rem] rounded-md' />
-              <button type='submit' onSubmit={(e) => e.preventDefault()} className='bg-lime-200 p-2 rounded-md w-[8rem] hover:bg-lime-400'>Invest Now</button>
-            </form>
+              <Link to="/investorApplication"><button type='submit' className='bg-lime-200 p-2 rounded-md w-[8rem] hover:bg-lime-400'>Invest Now</button></Link>
+            </div>
             <div className='mt-10 flex justify-start gap-20'>
               <button className='bg-lime-200 p-1 rounded-md w-[7rem] hover:bg-lime-300' onClick={() => handleButtonClick(10000)}>10000</button>
               <button className='bg-lime-200 p-1 rounded-md w-[7rem] hover:bg-lime-300' onClick={() => handleButtonClick(15000)}>15000</button>

@@ -7,11 +7,12 @@ import { farmerProfiles } from '../utils/data'
 import FarmerCard from './FarmerCard'
 import { merchantProfiles } from '../utils/data'
 import MerchantCard from './MerchantCard'
+import { tempMerchantProfile } from '../utils/data'
 
 const InvestInMerchant = () => {
 
-  const [data,setData] = useState(merchantProfiles);
-  const [filteredData,setFilteredData] = useState(merchantProfiles);
+  const [data,setData] = useState(tempMerchantProfile);
+  const [filteredData,setFilteredData] = useState(tempMerchantProfile);
   const [criteria,setCriteria] = useState("");
 
 

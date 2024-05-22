@@ -15,6 +15,7 @@ import Statistics from './pages/Statistics'
 import ContactUs from "./pages/ContactUs"
 import SingleFarmerDetails from './components/SingleFarmerDetails'
 import SingleMerchantDetails from './components/SingleMerchantDetails'
+import InvestorApplicationForm from './Forms/InvestorApplicationForm'
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
     <Route path='/contactus' element={<ContactUs/>}  />
     <Route path='/farmer/:id' element={<SingleFarmerDetails/>} />
     < Route path='/merchant/:id' element={<SingleMerchantDetails/>} />
+     <Route path='/investorApplication' element={<InvestorApplicationForm/>} />
    </Routes>
    <Footer/>
    </BrowserRouter>

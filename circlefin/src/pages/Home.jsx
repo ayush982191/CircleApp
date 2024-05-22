@@ -23,6 +23,9 @@ import { FiMapPin } from "react-icons/fi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
+import video from "../assets/videos/heroVideo.mp4"
+
+
 
 const Home = () => {
 
@@ -49,19 +52,20 @@ const Home = () => {
 
  
 
-  <div className='mt-20 sm:flex sm:justify-evenly'>
-  <div className='w-[30vw] flex justify-evenly'>
-    <video className="" autoPlay loop muted playsInline>
-      <source src="https://rangde-p2p-gen.s3.ap-south-1.amazonaws.com/videos/Video-Final-Homepage-Desktop.mp4" type="video/mp4" />
+<div className='mt-20 sm:flex sm:justify-evenly items-center'>
+  <div className='w-[45vw] h-[50vh] flex justify-evenly'> {/* Increased height to 50vh */}
+    <video autoPlay loop muted playsInline style={{ height: '100%' }}> {/* Set height to 100% */}
+      <source src={video} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
   <div className='w-[40vw] flex items-center'>
     <p class='tracking-wide text-xl font-semibold'>
-      <span class='text-lime-600 font-bold'>CircleFin</span> revolutionizes agricultural finance in India by integrating cutting-edge data analytics and embedded finance within the ONDC framework. Our platform empowers farmers and Agri-SMEs with tailored financial solutions, driving economic, social, and environmental prosperity. Committed to innovation and sustainability, CircleFin transforms the agri-sector into a landscape of opportunity for all stakeholders.
+      <span class='text-lime-600 font-bold'>CircleFin</span> harnesses advanced data analytics and embedded finance solutions to enhance financial access for farmers and Agri-SMEs, offering a truly digital experience through our robust partner ecosystem. Our platform delivers precisely tailored financial products that elevate agricultural stakeholders, ensuring market success and operational efficiency.For investors, CircleFin offers a unique P2P lending opportunity, providing access to a carefully curated agricultural portfolio that yields returns while contributing to significant sectoral transformation
     </p> 
   </div>
 </div>
+
 
 
 
@@ -69,7 +73,7 @@ const Home = () => {
 
 
       <div className='mx-10'>
-        <h1 className='font-extrabold text-5xl mt-10 mb-10' >Join Us In The <span className='text-lime-600' >Revolution</span></h1>
+        <h1 className='font-extrabold text-5xl mt-10 mb-10 text-center' >Join Us In The <span className='text-lime-600' >Revolution</span></h1>
       </div>
 
 {/* <h1>---------------------------------------</h1> */}
@@ -144,14 +148,14 @@ const Home = () => {
 
 
 
-      <div className='bg-yellow-400 mt-20 h-20 flex items-center justify-center' >
+      {/* <div className='bg-yellow-400 mt-20 h-20 flex items-center justify-center' >
 
         <h1 className='text-4xl font-bold text-center' >Stories of <span className=' text-white' >Change</span> </h1>
 
 
 
-      </div>
-      <h1 className='my-2 font-semibold text-center text-lime-600 text-2xl' >Get In Touch</h1>
+      </div> */}
+      <h1 className='mt-5 font-semibold text-center text-lime-600 text-2xl' >Get In Touch</h1>
       <h1 className='mb-2 font-bold text-4xl text-center' >Reach Out To Us Anytime</h1>
         
 
