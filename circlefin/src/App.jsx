@@ -14,6 +14,7 @@ import Login from './pages/Login'
 import Statistics from './pages/Statistics'
 import ContactUs from "./pages/ContactUs"
 import SingleFarmerDetails from './components/SingleFarmerDetails'
+import SingleMerchantDetails from './components/SingleMerchantDetails'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     <Route path='/statistics' element={<Statistics/>} />
     <Route path='/contactus' element={<ContactUs/>}  />
     <Route path='/farmer/:id' element={<SingleFarmerDetails/>} />
+    < Route path='/merchant/:id' element={<SingleMerchantDetails/>} />
    </Routes>
    <Footer/>
    </BrowserRouter>

@@ -22,15 +22,15 @@ const Invest = () => {
       <h1 className='text-4xl font-bold text-center'>Choose Your Investment Type</h1>
     </div>
     <div className='flex justify-around mt-10'>
-  <button onClick={() => setInvestmentDomain("farmer")} className=' bg-gray-300 hover:bg-lime-300 hover:border-b-2 p-3 rounded-md   font-bold focus:bg-lime-400 border-black'>
+  <button onClick={() => setInvestmentDomain("farmer")} className='text-2xl bg-gray-300 hover:bg-lime-300 hover:border-b-2 p-3 rounded-md   font-bold focus:bg-lime-400 border-black'>
     Farmer
   </button>
-  <button onClick={() => setInvestmentDomain("merchant")} className=' bg-gray-300 hover:bg-lime-300 hover:border-b-2 p-3 rounded-md   font-bold focus:bg-lime-400 border-black'>
+  <button onClick={() => setInvestmentDomain("merchant")} className='text-2xl bg-gray-300 hover:bg-lime-300 hover:border-b-2 p-3 rounded-md   font-bold focus:bg-lime-400 border-black'>
     Merchant
   </button>
 </div>
 
-    <div>
+    <div className="">
       {
         investmentDomain === "merchant" ? <div>
            <InvestInMerchant/>

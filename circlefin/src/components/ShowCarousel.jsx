@@ -5,18 +5,23 @@ import 'slick-carousel/slick/slick-theme.css';
 import "./ShowCarousel.css";
 import { GrRestroomWomen } from "react-icons/gr";
 import { farmerCarouselIconArray } from '../utils/data';
+import { farmerCarouselLogoArray } from '../utils/data';
+import { merchantCarouselLogoArray } from '../utils/data';
 
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const ShowCarousel = ({ filters , setCriteria,type }) => {
   const [caroselLogo,setCarouselLogo] = useState([]);
 
+
   const [activeFilter, setActiveFilter] = useState(null);
 
   useEffect(()=>{
     if(type == "farmer"){
-      setCarouselLogo(farmerCarouselIconArray);
-    }
+      setCarouselLogo(farmerCarouselLogoArray);
+
+    }else 
+    setCarouselLogo(merchantCarouselLogoArray)
 
   },[])
 
@@ -74,7 +79,7 @@ const ShowCarousel = ({ filters , setCriteria,type }) => {
               <div className='flex flex-col items-center'>
                <div>
                 {/* ----------------------------------------- */}
-                <img src={caroselLogo[0]} className='w-[5rem]' alt="" />
+                <img src={caroselLogo[idx]} className='w-[3rem]' alt="" />
                 {/* ------------------------------------------ */}
                </div>
                 <div

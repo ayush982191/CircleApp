@@ -29,6 +29,7 @@ const FarmerApplicationForm = () => {
         cropRotation: 'Yes',
         farmingTechnology: [],
         livestockTypes: [],
+        tenure : 0, 
         annualIncome: '',
         otherIncome: '',
         monthlyEMI: '',
@@ -284,26 +285,40 @@ const FarmerApplicationForm = () => {
 <>
 <h2 className="text-xl font-semibold mb-3">Additional Information</h2>
 
-       <div className="mb-5  ">
-                      <label htmlFor="landStatus" className="block text-sm font-medium text-gray-700 sm:mb-0">Land Status:<span className='text-red-500' >*</span></label>
-                      <select id="landStatus" name="landStatus" value={farmerFormData.landStatus} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
-                          <option value="Owner">Owner</option>
-                          <option value="Tenant">Tenant</option>
-                      </select>
-                  </div>
+<div className="mb-5">
+        <label htmlFor="landStatus" className="block text-sm font-medium text-gray-700">
+          Land Status<span className='text-red-500'>*</span>
+        </label>
+        <select
+          id="landStatus"
+          name="landStatus"
+          value={farmerFormData.landStatus}
+          onChange={handleChange}
+          className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+        >
+          <option value="Owner">Owner</option>
+          <option value="Tenant">Tenant</option>
+        </select>
+      </div>
 
 
 
                   
-    <div className="mb-5">
-      <label htmlFor="fpoAffiliation" className="block text-sm font-medium text-gray-700 sm:mb-0">FPO Affiliation:<span className='text-red-500' >*</span></label>
-      <select id="fpoAffiliation" name="fpoAffiliation" value={farmerFormData.fpoAffiliation} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md">
-        <option value="FPO Name 1">FPO Name 1</option>
-        <option value="FPO Name 2">FPO Name 2</option>
-        <option value="FPO Name 3">FPO Name 3</option>
-        <option value="none">None</option>
-      </select>
-    </div>
+      <div className="mb-5">
+        <label htmlFor="fpoAffiliation" className="block text-sm font-medium text-gray-700">
+          FPO Affiliation<span className='text-red-500'>*</span>
+        </label>
+        <select
+          id="fpoAffiliation"
+          name="fpoAffiliation"
+          value={farmerFormData.fpoAffiliation}
+          onChange={handleChange}
+          className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+        >
+          <option value="none">None</option>
+          <option value="someAffiliation">Some Affiliation</option>
+        </select>
+      </div>
 
     <div className="mb-5">
       <label htmlFor="numberOfDependents" className="block text-sm font-medium text-gray-700 sm:mb-0">Number of Dependents:<span className='text-red-500' >*</span></label>
@@ -536,7 +551,7 @@ const FarmerApplicationForm = () => {
 {currentPage === 4 && (
   <>
    <div className="mb-5">
-  <label htmlFor="applicantName" className="block text-sm font-medium text-gray-700">Name of the Firm / Applicant</label>
+  <label htmlFor="applicantName" className="block text-sm font-medium text-gray-700">Name of the Firm / Applicant<span className='text-red-500' >*</span></label>
   <input
     type="text"
     id="applicantName"
@@ -548,65 +563,81 @@ const FarmerApplicationForm = () => {
 </div>
 
 <div className="mb-5">
-  <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years ITR</label>
-  <div className="flex items-center mt-1">
+  <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years ITR<span className='text-red-500' >*</span></label>
+  <div className="flex gap-2 items-center mt-1">
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year1">Year-1</option>
     </select>
     <button className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadITR1" />
-    <label htmlFor="uploadITR1" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+    <label htmlFor="uploadITR1" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
-  <div className="flex items-center mt-1">
+  <div className="flex gap-2 items-center mt-1">
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year2">Year-2</option>
     </select>
     <button className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadITR2" />
-    <label htmlFor="uploadITR2" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+    <label htmlFor="uploadITR2" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
 </div>
 
 <div className="mb-5">
-  <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years Financials</label>
-  <div className="flex items-center mt-1">
+  <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years Financials<span className='text-red-500' >*</span></label>
+  <div className="flex gap-2 items-center mt-1">
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year1">Year-1</option>
     </select>
     <button className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadFinancial1" />
-    <label htmlFor="uploadFinancial1" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+    <label htmlFor="uploadFinancial1" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
-  <div className="flex items-center mt-1">
+  <div className="flex gap-2 items-center mt-1">
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year2">Year-2</option>
     </select>
     <button className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadFinancial2" />
-    <label htmlFor="uploadFinancial2" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+    <label htmlFor="uploadFinancial2" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
 </div>
 
 <div className="mb-5">
   <label className="block text-sm font-medium text-gray-700">Upload previous 12 months Bank Statement</label>
-  <div className="flex items-center mt-1">
+  <div className="flex gap-2 items-center mt-1">
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
-      <option value="consolidateStatement">Consolidate statement</option>
+      <option value="consolidateStatement">Consolidated statement</option>
     </select>
     <button className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadBankStatement" />
-    <label htmlFor="uploadBankStatement" className="p-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
+    <label htmlFor="uploadBankStatement" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
 </div>
 
 <div className="mb-5">
   <label className="block text-sm font-medium text-gray-700">OR</label>
   <label className="block text-sm font-medium text-gray-700">Use netbanking to provide Bank Statements</label>
-  <div className="flex items-center mt-1">
+  <div className="flex gap-2 items-center mt-1">
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
-      <option value="hdfcBank">HDFC Bank Ltd.</option>
+    <option value="">Select a Bank</option>
+          <option value="hdfcBank">HDFC Bank Ltd.</option>
+          <option value="iciciBank">ICICI Bank Ltd.</option>
+          <option value="sbi">State Bank of India</option>
+          <option value="axisBank">Axis Bank</option>
+          <option value="kotakBank">Kotak Mahindra Bank</option>
+          <option value="pnb">Punjab National Bank</option>
+          <option value="bobh">Bank of Baroda</option>
+          <option value="idfcBank">IDFC First Bank</option>
+          <option value="indusIndBank">IndusInd Bank</option>
+          <option value="yesBank">Yes Bank</option>
+          <option value="federalBank">Federal Bank</option>
+          <option value="canaraBank">Canara Bank</option>
+          <option value="unionBank">Union Bank of India</option>
+          <option value="bandhanBank">Bandhan Bank</option>
+          <option value="rblBank">RBL Bank</option>
+          <option value="bankOfIndia">Bank of India</option>
     </select>
-    <button className="p-2  bg-lime-500 text-white rounded-md">Login</button>
+    <button className="p-1  px-2  bg-lime-500 text-white rounded-md">Login</button>
   </div>
 </div>
 
@@ -621,33 +652,53 @@ const FarmerApplicationForm = () => {
   {currentPage === 5 && (
             <>
             <div className="mb-5">
-  <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700">Maximum Approved Loan Amount</label>
-  <input
-    type="text"
-    id="loanAmount"
-    name="loanAmount"
-    value="1,00,000"
-    readOnly
-    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
-  />
-  <input type="range" min="0" max="100000" value="100000" className="w-full mt-2" />
-</div>
+      <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700">
+        Loan Amount<span className='text-red-500'>*</span>
+      </label>
+      <input
+        type="text"
+        id="loanAmount"
+        name="loanAmount"
+        value={farmerFormData.loanAmount}
+        onChange={handleChange}
+        className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+      />
+      <input
+        type="range"
+        min="0"
+        max="100000"
+        name="loanAmount"
+        value={farmerFormData.loanAmount}
+        onChange={handleChange}
+        className="w-full mt-2"
+      />
+    </div>
 
 <div className="mb-5">
-  <label htmlFor="tenor" className="block text-sm font-medium text-gray-700">Tenor (In Months)</label>
-  <input
-    type="text"
-    id="tenor"
-    name="tenor"
-    value="6"
-    readOnly
-    className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
-  />
-  <input type="range" min="1" max="60" value="6" className="w-full mt-2" />
-</div>
+      <label htmlFor="tenor" className="block text-sm font-medium text-gray-700">
+        Tenure (In Months)<span className='text-red-500'>*</span>
+      </label>
+      <input
+        type="text"
+        id="tenor"
+        name="tenure"
+        value={farmerFormData.tenure}
+        onChange={handleChange}
+        className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
+      />
+      <input
+        type="range"
+        min="1"
+        max="60"
+        name='tenure'
+        value={farmerFormData.tenure}
+        onChange={handleChange}
+        className="w-full mt-2"
+      />
+    </div>
 
 <div className="mb-5">
-  <label htmlFor="interestRate" className="block text-sm font-medium text-gray-700">Rate of Interest</label>
+  <label htmlFor="interestRate" className="block text-sm font-medium text-gray-700">Rate of Interest<span className='text-red-500' >*</span></label>
   <input
     type="text"
     id="interestRate"
@@ -659,7 +710,7 @@ const FarmerApplicationForm = () => {
 </div>
 
 <div className="mb-5">
-  <label htmlFor="processingFees" className="block text-sm font-medium text-gray-700">Processing Fees</label>
+  <label htmlFor="processingFees" className="block text-sm font-medium text-gray-700">Processing Fees<span className='text-red-500' >*</span></label>
   <input
     type="text"
     id="processingFees"
@@ -671,7 +722,7 @@ const FarmerApplicationForm = () => {
 </div>
 
 <div className="mb-5">
-  <label htmlFor="emiAmount" className="block text-sm font-medium text-gray-700">EMI Amount</label>
+  <label htmlFor="emiAmount" className="block text-sm font-medium text-gray-700">EMI Amount<span className='text-red-500' >*</span></label>
   <input
     type="text"
     id="emiAmount"
@@ -683,7 +734,7 @@ const FarmerApplicationForm = () => {
 </div>
 
 <div className="mb-5">
-  <label htmlFor="firstEmiDate" className="block text-sm font-medium text-gray-700">First EMI Date (Tentative)</label>
+  <label htmlFor="firstEmiDate" className="block text-sm font-medium text-gray-700">First EMI Date (Tentative)<span className='text-red-500' >*</span></label>
   <input
     type="text"
     id="firstEmiDate"
@@ -716,18 +767,18 @@ const FarmerApplicationForm = () => {
         <td className="border border-gray-300 p-2">
           <input
             type="text"
-            value="1,00,000"
+            value={farmerFormData.loanAmount}
             readOnly
             className="w-full border-0 bg-transparent"
           />
         </td>
       </tr>
       <tr>
-        <td className="border border-gray-300 p-2">Tenor</td>
+        <td className="border border-gray-300 p-2">Tenure</td>
         <td className="border border-gray-300 p-2">
           <input
             type="text"
-            value="6 Months"
+            value={farmerFormData.tenure}
             readOnly
             className="w-full border-0 bg-transparent"
           />
@@ -810,7 +861,7 @@ const FarmerApplicationForm = () => {
         <h3 className="text-lg font-semibold text-lime-600 mb-4">Repayment Bank Details</h3>
         <div className="">
           <div className="mb-3">
-            <label htmlFor="bankName" className="block text-sm font-medium text-gray-700">Bank Name:</label>
+            <label htmlFor="bankName" className="block text-sm font-medium text-gray-700">Bank Name:<span className='text-red-500' >*</span></label>
             <input
               type="text"
               id="bankName"
@@ -820,7 +871,7 @@ const FarmerApplicationForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="branchName" className="block text-sm font-medium text-gray-700">Branch Name:</label>
+            <label htmlFor="branchName" className="block text-sm font-medium text-gray-700">Branch Name:<span className='text-red-500' >*</span></label>
             <input
               type="text"
               id="branchName"
@@ -830,7 +881,7 @@ const FarmerApplicationForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="accountNumber" className="block text-sm font-medium text-gray-700">Account Number:</label>
+            <label htmlFor="accountNumber" className="block text-sm font-medium text-gray-700">Account Number:<span className='text-red-500' >*</span></label>
             <input
               type="text"
               id="accountNumber"
@@ -840,7 +891,7 @@ const FarmerApplicationForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="ifscCode" className="block text-sm font-medium text-gray-700">IFSC Code:</label>
+            <label htmlFor="ifscCode" className="block text-sm font-medium text-gray-700">IFSC Code:<span className='text-red-500' >*</span></label>
             <input
               type="text"
               id="ifscCode"
@@ -850,7 +901,7 @@ const FarmerApplicationForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="accountType" className="block text-sm font-medium text-gray-700">Account Type:</label>
+            <label htmlFor="accountType" className="block text-sm font-medium text-gray-700">Account Type:<span className='text-red-500' >*</span></label>
             <select
               id="accountType"
               name="accountType"
@@ -862,7 +913,7 @@ const FarmerApplicationForm = () => {
             </select>
           </div>
           <div className="mb-3">
-            <label htmlFor="accountName" className="block text-sm font-medium text-gray-700">Account Name:</label>
+            <label htmlFor="accountName" className="block text-sm font-medium text-gray-700">Account Name:<span className='text-red-500' >*</span></label>
             <input
               type="text"
               id="accountName"

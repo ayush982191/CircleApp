@@ -13,22 +13,7 @@ const InvestInFarmers = () => {
 
 
 
-
-
-
-  // const showFilterData = (criteria) => {
-  //   const tempData= [];
-  //   if(criteria){
-  //     if(criteria==="North India"){
-  //       tempData = data.filter((item)=>{
-  //         Object.values(item)
-  //       })
-        
-  //     }
-
-  //   }
-  // };
-  
+ 
   const showFilterData = (criteria) => {
     console.log(criteria)
 
@@ -63,7 +48,7 @@ const InvestInFarmers = () => {
       </div>
       
       {/* <h1>Farming</h1> */}
-      <div className='flex gap-10 flex-wrap justify-aroundfy mx-5'>
+      <div className='flex gap-10 flex-wrap justify-around mx-5'>
       {filteredData.map((farmer, index) => (
         <FarmerCard farmer={farmer} key={index} />
       ))}

@@ -1,23 +1,15 @@
 import React from 'react'
+
 import { Link } from 'react-router-dom';
 import { farmerImageArray } from '../utils/data';
-// import { useParams } from 'react-router-dom';
 
-
-const FarmerCard = ({farmer}) => {
-  const{Name,state,amountRecived,image,id,"Amount-Required":amountRequired} = farmer;
-  // console.log(farmer)
-  // const {id} = useParams();
-  // console.log("id="+id);
-  const percent = Math.floor((amountRecived/amountRequired)*100);
-
-
-
-
+const MerchantCard = ({merchant}) => {
+    const{Name,state,image,id,amountReceived,"Amount Required":amountRequired,"Annual Revenue" : annualRevenue} = merchant;
+    const percent = Math.floor((amountReceived/amountRequired)*100);
   return (
     <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
     <div className='flex justify-center'>
-    <img className="w-[15rem] h-[12rem] rounded-t-xl" src={image} alt="Image Description"/>
+    <img className="w-[15rem] h-[12rem] rounded-t-xl" src={farmerImageArray[id]} alt="Image Description"/>
     </div>
     <div className="p-4 md:p-5">
       <h3 className="text-lg font-bold text-gray-800 dark:text-white">{state}
@@ -38,7 +30,7 @@ const FarmerCard = ({farmer}) => {
 
 
       <div className='flex justify-evenly' >
-      <Link to={`/farmer/${id}`}><button className='border-lime-400 p-2 w-20 rounded-md border-2 hover:bg-lime-100'>Details</button></Link>
+      <Link to={`/merchant/${id}`}><button className='border-lime-400 p-2 w-20 rounded-md border-2 hover:bg-lime-100'>Details</button></Link>
         <button className='p-2 mx-1 rounded-md w-20 text-white bg-lime-500 hover:bg-lime-600'>Invest</button>
       </div>
     </div>
@@ -46,4 +38,4 @@ const FarmerCard = ({farmer}) => {
   )
 }
 
-export default FarmerCard
+export default MerchantCard
