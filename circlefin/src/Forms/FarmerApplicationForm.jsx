@@ -85,6 +85,23 @@ const FarmerApplicationForm = () => {
     const prevStep = () => {
       setcurrentPage((prevStep) => Math.max(prevStep - 1, 1));
     };
+    const renderCircles = () => {
+      const circles = [];
+      const totalSteps = 9; // Change this if you have more steps
+      for (let i = 1; i <= totalSteps; i++) {
+        circles.push(
+          <div
+            key={i}
+            className={`w-4 h-4 rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+              i <= currentPage+1 ? 'bg-lime-700' : 'bg-gray-300'
+            }`}
+            style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
+          ></div>
+        );
+      }
+      return circles;
+    };
+  
   
     const progressPercentage = (currentPage / 8) * 100;
   return (
@@ -94,24 +111,42 @@ const FarmerApplicationForm = () => {
       <div className="flex justify-center mt-5">
     <form onSubmit={handleSubmit} className="border-2 p-5 border-gray-200 rounded-md sm:w-[80vw]">
       <h1 className="text-4xl text-center font-bold mb-5 bg-lime-700 text-gray-50 p-5">Farmer Loan Application Form</h1>
-      <div className="relative pt-1">
-            <div className="flex mb-2 items-center justify-between">
-              <div className="text-right">
-                <span className="text-xs font-semibold inline-block text-lime-700">Step {currentPage} of 8</span>
+      <div className="relative pt-1 mx-10">
+              <div className="flex mb-2 items-center justify-between">
+                <div className="text-right">
+                  <span className="text-xs font-semibold inline-block text-lime-700">
+                    Step {currentPage} of 8
+                  </span>
+                </div>
               </div>
+              <div className="relative h-2 mb-4 text-xs flex rounded bg-lime-200">
+                <div
+                  style={{ width: `${progressPercentage}%` }}
+                  className="absolute left-0 h-full shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lime-700"
+                ></div>
+                {renderCircles()}
+              </div>
+             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 8) * 100)+5}%`  }}>
+             <h2
+                className={`text-sm font-semibold mb-3 text-center  w-20 ${currentPage !=8 ? "ml-[4rem]":""}`}
+                
+              >
+                {currentPage === 1 && 'Personal Information'}
+                {currentPage === 2 && 'Additional Information'}
+                {currentPage === 3 && 'Additional Information'}
+                {currentPage === 4 && 'Documentation Details'}
+                {currentPage === 5 && 'Loan Information'}
+                {currentPage === 6 && 'Documentation'}
+                {currentPage === 7 && 'Repayment Bank Details'}
+                {currentPage === 8 && 'Income Details'}
+              </h2>
+             </div>
             </div>
-            <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-lime-200">
-              <div
-                style={{ width: `${progressPercentage}%` }}
-                className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lime-700"
-              ></div>
-            </div>
-          </div>
 
           {currentPage === 1 && (
 
 <> 
-  <h2 className="text-xl font-semibold mb-3">Personal Information</h2>
+  {/* <h2 className="text-xl font-semibold mb-3">Personal Information</h2> */}
 
   <div className="mb-4">
     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
@@ -230,7 +265,7 @@ const FarmerApplicationForm = () => {
 )}
           {currentPage === 2 && (
 <> 
-<h2 className="text-xl font-semibold mb-3">Additional Information</h2>
+{/* <h2 className="text-xl font-semibold mb-3">Additional Information</h2> */}
 
   <div className="mb-5">
     <label
@@ -858,7 +893,7 @@ const FarmerApplicationForm = () => {
     <>
       <div className="mb-5">
         {/* Repayment Bank Details */}
-        <h3 className="text-lg font-semibold text-lime-600 mb-4">Repayment Bank Details</h3>
+        {/* <h2 className="text-lg font-semibold text-lime-600 mb-4">Repayment Bank Details</h2> */}
         <div className="">
           <div className="mb-3">
             <label htmlFor="bankName" className="block text-sm font-medium text-gray-700">Bank Name:<span className='text-red-500' >*</span></label>

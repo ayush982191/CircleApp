@@ -15,7 +15,7 @@ const InvestInFarmers = () => {
 
  
   const showFilterData = (criteria) => {
-    console.log(criteria)
+    // console.log(criteria)
 
     let newData = [];  
     if(criteria){

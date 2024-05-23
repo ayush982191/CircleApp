@@ -16,17 +16,23 @@ import ContactUs from "./pages/ContactUs"
 import SingleFarmerDetails from './components/SingleFarmerDetails'
 import SingleMerchantDetails from './components/SingleMerchantDetails'
 import InvestorApplicationForm from './Forms/InvestorApplicationForm'
+import Dashboard from './pages/Dashboard'
+import SignIn from './pages/SignIn'
+import { MyContext } from './context/context'
 
 
 function App() {
+  const [investorRegistered,setInvestorRegistered] = useState(false);
   
 
   return (
    <>
+   <MyContext.Provider value={{investorRegistered,setInvestorRegistered}}>
    <BrowserRouter>
    <Navbar/>
    <Routes>
     <Route path='/' element={<Home/>} />
+    <Route path='/signin/:type' element={<SignIn/>} />
     <Route path='/signup' element={<SignUp/>} />
     <Route path='/login' element={<Login/>} />
     <Route path='/invest' element={<Invest/>} />
@@ -37,9 +43,13 @@ function App() {
     <Route path='/farmer/:id' element={<SingleFarmerDetails/>} />
     < Route path='/merchant/:id' element={<SingleMerchantDetails/>} />
      <Route path='/investorApplication' element={<InvestorApplicationForm/>} />
+     < Route path='/dashboard' element={<Dashboard/>} />
    </Routes>
    <Footer/>
    </BrowserRouter>
+
+   </MyContext.Provider>
+
    </>
   )
 }

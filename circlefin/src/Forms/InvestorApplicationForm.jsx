@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import OtpBox from '../components/OtpBox';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const InvestorApplicationForm = () => {
+  const navigate = useNavigate();
   const [currentPage,setcurrentPage] = useState(1)
   const [investorFormData, setInvestorFormData] = useState({
     fullName: '',
@@ -25,6 +26,21 @@ const InvestorApplicationForm = () => {
     signature: '',
     date: ''
   });
+
+  useEffect(() => {
+    const storedFormData = sessionStorage.getItem('formData');
+    // console.log(storedFormData)
+    if (storedFormData) {
+      const parsedFormData = JSON.parse(storedFormData);
+      setInvestorFormData((prevData) => ({
+        ...prevData,
+        fullName: parsedFormData.name,
+        email: parsedFormData.email
+      }));
+    }else{
+      navigate("/signin/investor")
+    }
+  }, []); 
 
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
@@ -48,6 +64,23 @@ const InvestorApplicationForm = () => {
     const prevStep = () => {
       setcurrentPage((prevStep) => Math.max(prevStep - 1, 1));
     };
+    const renderCircles = () => {
+      const circles = [];
+      const totalSteps = 4; // Change this if you have more steps
+      for (let i = 1; i <= totalSteps; i++) {
+        circles.push(
+          <div
+            key={i}
+            className={`w-4 h-4 flex justify-center text-white font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+              i <= currentPage+1 ? 'bg-lime-700' : 'bg-lime-200'
+            }`}
+            style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
+          >&#10003;</div>
+        );
+      }
+      return circles;
+    };
+  
   
     const progressPercentage = (currentPage / 3) * 100;
   return (
@@ -57,28 +90,44 @@ const InvestorApplicationForm = () => {
       <div className="mt-32 flex justify-center ">
     <form onSubmit={handleSubmit} className="border-2 p-5 border-gray-200 rounded-md sm:w-[80vw]">
       <h1 className="text-4xl text-center font-bold mb-5 bg-lime-700 text-gray-50 p-5">Investor Application Form</h1>
-      <div className="relative pt-1">
-            <div className="flex mb-2 items-center justify-between">
-              <div className="text-right">
-                <span className="text-xs font-semibold inline-block text-lime-700">Step {currentPage} of 3</span>
+      <div className="relative pt-1 mx-10">
+              <div className="flex mb-2 items-center justify-between">
+                <div className="text-right">
+                  <span className="text-xs font-semibold inline-block text-lime-700">
+                    Step {currentPage} of 3
+                  </span>
+                </div>
               </div>
+              <div className="relative h-2 mb-4 text-xs flex rounded bg-lime-200">
+                <div
+                  style={{ width: `${progressPercentage}%` }}
+                  className="absolute left-0 h-full shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lime-700"
+                ></div>
+                {renderCircles()}
+              </div>
+             <div className='flex justify-end' style={{ width: `${Math.floor((currentPage / 3) * 100)+5}%`  }}>
+             <h2
+                className={`text-sm font-semibold mb-3  w-20 ${currentPage !=3 ? "ml-[4rem]":""}`}
+                
+              >
+                {currentPage === 1 && 'Personal Information'}
+                {currentPage === 2 && 'Investment Details'}
+                {currentPage === 3 && 'Consent and Declarations'}
+              </h2>
+             </div>
             </div>
-            <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-lime-200">
-              <div
-                style={{ width: `${progressPercentage}%` }}
-                className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lime-700"
-              ></div>
-            </div>
-          </div>
+
+          {/* Render circles */}
+         
 
           {currentPage === 1 && (
 
 <> 
-  <h2 className="text-xl font-semibold mb-3">Personal Information</h2>
+  {/* <h2 className={`text-sm font-semibold mb-3 flex justify-end bg-red-500 w-[${Math.floor((currentPage/3)*100)}%]`}>Personal Information</h2> */}
 
   
  
-  <div className="mb-5">
+      <div className="mb-5">
         <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
           Full Name
         </label>
@@ -130,22 +179,12 @@ const InvestorApplicationForm = () => {
         ></textarea>
       </div>
        
-   
-
-   
- 
-
-
-  
-
-
-   
- 
+    
 </>
 )}
           {currentPage === 2 && (
 <> 
-<h2 className="text-xl font-semibold mb-3">Additional Information</h2>
+{/* <h2 className={`text-sm font-semibold mb-3 flex justify-end bg-red-500 w-[${Math.floor((currentPage/3)*100)}%]`}>Additional Information</h2> */}
 
    
   <div className="mb-5">
@@ -167,7 +206,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label htmlFor="minInvestment" className="block text-sm font-medium text-gray-700">
-          Minimum amount you are willing to lend: ₹
+          Minimum amount you are willing to lend: $
         </label>
         <input
           type="number"
@@ -180,7 +219,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label htmlFor="maxInvestment" className="block text-sm font-medium text-gray-700">
-          Maximum amount you are willing to lend: ₹
+          Maximum amount you are willing to lend: $
         </label>
         <input
           type="number"
@@ -240,7 +279,7 @@ const InvestorApplicationForm = () => {
       )}
       <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">
-          Are you planning to invest more than ₹10,00,000 across P2P platforms?
+          Are you planning to invest more than $10,00,000 across P2P platforms?
         </label>
         <div>
           <label className="inline-flex items-center mt-1">
@@ -270,7 +309,7 @@ const InvestorApplicationForm = () => {
       {investorFormData.investMoreThan10L === 'yes' && (
         <div className="mb-5">
           <label htmlFor="netWorthCertificate" className="block text-sm font-medium text-gray-700">
-            Please upload a certificate from a practicing Chartered Accountant certifying a minimum net worth of ₹50,00,000.
+            Please upload a certificate from a practicing Chartered Accountant certifying a minimum net worth of $50,00,000.
           </label>
           <input
             type="file"
@@ -286,7 +325,7 @@ const InvestorApplicationForm = () => {
  {
   currentPage ===3 && (
     <div>
-      <h2 className="text-xl font-semibold mb-3">Consent and Declarations</h2>
+      {/* <h2 className={`text-sm font-semibold mb-3 flex justify-end bg-red-500 w-[${Math.floor((currentPage/3)*100)}%]`}>Consent and Declarations</h2> */}
 
        <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">

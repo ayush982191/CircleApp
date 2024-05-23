@@ -53,6 +53,8 @@ const ShowCarousel = ({ filters , setCriteria,type }) => {
         }
       },
       {
+
+        
         breakpoint: 480,
         settings: {
           slidesToShow: 2,

@@ -148,18 +148,12 @@ const Home = () => {
 
 
 
-      {/* <div className='bg-yellow-400 mt-20 h-20 flex items-center justify-center' >
-
-        <h1 className='text-4xl font-bold text-center' >Stories of <span className=' text-white' >Change</span> </h1>
-
-
-
-      </div> */}
-      <h1 className='mt-5 font-semibold text-center text-lime-600 text-2xl' >Get In Touch</h1>
+      
+      {/* <h1 className='mt-5 font-semibold text-center text-lime-600 text-2xl' >Get In Touch</h1>
       <h1 className='mb-2 font-bold text-4xl text-center' >Reach Out To Us Anytime</h1>
-        
+         */}
 
-       <div>
+       {/* <div>
        <div className='flex justify-around mt-5'>
           <div className='p-5 rounded-xl shadow-md flex gap-2 w-[15rem] bg-white '>
             <div>< FiMapPin className='text-lime-600 text-2xl'/></div>
@@ -188,8 +182,43 @@ const Home = () => {
 
           </div>
         </div>
-       </div>
+       </div> */}
+    
+      <div className='bg-white'>
+      <div>
+        <div>
+          <h1 className='font-bold text-center mt-20 my-20 text-4xl  '>Get In Touch!</h1>
+        </div>
+        <div >
 
+           <form className='flex justify-center mt-20 '>
+            <div className='mr-40'>         
+             <p className='text-blue-900 font-bold text-xl'>Name</p>
+             <input type='text' className="w-96  border-b-4" placeholder="Please Enter Your Name" name='username'>                    
+             </input>
+             <br></br>
+
+              <p className='text-blue-900 font-bold text-xl mt-40'>E-Mail</p>  <br></br>
+             <input type='e-mail ' className='w-96  border-b-4' placeholder='web@xxxx.com' name='username'>                    
+             </input><br></br>
+             </div>
+              
+             <div className='ml-40'> 
+             <p className='text-blue-900 font-bold text-xl'>
+             What Investment's are you interested in? </p> <br></br>
+             <textarea placeholder='Let us know how we can help you!' className='w-96  border-b-4' name='username'>                    
+             </textarea><br></br>
+
+              <input type='checkbox' className='mt-40'></input>
+              <label className='text-blue-900 font-bold text-xl'> I agree to Ayekart's privacy policy</label><br></br>
+              <br></br>
+              
+              <button className='text-blue-900 font-bold text-xl mt-10 hover:bg-sky-200 px-4'>SEND</button>
+              </div>
+        </form>
+        </div>
+    </div>
+      </div>
 
 
 

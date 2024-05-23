@@ -69,7 +69,7 @@ const Statistics = () => {
        <div className='mt-32 flex flex-wrap gap-2 justify-evenly'>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
             <h1 className='font-bold'>Average loan amount</h1>
-            <p>₹ 25000</p>
+            <p>$ 25000</p>
 
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
@@ -83,7 +83,7 @@ const Statistics = () => {
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
             <h1 className='font-bold'>Loans issued</h1>
           
-          <p>₹ 49.2cr</p>
+          <p>$ 49.2cr</p>
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
             <h1 className='font-bold'>Net return</h1>
@@ -118,7 +118,7 @@ const Statistics = () => {
           agriCompanies.map((company,idx)=>(
             <div key={idx} className='p-7 rounded-xl w-[15rem] bg-lime-200'>
               <h1 className='text-center'>{company}</h1>
-              <p className='text-center'>₹ {randomNo()}</p>
+              <p className='text-center'>$ {randomNo()}</p>
 
             </div>
           ))

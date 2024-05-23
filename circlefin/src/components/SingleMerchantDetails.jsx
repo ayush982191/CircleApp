@@ -43,7 +43,7 @@ const SingleMerchantDetails = () => {
               <p><span className='font-bold'>Country:</span> <span className="text-2xl text-lime-700 font-bold">India</span></p>
             </div>
             <div>
-              <p><span className='font-bold'>Loan Amount: </span><span className="font-bold text-lime-700">₹{amountRequired}</span></p>
+              <p><span className='font-bold'>Loan Amount: </span><span className="font-bold text-lime-700">${amountRequired}</span></p>
             </div>
             <div className="flex gap-4">
               <p className='font-bold'>Amount Required</p>
