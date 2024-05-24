@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import OtpBox from '../components/OtpBox';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ShowEligiblity from '../components/ShowEligiblity';
+import digilocker from "../assets/images/digilocker.png"
 
 const FarmerApplicationForm = () => {
-    const [currentPage, setcurrentPage] = useState(1);
+  const navigate = useNavigate();
+    const [currentPage, setcurrentPage] = useState(0);
     const [showOptBox,setShowOtpBox] = useState(false);
     const [showAadharOtpBox,setShowAadharOtpBox] = useState(false);
     const [showPanOtpBox,setShowPanOtpBox]= useState(false)
@@ -44,6 +47,7 @@ const FarmerApplicationForm = () => {
 
     const handleChange = (e) => {
       const { name, value, type, checked } = e.target;
+      
       if (type === 'checkbox') {
         if (name === 'primaryCrops' || name === 'farmingTechnology' || name === 'livestockTypes') {
           const newValue = checked
@@ -74,6 +78,7 @@ const FarmerApplicationForm = () => {
   
     const handleSubmit = (e) => {
       e.preventDefault();
+      navigate("/formsubmitted")
       // Handle form submission here
       // console.log(farmerFormData);
     };
@@ -83,20 +88,20 @@ const FarmerApplicationForm = () => {
     };
   
     const prevStep = () => {
-      setcurrentPage((prevStep) => Math.max(prevStep - 1, 1));
+      setcurrentPage((prevStep) => Math.max(prevStep - 1, 0));
     };
     const renderCircles = () => {
       const circles = [];
       const totalSteps = 9; // Change this if you have more steps
-      for (let i = 1; i <= totalSteps; i++) {
+      for (let i = 2; i <= totalSteps; i++) {
         circles.push(
           <div
             key={i}
-            className={`w-4 h-4 rounded-full absolute top-1/2 transform -translate-y-1/2 ${
-              i <= currentPage+1 ? 'bg-lime-700' : 'bg-gray-300'
+            className={`w-4 h-4 flex justify-center text-white font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+              i <= currentPage+1 ? 'bg-lime-700' : 'bg-lime-200'
             }`}
             style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
-          ></div>
+          >&#10003;</div>
         );
       }
       return circles;
@@ -115,7 +120,7 @@ const FarmerApplicationForm = () => {
               <div className="flex mb-2 items-center justify-between">
                 <div className="text-right">
                   <span className="text-xs font-semibold inline-block text-lime-700">
-                    Step {currentPage} of 8
+                    Step {currentPage+1} of 9
                   </span>
                 </div>
               </div>
@@ -126,16 +131,17 @@ const FarmerApplicationForm = () => {
                 ></div>
                 {renderCircles()}
               </div>
-             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 8) * 100)+5}%`  }}>
+             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 9) * 100)+11}%`  }}>
              <h2
                 className={`text-sm font-semibold mb-3 text-center  w-20 ${currentPage !=8 ? "ml-[4rem]":""}`}
                 
               >
-                {currentPage === 1 && 'Personal Information'}
+                {currentPage === 0 && 'Personal Information'}
+                {currentPage === 1 && 'Additional Information'}
                 {currentPage === 2 && 'Additional Information'}
-                {currentPage === 3 && 'Additional Information'}
-                {currentPage === 4 && 'Documentation Details'}
-                {currentPage === 5 && 'Loan Information'}
+                {currentPage === 3 && 'Documentation Details'}
+                { currentPage ===4 && 'Loan Information' }
+                {currentPage === 5 && ''}
                 {currentPage === 6 && 'Documentation'}
                 {currentPage === 7 && 'Repayment Bank Details'}
                 {currentPage === 8 && 'Income Details'}
@@ -143,7 +149,7 @@ const FarmerApplicationForm = () => {
              </div>
             </div>
 
-          {currentPage === 1 && (
+          {currentPage === 0 && (
 
 <> 
   {/* <h2 className="text-xl font-semibold mb-3">Personal Information</h2> */}
@@ -263,8 +269,46 @@ const FarmerApplicationForm = () => {
  
 </>
 )}
-          {currentPage === 2 && (
-<> 
+          {currentPage === 1 && (
+  <div>
+    <div>
+  {/* <h2 className="text-xl font-semibold mb-3">Aadhaar Verification</h2> */}
+  <div className="mb-4 flex justify-around items-center">
+    <div>
+    <label htmlFor="aadhaarVerification" className="text-center block font-medium text-gray-700">Aadhaar Verification via DigiLocker</label>
+    {/* <label htmlFor="" className='block text-sm font-medium text-gray-700'>Enter Your Aadhar Details</label>  */}
+    <br />
+    <label htmlFor="" className='  block   text-gray-700'>Enter Your Aadhar Details</label>
+    <input type="text" className='mt-1 p-2 w-full border-gray-300 rounded-md ' placeholder='Aadhar Number' />
+    <br />
+    <input type="text" className='mt-1 p-2 w-full border-gray-300 rounded-md' placeholder='6 digit security PIN*' />
+   
+   <div className='mt-2'>
+   <input
+      type="checkbox"
+      id="aadhaarVerification"
+      name="aadhaarVerification"
+      // checked={formData.aadhaarVerification}
+      // onChange={handleChange}
+      className="mt-1 p-2"
+    />
+    <span className="ml-2">I consent to verify my Aadhaar information via DigiLocker</span>
+      
+   </div>
+   <br />
+   <div className='flex justify-end'>
+   <button className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
+   </div>
+    
+    </div>
+    <div>
+      <img src={digilocker} className='w-[10rem]' alt="" />
+
+    </div>
+  </div>
+  <h1 className='text-5xl text-center my-4 font-semibold' >OR</h1>
+</div>
+<div> 
 {/* <h2 className="text-xl font-semibold mb-3">Additional Information</h2> */}
 
   <div className="mb-5">
@@ -313,10 +357,11 @@ const FarmerApplicationForm = () => {
     </div>
   </div>
   {showPanOtpBox && <OtpBox type={"Pancard"}  />}
-</>
+</div>
+</div>
 )}
 
-{currentPage === 3 && (
+{currentPage === 2 && (
 <>
 <h2 className="text-xl font-semibold mb-3">Additional Information</h2>
 
@@ -583,7 +628,7 @@ const FarmerApplicationForm = () => {
 )}
 
 {/* -------------------------------------------------- */}
-{currentPage === 4 && (
+{currentPage === 3 && (
   <>
    <div className="mb-5">
   <label htmlFor="applicantName" className="block text-sm font-medium text-gray-700">Name of the Firm / Applicant<span className='text-red-500' >*</span></label>
@@ -682,9 +727,10 @@ const FarmerApplicationForm = () => {
 
   </>
 )}
-  {/* --------------------------------------------- */}
+  {/* --------------------------------------------- */}  
 
-  {currentPage === 5 && (
+
+  {currentPage === 4 && (
             <>
             <div className="mb-5">
       <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700">
@@ -784,7 +830,29 @@ const FarmerApplicationForm = () => {
             </>)}
 
  { 
-  currentPage ===6 && (
+   
+
+// {
+//   currentPage == 6 && (
+//     <>
+//     <ShowEligiblity/>
+//     </>
+//   )
+// }
+
+
+
+
+ 
+currentPage ===5 && (
+ <> <ShowEligiblity/></>
+)
+}
+
+
+
+
+ { currentPage ===6 && (
     <>
     
     <div className="mb-5">
@@ -1011,7 +1079,7 @@ const FarmerApplicationForm = () => {
           )}
 
           <div className="mb-5 flex justify-between">
-            {currentPage > 1 && (
+            {currentPage > 0 && (
               <button type="button" onClick={prevStep} className="bg-gray-300 text-gray-700 p-2 rounded-lg">
                 Previous
               </button>

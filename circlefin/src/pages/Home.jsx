@@ -183,8 +183,10 @@ const Home = () => {
           </div>
         </div>
        </div> */}
+
+       {/* ------------------------ void  */}
     
-      <div className='bg-white'>
+      {/* <div className='bg-white'>
       <div>
         <div>
           <h1 className='font-bold text-center mt-20 my-20 text-4xl  '>Get In Touch!</h1>
@@ -218,9 +220,110 @@ const Home = () => {
         </form>
         </div>
     </div>
+      </div> */}
+
+      {/* --------------------------------void  */}
+
+
+      
+
+
+      <div className="flex flex-col items-center justify-center mt-20 ">
+      <h1 className="text-3xl font-bold  ">Get In Touch!</h1>
+      <div className="w-full max-w-2xl space-y-10">
+        <div className="flex justify-between">
+          <div className="flex flex-col w-1/2 pr-2">
+            <label className="text-navy-500 font-semibold mb-2">Name</label>
+            <input 
+              type="text" 
+              placeholder="Please Enter Your Name" 
+              className="px-4 py-0 border-b-4 border-black-500 focus:outline-none focus:ring-0"
+            />
+          </div>
+          <div className="flex flex-col w-1/2 pl-4">
+            <label className="text-navy-500 font-semibold mb-2">What investments are you interested in?</label>
+            <input 
+              type="text" 
+              placeholder="Let us know how we can help you!" 
+              className="px-4 py-0 border-b-4 border-black-500 focus:outline-none focus:ring-0"
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-12">
+          <div className="flex flex-col">
+            <label className="text-navy-500 font-semibold mb-2">Email</label>
+            <input 
+              type="email" 
+              placeholder="web@xxxx.com" 
+              className="px-4 py-0 border-b-4 border-black-500 focus:outline-none focus:ring-0"
+            />
+          </div>
+          <div className="flex items-center mt-6">
+            <input 
+              type="checkbox" 
+              id="privacyPolicy" 
+              className="mr-2"
+            />
+            <label 
+              htmlFor="privacyPolicy" 
+              className="flex items-center"
+            >
+              <span className="text-navy-500">I agree to </span>
+              <span className="text-blue-500">ayekart's privacy policy</span>
+            </label>
+          </div>
+        </div>
+        <div className="flex justify-end mt-4">
+          <button 
+            type="submit" 
+            className="px-6 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-700"
+          >
+            Send
+          </button>
+        </div>
       </div>
 
+      
+    </div>
 
+    <div className='mt-20 flex justify-center '>
+    <div className="w-full max-w-2xl  p-6 bg-white shadow-md rounded-lg">
+        <h2 className="text-xl font-bold mb-4">Better Business, Not Better Buzzwords</h2>
+        <p className="mb-4">
+          Making better things takes time. Drop us your email to stay in the know as we work to reduce our environmental impact. We'll share other exciting news and exclusive offers, too.
+        </p>
+        <div className="flex items-center mb-4">
+          <input 
+            type="email" 
+            placeholder="Enter Your Email Address" 
+            className="flex-grow px-4 py-2 border-b-2 border-navy-500 focus:outline-none focus:ring-0"
+          />
+          <button 
+            type="submit" 
+            className="ml-4 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-700"
+          >
+            SIGN UP
+          </button>
+        </div>
+        <div className="flex items-center mb-4">
+          <input 
+            type="checkbox" 
+            id="newsletterConsent" 
+            className="mr-2"
+          />
+          <label 
+            htmlFor="newsletterConsent" 
+            className="text-navy-500"
+          >
+            Keep me updated on other news and exclusive offers
+          </label>
+        </div>
+        <p className="text-sm text-gray-600">
+          Note: You can opt-out at any time. See our <a href="#" className="text-blue-500">Privacy Policy</a> and <a href="#" className="text-blue-500">Terms</a>.
+        </p>
+      </div>
+      
+    </div>
 
 
     </div>

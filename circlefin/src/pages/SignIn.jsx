@@ -73,7 +73,7 @@ const SignIn = () => {
 
                         <div className="mt-6">
                             <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-700">Email address</label>
-                            <div className="mt-1 relative rounded-md shadow-sm">
+                            <div className="mt-1 relative rounded-md shadow-sm flex gap-2">
                                 <input
                                     id="email"
                                     name="email"
@@ -84,6 +84,7 @@ const SignIn = () => {
                                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                     placeholder="ramKumar@gmail.com"
                                 />
+                                <button className='bg-lime-300 px-2 hover:bg-lime-400 rounded-md ' >Verify</button>
                             </div>
                         </div>
 
@@ -116,25 +117,7 @@ const SignIn = () => {
                                 />
                             </div>
                         </div>
-
-                        {/* <div className="mt-6">
-                            <label htmlFor="occupation" className="block text-sm font-medium leading-5 text-gray-700">Occupation</label>
-                            <div className="mt-1 relative rounded-md shadow-sm">
-                                <select
-                                    id="occupation"
-                                    name="occupation"
-                                    required
-                                    value={formData.occupation}
-                                    onChange={handleChange}
-                                    className="block w-full px-3 py-2 border border-gray-300 rounded-md bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                                >
-                                    <option value="" disabled>Select your occupation</option>
-                                    <option value="Farmer">Farmer</option>
-                                    <option value="Merchant">Merchant</option>
-                                    <option value="Investor">Investor</option>
-                                </select>
-                            </div>
-                        </div> */}
+ 
 
                         <div className="mt-6">
                             <span className="block w-full rounded-md shadow-sm">

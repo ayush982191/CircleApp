@@ -19,6 +19,7 @@ import InvestorApplicationForm from './Forms/InvestorApplicationForm'
 import Dashboard from './pages/Dashboard'
 import SignIn from './pages/SignIn'
 import { MyContext } from './context/context'
+import FormSubmitted from './pages/FormSubmitted'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
     < Route path='/merchant/:id' element={<SingleMerchantDetails/>} />
      <Route path='/investorApplication' element={<InvestorApplicationForm/>} />
      < Route path='/dashboard' element={<Dashboard/>} />
+     <Route path='/formsubmitted' element={<FormSubmitted/>} />
    </Routes>
    <Footer/>
    </BrowserRouter>
