@@ -20,6 +20,8 @@ import Dashboard from './pages/Dashboard'
 import SignIn from './pages/SignIn'
 import { MyContext } from './context/context'
 import FormSubmitted from './pages/FormSubmitted'
+import SingleFarmerFundDetail from './components/SingleFarmerFundDetail'
+import SingleMerchantFundDetail from './components/SingleMerchantFundDetail'
 
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
     <Route path='/contactus' element={<ContactUs/>}  />
     <Route path='/farmer/:id' element={<SingleFarmerDetails/>} />
     < Route path='/merchant/:id' element={<SingleMerchantDetails/>} />
+    <Route path='/farmerfund/:id' element={<SingleFarmerFundDetail/>} />
+    <Route path='/merchantfund/:id' element={<SingleMerchantFundDetail/>} />
      <Route path='/investorApplication' element={<InvestorApplicationForm/>} />
      < Route path='/dashboard' element={<Dashboard/>} />
      <Route path='/formsubmitted' element={<FormSubmitted/>} />

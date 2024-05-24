@@ -23,7 +23,7 @@ const Navbar = () => {
           <Link 
             className='px-4 py-2 bg-lime-500 text-white rounded-full font-semibold hover:bg-lime-600 transition duration-300' 
             to="/dashboard">
-            Dashboard
+            My Dashboard
           </Link>
         </li>
         }

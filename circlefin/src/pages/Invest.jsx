@@ -9,8 +9,10 @@ import ShowCarousel from '../components/ShowCarousel';
 import { farmerFilter } from '../utils/data';
 import InvestInMerchant from '../components/InvestInMerchant';
 import InvestInFarmers from '../components/InvestInFarmers';
+import FarmingBusinessInvestment from '../components/FarmingBusinessInvestment';
+import MerchantBusinessInvestment from '../components/MerchantBusinessInvestment';
 const Invest = () => {
-  const [investmentDomain,setInvestmentDomain] = useState("");
+  const [investmentDomain,setInvestmentDomain] = useState("farmer");
 
   
 
@@ -33,9 +35,12 @@ const Invest = () => {
     <div className="">
       {
         investmentDomain === "merchant" ? <div>
-           <InvestInMerchant/>
+           {/* <InvestInMerchant/> */}
+           <MerchantBusinessInvestment/>
+         
         </div> : <div>
-         <InvestInFarmers/>
+         {/* <InvestInFarmers/> */}
+         <FarmingBusinessInvestment/>
 
         </div>
       }

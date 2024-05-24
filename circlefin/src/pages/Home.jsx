@@ -54,10 +54,13 @@ const Home = () => {
 
 <div className='mt-20 sm:flex sm:justify-evenly items-center'>
   <div className='w-[45vw] h-[50vh] flex justify-evenly'> {/* Increased height to 50vh */}
+    <div>
     <video autoPlay loop muted playsInline style={{ height: '100%' }}> {/* Set height to 100% */}
       <source src={video} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <p className='text-sm'>Video Credit : GEOSPATIAL WORLD</p>
+    </div>
   </div>
   <div className='w-[40vw] flex items-center'>
     <p class='tracking-wide text-xl font-semibold'>
