@@ -297,7 +297,7 @@ const FarmerApplicationForm = () => {
    </div>
    <br />
    <div className='flex justify-end'>
-   <button className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
+   <button type='button' className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
    </div>
     
     </div>
