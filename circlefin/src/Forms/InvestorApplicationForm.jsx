@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const InvestorApplicationForm = () => {
   const navigate = useNavigate();
-  const [currentPage,setcurrentPage] = useState(1)
+  const [currentPage,setcurrentPage] = useState(0)
   const [investorFormData, setInvestorFormData] = useState({
     fullName: '',
     email: '',
@@ -53,21 +53,22 @@ const InvestorApplicationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(investorFormData);
+    // console.log(investorFormData);
+    navigate("/formsubmitted");
   };
 
   
     const nextStep = () => {
-      setcurrentPage((prevStep) => Math.min(prevStep + 1, 9));
+      setcurrentPage((prevStep) => Math.min(prevStep + 1, 3));
     };
   
     const prevStep = () => {
-      setcurrentPage((prevStep) => Math.max(prevStep - 1, 1));
+      setcurrentPage((prevStep) => Math.max(prevStep - 1, 0));
     };
     const renderCircles = () => {
       const circles = [];
       const totalSteps = 4; // Change this if you have more steps
-      for (let i = 1; i <= totalSteps; i++) {
+      for (let i = 2; i <= totalSteps; i++) {
         circles.push(
           <div
             key={i}
@@ -94,7 +95,7 @@ const InvestorApplicationForm = () => {
               <div className="flex mb-2 items-center justify-between">
                 <div className="text-right">
                   <span className="text-xs font-semibold inline-block text-lime-700">
-                    Step {currentPage} of 3
+                    Step {currentPage+1} of 3
                   </span>
                 </div>
               </div>
@@ -110,9 +111,9 @@ const InvestorApplicationForm = () => {
                 className={`text-sm font-semibold mb-3  w-20 ${currentPage !=3 ? "ml-[4rem]":""}`}
                 
               >
-                {currentPage === 1 && 'Personal Information'}
-                {currentPage === 2 && 'Investment Details'}
-                {currentPage === 3 && 'Consent and Declarations'}
+                {currentPage === 0 && 'Personal Information'}
+                {currentPage === 1 && 'Investment Details'}
+                {currentPage === 2 && 'Consent and Declarations'}
               </h2>
              </div>
             </div>
@@ -120,7 +121,7 @@ const InvestorApplicationForm = () => {
           {/* Render circles */}
          
 
-          {currentPage === 1 && (
+          {currentPage === 0 && (
 
 <> 
   {/* <h2 className={`text-sm font-semibold mb-3 flex justify-end bg-red-500 w-[${Math.floor((currentPage/3)*100)}%]`}>Personal Information</h2> */}
@@ -182,7 +183,7 @@ const InvestorApplicationForm = () => {
     
 </>
 )}
-          {currentPage === 2 && (
+          {currentPage === 1 && (
 <> 
 {/* <h2 className={`text-sm font-semibold mb-3 flex justify-end bg-red-500 w-[${Math.floor((currentPage/3)*100)}%]`}>Additional Information</h2> */}
 
@@ -323,7 +324,7 @@ const InvestorApplicationForm = () => {
 </>
 )}
  {
-  currentPage ===3 && (
+  currentPage === 2 && (
     <div>
       {/* <h2 className={`text-sm font-semibold mb-3 flex justify-end bg-red-500 w-[${Math.floor((currentPage/3)*100)}%]`}>Consent and Declarations</h2> */}
 
@@ -464,12 +465,12 @@ const InvestorApplicationForm = () => {
  
 
           <div className="mb-5 flex justify-between">
-            {currentPage > 1 && (
+            {currentPage > 0 && (
               <button type="button" onClick={prevStep} className="bg-gray-300 text-gray-700 p-2 rounded-lg">
                 Previous
               </button>
             )}
-            {currentPage < 3 && (
+            {currentPage < 2 && (
               <button type="button" onClick={nextStep} className="bg-lime-600 text-white p-2 rounded-lg">
                 Next
               </button>

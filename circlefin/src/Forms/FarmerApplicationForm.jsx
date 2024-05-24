@@ -717,7 +717,7 @@ const FarmerApplicationForm = () => {
           <option value="rblBank">RBL Bank</option>
           <option value="bankOfIndia">Bank of India</option>
     </select>
-    <button className="p-1  px-2  bg-lime-500 text-white rounded-md">Login</button>
+    <button type='button' className="p-1  px-2  bg-lime-500 text-white rounded-md">Login</button>
   </div>
 </div>
 

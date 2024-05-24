@@ -1,8 +1,10 @@
 import React , {useState} from 'react'
 import OtpBox from '../components/OtpBox';
 import digilocker from "../assets/images/digilocker.png"
+import { useNavigate } from 'react-router-dom';
 
 const MerchantApplicationForm = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(0);
   const [showAadharOtpBox,setShowAadharOtpBox] = useState(false)
   const [showPanOtpBox,setShowPanOtpBox] = useState(false)
@@ -52,8 +54,10 @@ const MerchantApplicationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/formsubmitted")
     // console.log(formData);
     // Add submission logic here
+
   };
 
   const renderCircles = () => {
@@ -487,7 +491,7 @@ const MerchantApplicationForm = () => {
    </div>
    <br />
    <div className='flex justify-end'>
-   <button className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
+   <button type='button' className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
    </div>
     
     </div>

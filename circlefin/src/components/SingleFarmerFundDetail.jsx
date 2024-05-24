@@ -10,7 +10,7 @@ const SingleFarmerFundDetail = () => {
 
   // console.log("id="+id);
   const farmerFund = farmerFundData.find((fund)=>fund.id == id);
-  const { "Fund Name":fundName,"Target Return":targetReturns,"Risk Level":riskLevel,"Minimum Investment":minimumInvestment, "Investment Period":investmentPeriod,"Detailed Description":detailedDesc, "Fund Size":fundSize,"Why Invest":whyInvest } = farmerFund;   
+  const { "Fund Name":fundName,"Target Return":targetReturns,image,"Risk Level":riskLevel,"Minimum Investment":minimumInvestment, "Investment Period":investmentPeriod,"Detailed Description":detailedDesc, "Fund Size":fundSize,"Why Invest":whyInvest } = farmerFund;   
   const { "Initial Labor Costs":initialLabourCost,Fertilizers,Seeds} = detailedDesc;                                                                                   
   return (
     <div>
@@ -20,7 +20,7 @@ const SingleFarmerFundDetail = () => {
            
            <div >
             <div>
-              <img src={farmerImageArray[id]} className='w-[30rem] h-[20rem]' alt="" />
+              <img src={image} className='w-[30rem] h-[20rem]' alt="" />
 
             </div>
             {/* <div> */}

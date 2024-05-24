@@ -16,9 +16,9 @@ const MerchantBusinessInvestment = () => {
   }
   return (
     <div className='mt-5'>
-    <div className='flex justify-around'>
-        <button onClick={handleMerchantClick} className={` p-2 rounded-md ${merchantClicked ? "bg-lime-200":""}`} >Merchant</button>
-        <button onClick={handleFarmerClicked} className={` p-2 rounded-md ${merchantClicked ? "":"bg-lime-200"}`} >Funds</button>
+    <div className='flex justify-center'>
+        <button onClick={handleMerchantClick} className={` p-2 w-[15rem] rounded-e-none bg-gray-300 rounded-md ${merchantClicked ? "bg-yellow-300":""}`} >Individual</button>
+        <button onClick={handleFarmerClicked} className={` p-2 w-[15rem] rounded-s-none bg-gray-300 rounded-md ${merchantClicked ? "":"bg-yellow-300"}`} >Funds</button>
     </div>
     {
         showBusiness === "merchant" ?  <InvestInMerchant/>  : <InvestInMerchantFund/> 

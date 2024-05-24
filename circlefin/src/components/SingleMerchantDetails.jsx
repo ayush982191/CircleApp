@@ -27,61 +27,61 @@ const SingleMerchantDetails = () => {
           <img src={farmerImageArray[id]} alt="" className="w-[30rem] h-[30rem]" />
         </div>
         <div>
-          <h1 className="text-4xl  font-bold text-lime-700">{name}</h1>
-          <p className="font-bold">{name} requires credit to buy farming inputs for cultivating the crops</p>
+          <h1 className="text-4xl   font-semibold">{name}</h1>
+          <p className="mr-3 font-semibold">{name} requires credit to buy farming inputs for cultivating the crops</p>
           <div className="my-2">
             <p>
-              <span className="font-bold">Credit Score </span>
-              <span className="font-bold text-lime-700"> {creditScore}</span>
+              <span className="mr-3  font-semibold text-lime-700">Credit Score </span>
+              <span className="mr-3  font-semibold "> {creditScore}</span>
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <p><span className='font-bold'>State:</span> <span className="text-2xl text-lime-700 font-bold">{state}</span></p>
+              <p><span className=' r-3  font-semibold text-lime-700 '>State:</span> <span className="mr-3  font-semibold">{state}</span></p>
             </div>
             <div>
-              <p><span className='font-bold'>Country:</span> <span className="text-2xl text-lime-700 font-bold">India</span></p>
+              <p><span className=' r-3  font-semibold text-lime-700 '>Country:</span> <span className="text-2xl mr-3  font-semibold">India</span></p>
             </div>
             <div>
-              <p><span className='font-bold'>Loan Amount: </span><span className="font-bold text-lime-700">${amountRequired}</span></p>
+              <p><span className=' r-3  font-semibold text-lime-700 '>Loan Amount: </span><span className="mr-3  font-semibold ">${amountRequired}</span></p>
             </div>
             <div className="flex gap-4">
-              <p className='font-bold'>Amount Required</p>
-              <p className="font-bold text-lime-700">{amountRequired}</p>
+              <p className=' r-3  font-semibold text-lime-700 '>Amount Required</p>
+              <p className="mr-3  font-semibold">{amountRequired}</p>
             </div>
             <div className="flex gap-4">
-              <p className='font-bold'>Returns:</p>
-              <p className="font-bold text-lime-700">6% p.a.</p>
+              <p className=' r-3  font-semibold text-lime-700 '>Returns:</p>
+              <p className="mr-3  font-semibold">6% p.a.</p>
             </div>
             <div className="flex gap-4">
-              <p className='font-bold'>Annual Revenue</p>
-              <p className="font-bold text-lime-700">{annualRevenue} </p>
+              <p className=' r-3  font-semibold text-lime-700 '>Annual Revenue</p>
+              <p className="mr-3  font-semibold">{annualRevenue} </p>
             </div>
             <div className="flex gap-4">
-              <p className='font-bold'>Farming Experience:</p>
-              <p className="font-bold text-lime-700">{EXPERIENCE}</p>
+              <p className=' mr-3  font-semibold text-lime-700 '>Farming Experience:</p>
+              <p className="mr-3  font-semibold">{EXPERIENCE}</p>
             </div>
             <div className="flex gap-4">
-              <p className='font-bold'>Credit Score:</p>
-              <p className="font-bold text-lime-700">{creditScore}</p>
+              <p className=' mr-3  font-semibold text-lime-700 '>Credit Score:</p>
+              <p className="mr-3  font-semibold">{creditScore}</p>
             </div>
           </div>
           <div className='my-5 flex gap-5'>
-            <h1 className='font-bold'>Financial Health:</h1>
-            <p className='text-lime-700'>{financialHealth}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Financial Health:</h1>
+            <p className='mr-3  font-semibold'>{financialHealth}</p>
           </div>
           <div className='my-5 flex gap-5'>
-            <h1 className='font-bold'>Market Access</h1>
-            <p className='text-lime-700'>{marketAccess}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Market Access</h1>
+            <p className='mr-3  font-semibold'>{marketAccess}</p>
           </div>
           {/* ---------------------------  */}
           <div className='my-5 flex gap-5'>
-            <h1 className='font-bold'>Sustainablity Practices</h1>
-            <p className='text-lime-700'>{sustanablityPractice}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Sustainablity Practices</h1>
+            <p className='mr-3  font-semibold'>{sustanablityPractice}</p>
           </div>
           <div className='my-5 flex gap-5'>
-            <h1 className='font-bold'>Risk Factor:</h1>
-            <p className='text-lime-700'>{riskFactor}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Risk Factor:</h1>
+            <p className='mr-3  font-semibold'>{riskFactor}</p>
           </div>
           
           {/* ----------------------------------- */}
@@ -111,15 +111,15 @@ const SingleMerchantDetails = () => {
           </div>
         </div>
         <div className='w-[40vw]'>
-          {/* <h1 className='font-bold'>About {name}</h1>
+          {/* <h1 className='mr-3  font-semibold text-lime-700'>About {name}</h1>
           <p className='space-x-1'>{name} a resident of {state}, comes from a family deeply rooted in farming for the past seven years. While agriculture has been their mainstay, {name} envisions expanding their operations. To achieve this, he seeks a loan to invest in crucial farming inputs like irrigation systems, pesticides, and other necessities. By scaling up his cultivation, {name} aims to significantly boost her family's income. Your investment in {name} not only supports her aspirations but also enhances agricultural productivity in his community</p> */}
           <div className='my-5 flex gap-5'>
-            <h1 className='font-bold'>Repayment Structure</h1>
-            <p className='text-lime-700'>{REPAYMENT_STRUCTURE}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Repayment Structure</h1>
+            <p className='mr-3  font-semibold'>{REPAYMENT_STRUCTURE}</p>
           </div>
           <div className='my-5 flex gap-5'>
-            <h1 className='font-bold'>Loan Amount Recommended</h1>
-            <p className='text-lime-700'>{loanAmountRecommended}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Loan Amount Recommended</h1>
+            <p className='mr-3  font-semibold'>{loanAmountRecommended}</p>
           </div>
         </div>
       </div>
