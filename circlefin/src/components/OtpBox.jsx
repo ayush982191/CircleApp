@@ -104,7 +104,7 @@ const OtpBox = ({ type }) => {
           />
         </div>
         <div className="max-w-[260px] mx-auto mt-4">
-          <button onClick={verifyOtp}
+          <button type='button' onClick={verifyOtp}
             
             className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-lime-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-lime-950/10 hover:bg-lime-600 focus:outline-none focus:ring focus:ring-lime-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-lime-300 transition-colors duration-150"
           >
@@ -114,7 +114,7 @@ const OtpBox = ({ type }) => {
       </div>
       <div className="text-sm text-slate-500 mt-4">
         Didn't receive code?{' '}
-        <Link className="font-medium text-lime-500 hover:text-lime-600" to="*">
+        <Link className="font-medium text-lime-500 hover:text-lime-600" to="">
           Resend
         </Link>
       </div>
