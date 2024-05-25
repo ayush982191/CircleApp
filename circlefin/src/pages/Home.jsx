@@ -53,21 +53,26 @@ const Home = () => {
  
 
 <div className='mt-20 sm:flex sm:justify-evenly items-center'>
-  <div className='w-[45vw] h-[50vh] flex justify-evenly'> {/* Increased height to 50vh */}
-    <div>
-    <video autoPlay loop muted playsInline style={{ height: '100%' }}> {/* Set height to 100% */}
-      <source src={video} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p className='text-sm'>Video Credit : GEOSPATIAL WORLD</p>
+  <div className='w-full sm:w-[45vw] h-[50vh] flex justify-center items-center'>
+    <div className="relative">
+      <video autoPlay loop muted playsInline className="w-full h-full object-cover rounded-lg">
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p className='absolute bottom-2 right-2 text-sm text-white bg-black bg-opacity-50 px-2 py-1 rounded'>
+        Video Credit: GEOSPATIAL WORLD
+      </p>
     </div>
   </div>
-  <div className='w-[40vw] flex items-center'>
-    <p className='tracking-wide text-justify text-xl font-semibold'>
-      <span className='text-lime-600 font-bold'>CircleFin</span> harnesses advanced data analytics and embedded finance solutions to enhance financial access for farmers and Agri-SMEs, offering a truly digital experience through our robust partner ecosystem. Our platform delivers precisely tailored financial products that elevate agricultural stakeholders, ensuring market success and operational efficiency.For investors, CircleFin offers a unique P2P lending opportunity, providing access to a carefully curated agricultural portfolio that yields returns while contributing to significant sectoral transformation
-    </p> 
+  <div className='w-full sm:w-[40vw] flex items-center'>
+    <div className="p-6  rounded-lg">
+      <p className='tracking-wide text-justify text-xl font-semibold text-gray-800'>
+        <span className='text-lime-600 font-bold'>CircleFin</span> harnesses advanced data analytics and embedded finance solutions to enhance financial access for farmers and Agri-SMEs, offering a truly digital experience through our robust partner ecosystem. Our platform delivers precisely tailored financial products that elevate agricultural stakeholders, ensuring market success and operational efficiency. For investors, CircleFin offers a unique P2P lending opportunity, providing access to a carefully curated agricultural portfolio that yields returns while contributing to significant sectoral transformation.
+      </p>
+    </div>
   </div>
 </div>
+
 
 
 
