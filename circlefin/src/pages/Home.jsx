@@ -79,12 +79,28 @@ const Home = () => {
 
  
 
+{/* <div className='mx-10'>
+  <h1 className='font-extrabold text-5xl mt-10 mb-10 text-center text-gray-900'>
+    Join Us In The <span className='text-lime-600'>Revolution</span>
+  </h1>
+</div>
+<div className='flex justify-center'>
+  <div className='max-w-3xl mx-auto'>
+    <img src={objectiveImg} alt="Objective" className='rounded-lg shadow-lg' />
+    <div className='mt-8 text-center'>
+      <p className='text-lg font-semibold text-gray-700'>
+        Our mission is to empower India's agricultural sectors with innovative financial solutions, driving prosperity for farmers and Agri-SMEs. By harnessing advanced data analytics and embedded finance technology, we offer a truly digital experience through our robust partner ecosystem.
+      </p>
+    </div>
+  </div>
+</div> */}
+
+
 
       <div className='mx-10'>
         <h1 className='font-extrabold text-5xl mt-10 mb-10 text-center' >Join Us In The <span className='text-lime-600' >Revolution</span></h1>
       </div>
-
-{/* <h1>---------------------------------------</h1> */}
+ 
 <div className='flex justify-center'>
   <img src={objectiveImg} alt="" />
 </div>
