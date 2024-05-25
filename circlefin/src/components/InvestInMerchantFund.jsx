@@ -4,7 +4,7 @@ import MerchantFundCard from './MerchantFundCard'
 
 const InvestInMerchantFund = () => {
   return (
-    <div>
+    <div className='flex flex-wrap justify-around'>
         {
           merchantFundData.map((fund,idx)=><MerchantFundCard key={idx} data={fund} />)
         }

@@ -1,38 +1,29 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { merchantFundImages } from '../utils/data';
-const MerchantFundCard = ({data}) => {
-  const {id,"Fund Name":fundName,"Target Return":targetReturn,"Risk Level":riskLevel,"Minimum Investment":minimumInvestment,"Investment Period":investmentPeriod} = data;
-  return (
-    <div>
-         <div className='flex flex-col justify-center items-center mt-20'>
-        <div className=' p-8 rounded-xl border-black border-2 bg-lime-50' >
-            <div className='flex'>
-               <div>
-            <img src={merchantFundImages[id]} className='w-[15rem] h-[15rem] rounded-lg' />   
-                </div>
-                <div>
-                    <h1 className='ml-14 mt-24 font-bold text-lg'>{fundName}</h1>
-                </div>
-               </div>
-               <h1 className=' ml-5 mt-5 text-xl'>
-                Target Return: {targetReturn}
-               </h1>
-               <h1 className=' ml-5 mt-5 text-xl'>
-                Risk level: {riskLevel}
-               </h1>
-               <h1 className=' ml-5 mt-5 text-xl'>
-                Minimum Investment: {minimumInvestment}
-               </h1>
-               <h1 className= 'ml-5 mt-5 text-xl'>
-                Investment Period: {investmentPeriod}
-               </h1>
-               <Link to={`/merchantfund/${id}`}><button className='border ml-20 mt-5 p-2 rounded-lg border-black bg-lime-200 hover:bg-sky-200'>DETAILS</button></Link>
-               
-         </div>
-    </div>
-    </div>
-  )
-}
 
-export default MerchantFundCard
+const MerchantFundCard = ({ data }) => {
+    const { id, "Fund Name": fundName, "Target Return": targetReturn, "Risk Level": riskLevel, "Minimum Investment": minimumInvestment, "Investment Period": investmentPeriod } = data;
+
+    return (
+        <div className='flex justify-center items-center mt-10'>
+            <div className='w-72 border border-gray-200 rounded-lg shadow-md bg-white'>
+                <img src={merchantFundImages[id]} className='w-full h-40 object-cover rounded-t-lg' alt={fundName} />
+                <div className='p-4'>
+                    <h1 className='text-lg font-semibold mb-2'>{fundName}</h1>
+                    <p className='text-sm mb-2'>Target Return: {targetReturn}</p>
+                    <p className='text-sm mb-2'>Risk Level: {riskLevel}</p>
+                    <p className='text-sm mb-2'>Minimum Investment: {minimumInvestment}</p>
+                    <p className='text-sm mb-2'>Investment Period: {investmentPeriod}</p>
+                    <Link to={`/merchantfund/${id}`}>
+                        <button className='block w-full py-2 px-4 bg-lime-500 text-white rounded-md hover:bg-lime-600 transition-colors duration-300'>
+                            DETAILS
+                        </button>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default MerchantFundCard;

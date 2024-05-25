@@ -33,7 +33,7 @@ const Home = () => {
 
 
   return (
-    <div className=' mb-20 text-xs sm:text-base '>
+    <div className='  text-xs sm:text-base '>
         
         
     <div className='relative bg-lime-50'>
@@ -63,8 +63,8 @@ const Home = () => {
     </div>
   </div>
   <div className='w-[40vw] flex items-center'>
-    <p class='tracking-wide text-xl font-semibold'>
-      <span class='text-lime-600 font-bold'>CircleFin</span> harnesses advanced data analytics and embedded finance solutions to enhance financial access for farmers and Agri-SMEs, offering a truly digital experience through our robust partner ecosystem. Our platform delivers precisely tailored financial products that elevate agricultural stakeholders, ensuring market success and operational efficiency.For investors, CircleFin offers a unique P2P lending opportunity, providing access to a carefully curated agricultural portfolio that yields returns while contributing to significant sectoral transformation
+    <p className='tracking-wide text-justify text-xl font-semibold'>
+      <span className='text-lime-600 font-bold'>CircleFin</span> harnesses advanced data analytics and embedded finance solutions to enhance financial access for farmers and Agri-SMEs, offering a truly digital experience through our robust partner ecosystem. Our platform delivers precisely tailored financial products that elevate agricultural stakeholders, ensuring market success and operational efficiency.For investors, CircleFin offers a unique P2P lending opportunity, providing access to a carefully curated agricultural portfolio that yields returns while contributing to significant sectoral transformation
     </p> 
   </div>
 </div>
@@ -150,183 +150,59 @@ const Home = () => {
 
 
 
+ 
+ 
 
-      
-      {/* <h1 className='mt-5 font-semibold text-center text-lime-600 text-2xl' >Get In Touch</h1>
-      <h1 className='mb-2 font-bold text-4xl text-center' >Reach Out To Us Anytime</h1>
-         */}
-
-       {/* <div>
-       <div className='flex justify-around mt-5'>
-          <div className='p-5 rounded-xl shadow-md flex gap-2 w-[15rem] bg-white '>
-            <div>< FiMapPin className='text-lime-600 text-2xl'/></div>
-            <div>
-              <h3 className='font-semibold'>Address</h3>
-              <p>Aakash Complex, Jp Nagar 4th phase,Bengaluru</p>
-            </div>
-
-          </div>
-          <div className='p-5 rounded-xl shadow-md flex gap-2 w-[15rem] bg-white '>
-            <div>< MdOutlineEmail className='text-lime-600 text-2xl'/></div>
-            <div>
-              <h3 className='font-semibold'>E-mail</h3>
-              <p>xyz@gmail.com</p>
-              <p>pqr@gmail.com</p>
-            </div>
-
-          </div>
-          <div className='p-5 rounded-xl shadow-md flex gap-2 w-[15rem] bg-white '>
-            <div>< LuPhone className='text-lime-600 text-2xl'/></div>
-            <div>
-              <h3 className='font-semibold'>Phone</h3>
-              <p>+9187643*****</p>
-              <p>+9187234*****</p>
-            </div>
-
-          </div>
-        </div>
-       </div> */}
-
-       {/* ------------------------ void  */}
-    
-      {/* <div className='bg-white'>
-      <div>
+<div className=' '>
+    <div className=''>
         <div>
-          <h1 className='font-bold text-center mt-20 my-20 text-4xl  '>Get In Touch!</h1>
+          <h1 className='pt-5 font-semibold text-center text-3xl mt-20  '>Get In Touch!</h1>
         </div>
         <div >
 
-           <form className='flex justify-center mt-20 '>
-            <div className='mr-40'>         
-             <p className='text-blue-900 font-bold text-xl'>Name</p>
-             <input type='text' className="w-96  border-b-4" placeholder="Please Enter Your Name" name='username'>                    
+           <form className='flex justify-center mt-5 '>
+            <div className=''>         
+             <p className='text-blue-900 font-semibold text-xl'>Name</p>
+             <input type='text' className="w-96 mt-6 border-b-4" placeholder="Please Enter Your Name" name='username'>                    
              </input>
              <br></br>
 
-              <p className='text-blue-900 font-bold text-xl mt-40'>E-Mail</p>  <br></br>
+              <p className='text-blue-900 font-semibold text-xl mt-14'>E-Mail</p>  <br></br>
              <input type='e-mail ' className='w-96  border-b-4' placeholder='web@xxxx.com' name='username'>                    
              </input><br></br>
              </div>
               
              <div className='ml-40'> 
-             <p className='text-blue-900 font-bold text-xl'>
+             <p className='text-blue-900 font-semibold text-xl'>
              What Investment's are you interested in? </p> <br></br>
              <textarea placeholder='Let us know how we can help you!' className='w-96  border-b-4' name='username'>                    
              </textarea><br></br>
 
-              <input type='checkbox' className='mt-40'></input>
-              <label className='text-blue-900 font-bold text-xl'> I agree to Ayekart's privacy policy</label><br></br>
-              <br></br>
+              <input type='checkbox' className='mt-14'></input>
+              <label className='text-blue-900 font-semibold text-xl'> I agree to CircleFin's privacy policy</label><br></br>
               
-              <button className='text-blue-900 font-bold text-xl mt-10 hover:bg-sky-200 px-4'>SEND</button>
+              
+              <button type='button' className='p-2 text-blue-900 font-semibold text-xl mt-10 bottom-2  rounded-lg  hover:border-blue-300 hover:border-2 '>SEND</button>
               </div>
         </form>
         </div>
     </div>
-      </div> */}
-
-      {/* --------------------------------void  */}
-
-
-      
-
-
-      <div className="flex flex-col items-center justify-center mt-20 ">
-      <h1 className="text-3xl font-bold  ">Get In Touch!</h1>
-      <div className="w-full max-w-2xl space-y-10">
-        <div className="flex justify-between">
-          <div className="flex flex-col w-1/2 pr-2">
-            <label className="text-navy-500 font-semibold mb-2">Name</label>
-            <input 
-              type="text" 
-              placeholder="Please Enter Your Name" 
-              className="px-4 py-0 border-b-4 border-black-500 focus:outline-none focus:ring-0"
-            />
+   
+    <div className='mt-5 flex flex-col justify-center items-center'> 
+        <h1 className='text-4xl font-semibold'>Stay In Touch!</h1>
+        <form className='flex flex-col items-start mt-10 p-2'>
+          <h1 className='text-xl'>Subscribe to our Newsletter to get the latest updates and info!</h1>
+          <div className='mt-4'>
+            <input type="email" className='border-b-4 w-[25rem] h-[2rem] px-2' placeholder='Enter your email address' />
+            <button type='button' className='ml-4 p-2 border font-semibold rounded-lg bg-lime-500'>Subscribe</button>
           </div>
-          <div className="flex flex-col w-1/2 pl-4">
-            <label className="text-navy-500 font-semibold mb-2">What investments are you interested in?</label>
-            <input 
-              type="text" 
-              placeholder="Let us know how we can help you!" 
-              className="px-4 py-0 border-b-4 border-black-500 focus:outline-none focus:ring-0"
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-12">
-          <div className="flex flex-col">
-            <label className="text-navy-500 font-semibold mb-2">Email</label>
-            <input 
-              type="email" 
-              placeholder="web@xxxx.com" 
-              className="px-4 py-0 border-b-4 border-black-500 focus:outline-none focus:ring-0"
-            />
-          </div>
-          <div className="flex items-center mt-6">
-            <input 
-              type="checkbox" 
-              id="privacyPolicy" 
-              className="mr-2"
-            />
-            <label 
-              htmlFor="privacyPolicy" 
-              className="flex items-center"
-            >
-              <span className="text-navy-500">I agree to </span>
-              <span className="text-blue-500">ayekart's privacy policy</span>
-            </label>
-          </div>
-        </div>
-        <div className="flex justify-end mt-4">
-          <button 
-            type="submit" 
-            className="px-6 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-700"
-          >
-            Send
-          </button>
-        </div>
+        </form> 
       </div>
 
-      
-    </div>
 
-    <div className='mt-20 flex justify-center '>
-    <div className="w-full max-w-2xl  p-6 bg-white shadow-md rounded-lg">
-        <h2 className="text-xl font-bold mb-4">Better Business, Not Better Buzzwords</h2>
-        <p className="mb-4">
-          Making better things takes time. Drop us your email to stay in the know as we work to reduce our environmental impact. We'll share other exciting news and exclusive offers, too.
-        </p>
-        <div className="flex items-center mb-4">
-          <input 
-            type="email" 
-            placeholder="Enter Your Email Address" 
-            className="flex-grow px-4 py-2 border-b-2 border-navy-500 focus:outline-none focus:ring-0"
-          />
-          <button 
-            type="submit" 
-            className="ml-4 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-700"
-          >
-            SIGN UP
-          </button>
-        </div>
-        <div className="flex items-center mb-4">
-          <input 
-            type="checkbox" 
-            id="newsletterConsent" 
-            className="mr-2"
-          />
-          <label 
-            htmlFor="newsletterConsent" 
-            className="text-navy-500"
-          >
-            Keep me updated on other news and exclusive offers
-          </label>
-        </div>
-        <p className="text-sm text-gray-600">
-          Note: You can opt-out at any time. See our <a href="#" className="text-blue-500">Privacy Policy</a> and <a href="#" className="text-blue-500">Terms</a>.
-        </p>
-      </div>
-      
+
     </div>
+    
 
 
     </div>

@@ -84,7 +84,7 @@ const Aboutus = () => {
     // </div>
     <div className='mx-16'>
       <h1 className='mt-32 mb-10 font-bold text-3xl text-center'>Meet Our Leadership Team</h1>
-      <p>
+      <p className='text-justify' >
       Our leadership team brings together over 50 years of combined expertise in risk management and fintech innovation. With backgrounds that include pioneering Revenue-Based Finance and Embedded Finance in Southeast Asia, our seasoned professionals have led advanced analytics and risk consultancy at top global financial institutions. Our experience spans setting up and scaling digital lending platforms and retail loan businesses, as well as crafting sophisticated credit risk models. Additionally, our team's expertise extends to optimizing digital lending processes and developing innovative cash flow-based lending solutions. Committed to transforming financial services, we focus on advanced analytics, innovative product management, and strategic risk management to expand access to financial services across unbanked sectors.
       </p>
     </div>

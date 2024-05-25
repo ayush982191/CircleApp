@@ -5,7 +5,7 @@ import { farmerImageArray } from '../utils/data';
 
 
 const FarmerCard = ({farmer}) => {
-  const{name,state,amountRecived,OverallRating,image,id,"Amount-Required":amountRequired} = farmer;
+  const{name,state,amountRecived,overallRating,image,id,"Amount-Required":amountRequired} = farmer;
   // console.log(farmer)
   // const {id} = useParams();
   // console.log("id="+id);
@@ -40,7 +40,7 @@ const FarmerCard = ({farmer}) => {
       <div className='flex justify-evenly ' >
         {/* <span>Overall Rating {OverallRating}</span> */}
       
-        <button className='border-lime-400 text-sm p-2 w-30 rounded-md border-2 cursor-text '>Overall Rating <span className='text-lime-700 font-bold' >{OverallRating}</span></button>
+        <button className='border-lime-400 text-sm p-2 w-30 rounded-md border-2 cursor-text '>Overall Rating <span className='text-lime-700 font-bold' >{overallRating}</span></button>
         {/* </Link> */}
       <Link to={`/farmer/${id}`}><button className='p-2 mx-1 rounded-md w-20 text-white bg-lime-500 hover:bg-lime-600'>Detail</button></Link>
       </div>

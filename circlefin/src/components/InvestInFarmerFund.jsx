@@ -4,7 +4,7 @@ import FarmerFundCard from './FarmerFundCard';
 const InvestInFarmerFund = () => {
     const [fundData,setFundData] = useState(farmerFundData);
   return (
-    <div>
+    <div className='flex flex-wrap justify-around'>
         {/* <h1>This is farmer fund</h1>
          */}
          {
