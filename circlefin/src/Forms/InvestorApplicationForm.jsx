@@ -2,9 +2,11 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import OtpBox from '../components/OtpBox';
 import { Link, useNavigate } from 'react-router-dom';
+// import OtpBox from '../components/OtpBox';
 
 const InvestorApplicationForm = () => {
   const navigate = useNavigate();
+  const [showOptBox,setShowOtpBox] = useState(false);
   const [currentPage,setcurrentPage] = useState(0)
   const [investorFormData, setInvestorFormData] = useState({
     fullName: '',
@@ -67,7 +69,7 @@ const InvestorApplicationForm = () => {
     };
     const renderCircles = () => {
       const circles = [];
-      const totalSteps = 4; // Change this if you have more steps
+      const totalSteps = 3; // Change this if you have more steps
       for (let i = 2; i <= totalSteps; i++) {
         circles.push(
           <div
@@ -83,7 +85,7 @@ const InvestorApplicationForm = () => {
     };
   
   
-    const progressPercentage = (currentPage / 3) * 100;
+    const progressPercentage = (currentPage / 2) * 100;
   return (
     <>
     <div>
@@ -106,7 +108,7 @@ const InvestorApplicationForm = () => {
                 ></div>
                 {renderCircles()}
               </div>
-             <div className='flex justify-end' style={{ width: `${Math.floor((currentPage / 3) * 100)+5}%`  }}>
+             <div className='flex justify-end' style={{ width: `${Math.floor((currentPage / 2) * 100)+5}%`  }}>
              <h2
                 className={`text-sm font-semibold mb-3  w-20 ${currentPage !=3 ? "ml-[4rem]":""}`}
                 
@@ -154,7 +156,9 @@ const InvestorApplicationForm = () => {
           className="mt-1 p-2 w-full border-gray-300 rounded-md"
         />
       </div>
-      <div className="mb-5">
+
+
+      {/* <div className="mb-5">
         <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
           Phone Number
         </label>
@@ -162,11 +166,39 @@ const InvestorApplicationForm = () => {
           type="text"
           id="phoneNumber"
           name="phoneNumber"
-          value={investorFormData.phoneNumber}
-          onChange={handleInputChange}
+          
+         
           className="mt-1 p-2 w-full border-gray-300 rounded-md"
         />
-      </div>
+      </div> */}
+
+
+      
+  <div className="mb-5">
+    <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700">
+      Contact Number:<span className='text-red-500' >*</span>
+    </label>
+    <div className="flex items-center sm:col-span-4">
+      <input
+        type="text"
+        id="contactNumber"
+        name="contactNumber"
+        value={investorFormData.phoneNumber}
+        onChange={handleInputChange}
+        className="mt-1 p-2 w-full border-gray-300 rounded-md"
+        placeholder="Phone Number"
+         
+      /> 
+      <button type="button" onClick={()=>setShowOtpBox(!showOptBox)} className="ml-2 bg-lime-600 text-white p-2 rounded-lg">
+        Verify
+      </button> 
+    </div>
+  </div>
+
+  <div>
+  { showOptBox && <OtpBox type={"Mobile"} /> }
+  </div>
+
       <div className="mb-5">
         <label htmlFor="address" className="block text-sm font-medium text-gray-700">
           Address
@@ -190,7 +222,7 @@ const InvestorApplicationForm = () => {
    
   <div className="mb-5">
         <label htmlFor="riskTolerance" className="block text-sm font-medium text-gray-700">
-          How comfortable are you with risk? (low, medium, high)
+          How comfortable are you with risk? (low, medium, high)<span className='text-red-500' >*</span>
         </label>
         <select
           id="riskTolerance"
@@ -207,7 +239,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label htmlFor="minInvestment" className="block text-sm font-medium text-gray-700">
-          Minimum amount you are willing to lend: $
+          Minimum amount you are willing to lend: ₹<span className='text-red-500' >*</span>
         </label>
         <input
           type="number"
@@ -220,7 +252,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label htmlFor="maxInvestment" className="block text-sm font-medium text-gray-700">
-          Maximum amount you are willing to lend: $
+          Maximum amount you are willing to lend: ₹<span className='text-red-500' >*</span>
         </label>
         <input
           type="number"
@@ -233,7 +265,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label htmlFor="loanDuration" className="block text-sm font-medium text-gray-700">
-          Preferred loan duration
+          Preferred loan duration<span className='text-red-500' >*</span>
         </label>
         <select
           id="loanDuration"
@@ -280,7 +312,7 @@ const InvestorApplicationForm = () => {
       )}
       <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">
-          Are you planning to invest more than $10,00,000 across P2P platforms?
+          Are you planning to invest more than $10,00,000 across P2P platforms?<span className='text-red-500' >*</span>
         </label>
         <div>
           <label className="inline-flex items-center mt-1">

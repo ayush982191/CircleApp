@@ -99,7 +99,7 @@ const MerchantApplicationForm = () => {
                 ></div>
                 {renderCircles()}
               </div>
-             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 6) * 100)+5}%`  }}>
+             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 6) * 100)+2*currentPage+6}%`  }}>
              <h2
                 className={`text-sm font-semibold mb-3 text-center  w-20 ${currentPage !=6 ? "ml-[4rem]":""}`}
                 

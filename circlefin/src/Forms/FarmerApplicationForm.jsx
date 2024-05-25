@@ -97,8 +97,9 @@ const FarmerApplicationForm = () => {
         circles.push(
           <div
             key={i}
-            className={`w-4 h-4 flex justify-center text-white font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
-              i <= currentPage+1 ? 'bg-lime-700' : 'bg-lime-200'
+            onClick={()=>setcurrentPage(i-1)}
+            className={`w-4 h-4 flex justify-center items-center text-lime-700 font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+              i <= currentPage+1 ? 'bg-lime-700 text-white' : 'bg-lime-200 border-2 border-lime-700'
             }`}
             style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
           >&#10003;</div>
@@ -131,7 +132,7 @@ const FarmerApplicationForm = () => {
                 ></div>
                 {renderCircles()}
               </div>
-             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 9) * 100)+11}%`  }}>
+             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 9) * 100)+currentPage +5}%`  }}>
              <h2
                 className={`text-sm font-semibold mb-3 text-center  w-20 ${currentPage !=8 ? "ml-[4rem]":""}`}
                 
