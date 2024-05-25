@@ -35,6 +35,7 @@ const MerchantApplicationForm = () => {
     repaymentPeriodPreference: '',
     aadhaarVerificationConsent: false
   });
+  // console.log("current page="+currentPage)
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -54,6 +55,7 @@ const MerchantApplicationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // if(currentPage==)
     navigate("/formsubmitted")
     // console.log(formData);
     // Add submission logic here
@@ -569,6 +571,10 @@ const MerchantApplicationForm = () => {
     />
     <span className="ml-2">I agree to the declaration and consent statement</span>
   </div>
+  <div className='flex justify-center' >
+  <button type="submit" className="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5">Submit</button>
+  </div>
+  
 </div>
 )}
 
@@ -578,10 +584,10 @@ const MerchantApplicationForm = () => {
         {currentPage !== 0 && (
           <button type="button" className="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5" onClick={prevPage}>Previous</button>
         )}
-        {currentPage !== 5 ? (
+        {currentPage < 5 ? (
           <button type="button" className="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5" onClick={nextPage}>Next</button>
         ) : (
-          <button type="submit" className="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5">Submit</button>
+         ""
         )}
       </div>
     </form>

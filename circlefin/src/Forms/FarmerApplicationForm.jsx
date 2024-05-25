@@ -32,11 +32,11 @@ const FarmerApplicationForm = () => {
         cropRotation: 'Yes',
         farmingTechnology: [],
         livestockTypes: [],
-        tenure : 0, 
+        tenure : 3, 
         annualIncome: '',
         otherIncome: '',
         monthlyEMI: '',
-        loanAmount: '',
+        loanAmount: 18000,
         khasraKhatauni: null,
         declaration: false
     });
@@ -573,12 +573,12 @@ const FarmerApplicationForm = () => {
     <label className="block">
       <input type="checkbox" name="livestockTypes" value="Cattle" checked={farmerFormData.livestockTypes.includes('Cattle')} onChange={handleChange} /> Cattle
     </label>
-    <label className="block">
+    {/* <label className="block">
       <input type="checkbox" name="livestockTypes" value="Buffalo" checked={farmerFormData.livestockTypes.includes('Buffalo')} onChange={handleChange} /> Buffalo
-    </label>
-    <label className="block">
+    </label> */}
+    {/* <label className="block">
       <input type="checkbox" name="livestockTypes" value="Mithun" checked={farmerFormData.livestockTypes.includes('Mithun')} onChange={handleChange} /> Mithun
-    </label>
+    </label> */}
     <label className="block">
       <input type="checkbox" name="livestockTypes" value="Yak" checked={farmerFormData.livestockTypes.includes('Yak')} onChange={handleChange} /> Yak
     </label>
@@ -648,7 +648,7 @@ const FarmerApplicationForm = () => {
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year1">Year-1</option>
     </select>
-    <button className="text-blue-500 mr-2">view</button>
+    <button type='button' className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadITR1" />
     <label htmlFor="uploadITR1" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
@@ -656,7 +656,7 @@ const FarmerApplicationForm = () => {
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year2">Year-2</option>
     </select>
-    <button className="text-blue-500 mr-2">view</button>
+    <button type='button' className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadITR2" />
     <label htmlFor="uploadITR2" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
@@ -668,7 +668,7 @@ const FarmerApplicationForm = () => {
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year1">Year-1</option>
     </select>
-    <button className="text-blue-500 mr-2">view</button>
+    <button type='button' className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadFinancial1" />
     <label htmlFor="uploadFinancial1" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
@@ -676,7 +676,7 @@ const FarmerApplicationForm = () => {
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="year2">Year-2</option>
     </select>
-    <button className="text-blue-500 mr-2">view</button>
+    <button type='button' className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadFinancial2" />
     <label htmlFor="uploadFinancial2" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>
@@ -688,7 +688,7 @@ const FarmerApplicationForm = () => {
     <select className="p-2 w-[30rem] border-gray-300 rounded-md mr-2">
       <option value="consolidateStatement">Consolidated statement</option>
     </select>
-    <button className="text-blue-500 mr-2">view</button>
+    <button type='button' className="text-blue-500 mr-2">view</button>
     <input type="file" className="hidden" id="uploadBankStatement" />
     <label htmlFor="uploadBankStatement" className="p-1  px-2 bg-lime-500 text-white rounded-md cursor-pointer">Upload</label>
   </div>

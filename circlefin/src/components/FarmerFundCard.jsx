@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { farmerFundImages } from '../utils/data';
 
 const FarmerFundCard = ({data}) => {
     const {id,"Fund Name" : fundName,"Target Return":targetReturn,"Risk Level":riskLevel,"Minimum Investment":minInvestment,"Investment Period":investmentPeriod} = data;                                                                      
@@ -9,7 +10,7 @@ const FarmerFundCard = ({data}) => {
         <div className=' p-8 rounded-xl border-black border-2 bg-lime-50' >
             <div className='flex'>
                <div>
-            <img src="/src/images/farmland.jpg" className='w-[15rem] h-[15rem] rounded-lg' />   
+            <img src={farmerFundImages[id]} className='w-[15rem] h-[15rem] rounded-lg' />   
                 </div>
                 <div>
                     <h1 className='ml-14 mt-24 font-bold text-lg'>{fundName}</h1>

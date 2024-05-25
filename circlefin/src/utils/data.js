@@ -2292,8 +2292,8 @@ export const farmerCarouselLogoArray = [ geopgraphyIcon,farmingType,farmSize,cro
 export const merchantCarouselLogoArray = [geopgraphyIcon,merchantType,businessSize,primarygoods,merchantTechnology,revenue,loanAmount]
 
 
-const farmerFundImages = [];
-const merchantFundImages = [inventory,marketExpansion];
+export const farmerFundImages = [sowing,preharvesting,postHarvesting];
+export const merchantFundImages = [inventory,marketExpansion];
 
 export const farmerImageArray  = [
   farmerImg1,farmerImg2,farmerImg3,farmerImg4,farmerImg5,farmerImg6,farmerImg7,farmerImg8,farmerImg9,farmerImg10,farmerImg11,farmerImg12,farmerImg13,farmerImg14,farmerImg15,farmerImg16,farmerImg17,farmerImg20,farmerImg21,farmerImg22,farmerImg23,farmerImg24,farmerImg25,farmerImg26,farmerImg27,farmerImg28,farmerImg29,farmerImg30,farmerImg31,farmerImg32,farmerImg33,farmerImg34

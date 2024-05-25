@@ -1,8 +1,11 @@
-// import { verify } from 'crypto';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import loader from "../assets/animations/loader.gif"
 
 const OtpBox = ({ type }) => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   useEffect(() => {
     const form = document.getElementById('otp-form');
     const inputs = [...form.querySelectorAll('input[type=text]')];
@@ -71,52 +74,72 @@ const OtpBox = ({ type }) => {
       });
     };
   }, []);
-  const verifyOtp = ()=>{}
+
+  const verifyOtp = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSuccess(true);
+    }, 2000); // Simulate a network request
+  };
 
   return (
-    <div className="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-5 rounded-xl shadow">
-      <header className="mb-8">
-        <h1 className="text-xl font-bold mb-1">{type} Verification</h1>
-        <p className="text-[15px] text-slate-500">Enter the 4-digit OTP</p>
-      </header>
-      <div id="otp-form">
-        <div className="flex items-center justify-center gap-3">
-          <input
-            type="text"
-            className="w-10 text-md h-10 text-center  text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
-            pattern="\d*"
-            maxLength="1"
-          />
-          <input
-            type="text"
-            className="w-10 text-md h-10 text-center  text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
-            maxLength="1"
-          />
-          <input
-            type="text"
-            className="w-10 text-md h-10 text-center  text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
-            maxLength="1"
-          />
-          <input
-            type="text"
-            className="w-10 text-md h-10 text-center  text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
-            maxLength="1"
-          />
+    <div>
+      <div className="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-5 rounded-xl shadow">
+        <header className="mb-8">
+          <h1 className="text-xl font-bold mb-1">{type} Verification</h1>
+          <p className="text-[15px] text-slate-500">Enter the 4-digit OTP</p>
+        </header>
+        <div id="otp-form">
+          {loading ? (
+            <div className="flex items-center justify-center py-4">
+              <img src={loader} width={40} alt="" />
+            </div>
+          ) : success ? (
+            <div className="text-green-500 text-lg">Verification Successful!</div>
+          ) : (
+            <>
+              <div className="flex items-center justify-center gap-3">
+                <input
+                  type="text"
+                  className="w-10 text-md h-10 text-center text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
+                  pattern="\d*"
+                  maxLength="1"
+                />
+                <input
+                  type="text"
+                  className="w-10 text-md h-10 text-center text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
+                  maxLength="1"
+                />
+                <input
+                  type="text"
+                  className="w-10 text-md h-10 text-center text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
+                  maxLength="1"
+                />
+                <input
+                  type="text"
+                  className="w-10 text-md h-10 text-center text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-lime-400 focus:ring-2 focus:ring-lime-100"
+                  maxLength="1"
+                />
+              </div>
+              <div className="max-w-[260px] mx-auto mt-4">
+                <button
+                  type="button"
+                  onClick={verifyOtp}
+                  className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-lime-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-lime-950/10 hover:bg-lime-600 focus:outline-none focus:ring focus:ring-lime-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-lime-300 transition-colors duration-150"
+                >
+                  Verify Account
+                </button>
+              </div>
+            </>
+          )}
         </div>
-        <div className="max-w-[260px] mx-auto mt-4">
-          <button type='button' onClick={verifyOtp}
-            
-            className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-lime-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-lime-950/10 hover:bg-lime-600 focus:outline-none focus:ring focus:ring-lime-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-lime-300 transition-colors duration-150"
-          >
-            Verify Account
-          </button>
+        <div className="text-sm text-slate-500 mt-4">
+          Didn't receive code?{' '}
+          <Link className="font-medium text-lime-500 hover:text-lime-600" to="">
+            Resend
+          </Link>
         </div>
-      </div>
-      <div className="text-sm text-slate-500 mt-4">
-        Didn't receive code?{' '}
-        <Link className="font-medium text-lime-500 hover:text-lime-600" to="">
-          Resend
-        </Link>
       </div>
     </div>
   );
