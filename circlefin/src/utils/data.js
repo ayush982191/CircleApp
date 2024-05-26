@@ -2308,7 +2308,7 @@ export const farmerImageArray  = [
   { id: 'type-of-farming',icon: "", label: 'Farming Type', subOptions: ['Arable Farming', 'Mixed Farming','Horticulture','Aquaculture'] },
   { id: 'farm-size',icon: "", label: 'Farm Size', subOptions: ['<10 acres', '>10 acres'] },
   { id: 'primary-crops-grown',icon: "", label: 'Primary Crops', subOptions: ['Food', 'Cash'] },
-  { id: 'use-of-farming-technology',icon: "", label: 'Farming Technology', subOptions: ['High-Tech Farming ', '"Traditionally Operated"ly Operated Farming','Conventional Farming'] },
+  { id: 'use-of-farming-technology',icon: "", label: 'Farming Technology', subOptions: ['High-Tech Farming ', 'Traditionally Operated Farming','Conventional Farming'] },
   // { id: 'annual-income-from-farming',icon: "", label: 'Annual Income', subOptions: ['>5 lakhs', '>5 lakhs'] },
   { id: 'loan-amount-required',icon: "", label: 'Loan Amount', subOptions: ['less than 50,000', 'more than 50,000'] },
 ];
