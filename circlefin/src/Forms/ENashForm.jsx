@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import approve from "../assets/logos/approved.png"
 
 const ENashForm = () => {
     const [losId, setLosId] = useState('');
     const [mobile, setMobile] = useState('');
     const [loading, setLoading] = useState(false);
     const [showMandateSettings, setShowMandateSettings] = useState(false);
+    const [otpSent, setOtpSent] = useState(false); // New state for OTP sent indication
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,6 +15,7 @@ const ENashForm = () => {
         setTimeout(() => {
             setLoading(false);
             setShowMandateSettings(true);
+            setOtpSent(true); // Set OTP sent to true after 3 seconds
         }, 3000);
     };
 
@@ -27,7 +30,7 @@ const ENashForm = () => {
             {!loading && !showMandateSettings && (
                 <div className="bg-sky-100 p-8 rounded-lg shadow-md w-96">
                     <h2 className="text-2xl font-semibold mb-6 text-center">eNACH Registration</h2>
-                    <div onSubmit={handleSubmit}>
+                    <div>
                         <div className="mb-4">
                             <label htmlFor="los_id" className="block text-gray-700 mb-2">
                                 LOS ID <span className="text-red-500">*</span>
@@ -91,6 +94,13 @@ const ENashForm = () => {
                         <label className=" text-gray-700 mb-2">End Date</label>
                         <input type="text" value="2025-06-01" className=" px-4 py-2 border rounded-lg" readOnly />
                     </div>
+                </div>
+            )}
+
+            {/* Conditionally render the approved logo */}
+            {otpSent && (
+                <div className="absolute -rotate-12 ml-52  flex justify-center items-center mt-4">
+                    <img src={approve} alt="Approved" className="w-44 h-44" />
                 </div>
             )}
         </div>
