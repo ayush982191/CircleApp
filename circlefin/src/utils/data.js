@@ -246,7 +246,7 @@ export const merchantFilter = [
   { id: 'type-of-merchant', label: 'Merchant Type', subOptions: ['Agricultural Products', 'Livestock Products'] },
   { id: 'business-size', label: 'Business Size', subOptions: ['Small (< 50 Lakhs)', 'Medium ( 50 Lakhs - 1 Crore)','Large (> 1 crore)'] },
   { id: 'primary-goods-traded', label: 'Primary Goods Traded', subOptions: ['Non-Perishable Goods', 'Perishable Goods'] },
-  { id: 'use-of-technology', label: 'Use of Technology', subOptions: ['Digitally Integrated', '"Traditionally Operated"ly Operatedly Operated'] },
+  { id: 'use-of-technology', label: 'Use of Technology', subOptions: ['Digitally Integrated', '"Tradionally Operatedly Operated'] },
   // { id: 'annual-revenue', label: 'Annual Revenue', subOptions: ['>50 lakh', '<50 lakh'] },
   { id: 'loan-amount-required', label: 'Loan Amount Required', subOptions: ['Less than ₹50,00,000', 'More than ₹50,00,000'] },
 ];

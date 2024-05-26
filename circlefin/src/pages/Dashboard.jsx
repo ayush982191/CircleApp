@@ -40,10 +40,14 @@ const Dashboard = () => {
                     <hr />
                                     {/* ------------------------------- */}
                     <div className=' flex flex-col justify-between h-60 '>
+                        <div className='mt-5 flex justify-around'>
+                            <h3 className='text-center font-semibold' >Individual</h3>
+                            <h3 className='text-center font-semibold' >Funds</h3>
+                        </div>
                         <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
                                 <div className='bg-red-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>A</h1>
+                                    <h1 className='text-center font-bold'>A1</h1>
                                 </div>
                                 <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                     <div class="bg-red-300 h-2.5 rounded-full" style={{ width: "80%" }}></div>
@@ -53,7 +57,7 @@ const Dashboard = () => {
 
                             <div className='flex justify-evenly items-center w-72'>
                                 <div className='bg-violet-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>B</h1>
+                                    <h1 className='text-center font-bold'>B1</h1>
                                 </div>
                                 <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                     <div class="bg-violet-300 h-2.5 rounded-full" style={{ width: "90%" }}></div>
@@ -64,7 +68,7 @@ const Dashboard = () => {
                         <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
                                 <div className='bg-yellow-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>A</h1>
+                                    <h1 className='text-center font-bold'>A3</h1>
                                 </div>
                                 <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                     <div class="bg-yellow-300 h-2.5 rounded-full" style={{ width: "60%" }}></div>
@@ -74,7 +78,7 @@ const Dashboard = () => {
 
                             <div className='flex justify-evenly items-center w-72'>
                                 <div className='bg-blue-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>B</h1>
+                                    <h1 className='text-center font-bold'>B2</h1>
                                 </div>
                                 <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                     <div class="bg-blue-300 h-2.5 rounded-full" style={{ width: "25%" }}></div>
@@ -86,7 +90,7 @@ const Dashboard = () => {
                     <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
                                 <div className='bg-lime-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>A</h1>
+                                    <h1 className='text-center font-bold'>A3</h1>
                                 </div>
                                 <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                     <div class="bg-lime-300 h-2.5 rounded-full" style={{ width: "70%" }}></div>
@@ -96,7 +100,7 @@ const Dashboard = () => {
 
                             <div className='flex justify-evenly items-center w-72'>
                                 <div className='bg-orange-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>A</h1>
+                                    <h1 className='text-center font-bold'>B3</h1>
                                 </div>
                                 <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                     <div class="bg-orange-300 h-2.5 rounded-full" style={{ width: "95%" }}></div>

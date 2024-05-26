@@ -34,10 +34,10 @@ const Invest = () => {
       <h1 className='text-4xl font-bold text-center'>Choose Your Investment Type</h1>
     </div>
     <div className='flex justify-center mt-10'>
-  <button onClick={handleFarmer } className={`rounded-e-none ${farmerSelected ? "bg-lime-200":""} w-[40vw] text-2xl bg-gray-300    p-3 rounded-md   font-bold border-black`}>
+  <button onClick={handleFarmer } className={`rounded-e-none ${farmerSelected ? "bg-lime-500":""} w-[40vw] text-2xl bg-gray-300    p-3 rounded-md   font-bold border-black`}>
     Farmer
   </button>
-  <button onClick={handleMerchant} className={` rounded-s-none ${!farmerSelected?"bg-lime-200":""} w-[40vw] text-2xl bg-gray-300   p-3 rounded-md   font-bold border-black`}>
+  <button onClick={handleMerchant} className={` rounded-s-none ${!farmerSelected?"bg-lime-500":""} w-[40vw] text-2xl bg-gray-300   p-3 rounded-md   font-bold border-black`}>
     Merchant
   </button>
 </div>
