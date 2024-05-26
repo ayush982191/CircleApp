@@ -1347,8 +1347,8 @@ export const merchantFundData =  [
         "Recommendation": "Priya Menon is eligible for a loan. Suggested investments in expanding inventory and enhancing digital marketing strategies to increase market reach and revenue.",
       }, 
         // --------------------------------------------
-    "North": true,
-    "South": false,
+    "North": false,
+    "South": true,
     "East": false,
     "West": false,
     "Agricultural Products": false,

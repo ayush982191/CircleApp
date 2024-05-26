@@ -69,25 +69,25 @@ const Statistics = () => {
        <div className='mt-32 flex flex-wrap gap-2 justify-evenly'>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
             <h1 className='font-bold'>Average loan amount</h1>
-            <p>₹ 25000</p>
+            <p>₹1,00,0000</p>
 
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
-            <h1 className='font-bold'>Average loan duration</h1>
-            <p>8 months</p>
+            <h1 className='font-bold'>Average Tenure</h1>
+            <p>22.5 months</p>
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
             <h1 className='font-bold'>Average interest rate</h1>
-            <p>9.0%</p>
+            <p>11.55%</p>
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
-            <h1 className='font-bold'>Loans issued</h1>
+            <h1 className='font-bold'>Total loan issued</h1>
           
-          <p>₹ 49.2cr</p>
+          <p>8840000</p>
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
-            <h1 className='font-bold'>Net return</h1>
-            <p>6.3%</p>
+            <h1 className='font-bold'>Net returns</h1>
+            <p>8.9%</p>
           </div>
         </div>
        

@@ -4,6 +4,7 @@ import OtpBox from '../components/OtpBox';
 import { Link, useNavigate } from 'react-router-dom';
 import ShowEligiblity from '../components/ShowEligiblity';
 import digilocker from "../assets/images/digilocker.png"
+import ENashForm from './ENashForm';
 
 const FarmerApplicationForm = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const FarmerApplicationForm = () => {
     const [showAadharOtpBox,setShowAadharOtpBox] = useState(false);
     const [showPanOtpBox,setShowPanOtpBox]= useState(false)
     const [showDigilockerOtpbox , setShowDigilockerOtpbox] = useState(false)
+    const [eNashClick,setENashClick] = useState(false);
     const [farmerFormData, setfarmerFormData] = useState({
         fullName: '',
         dob: '',
@@ -1058,14 +1060,19 @@ currentPage ===5 && (
           </div>
         </div>
       </div>
-      <div className="mb-5  flex gap-2">
+      <div>
+      <ENashForm/>
+    </div>
+      <div className="mb-5 mt-5  flex gap-2">
       
       <input type="checkbox" id="declaration" name="declaration" checked={farmerFormData.declaration} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block"   />
       <label htmlFor="declaration" className="block text-sm font-medium text-gray-700 sm:mb-0">By submitting this form, I declare that the information provided is accurate and complete to the best of my knowledge</label>
     </div>
+   
     <div className='flex justify-center'>
     <button onSubmit={handleSubmit} className='ml-2 bg-lime-500 text-white p-2 rounded-lg hover:bg-lime-600' >Submit From</button>
     </div>
+   
     </>
   )
 }

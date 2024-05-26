@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 import OtpBox from '../components/OtpBox';
 import digilocker from "../assets/images/digilocker.png"
 import { useNavigate } from 'react-router-dom';
-
+import ENashForm from './ENashForm';
 const MerchantApplicationForm = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(0);
@@ -36,12 +36,15 @@ const MerchantApplicationForm = () => {
     requestedLoanAmount: '',
     loanPurpose: '',
     repaymentPeriodPreference: '',
-    aadhaarVerificationConsent: false
+    aadhaarVerificationConsent: false,
+    declarationConsent : false
   });
   // console.log("current page="+currentPage)
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    
+
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? checked : value
@@ -616,8 +619,80 @@ const MerchantApplicationForm = () => {
       {/* Section 6: Declaration and Consent */}
       {currentPage === 5 && (
 <div>
-  <h2 className="text-xl font-semibold mb-3">Declaration and Consent</h2>
-  <p className="mb-4">I hereby declare that the information provided above is accurate and complete to the best of my knowledge. I understand that any false information may result in the rejection of my application.</p>
+<div className="mb-5">
+        {/* Repayment Bank Details */}
+        {/* <h2 className="text-lg font-semibold text-lime-600 mb-4">Repayment Bank Details</h2> */}
+        <div className="">
+          <div className="mb-3">
+            <label htmlFor="bankName" className="block text-sm font-medium text-gray-700">Bank Name:<span className='text-red-500' >*</span></label>
+            <input
+              type="text"
+              id="bankName"
+              name="bankName"
+              // onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="branchName" className="block text-sm font-medium text-gray-700">Branch Name:<span className='text-red-500' >*</span></label>
+            <input
+              type="text"
+              id="branchName"
+              name="branchName"
+              // onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="accountNumber" className="block text-sm font-medium text-gray-700">Account Number:<span className='text-red-500' >*</span></label>
+            <input
+              type="text"
+              id="accountNumber"
+              name="accountNumber"
+              // onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="ifscCode" className="block text-sm font-medium text-gray-700">IFSC Code:<span className='text-red-500' >*</span></label>
+            <input
+              type="text"
+              id="ifscCode"
+              name="ifscCode"
+              // onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="accountType" className="block text-sm font-medium text-gray-700">Account Type:<span className='text-red-500' >*</span></label>
+            <select
+              id="accountType"
+              name="accountType"
+              // onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            >
+              <option value="Savings">Savings</option>
+              <option value="Current">Current</option>
+            </select>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="accountName" className="block text-sm font-medium text-gray-700">Account Name:<span className='text-red-500' >*</span></label>
+            <input
+              type="text"
+              id="accountName"
+              name="accountName"
+              // onChange={handleChange}
+              className="mt-1 p-2 w-full border-gray-300 rounded-md"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+      <ENashForm/>
+    </div>
+ <div>
+ {/* <h2 className="text-xl font-semibold mb-3">Declaration and Consent</h2> */}
+  {/* <p className="mb-4">I hereby declare that the information provided above is accurate and complete to the best of my knowledge. I understand that any false information may result in the rejection of my application.</p> */}
   <div className="mb-4">
     <label htmlFor="declarationConsent" className="block text-sm font-medium text-gray-700">Declaration and Consent</label>
     <input
@@ -628,11 +703,12 @@ const MerchantApplicationForm = () => {
       onChange={handleChange}
       className="mt-1 p-2"
     />
-    <span className="ml-2">I agree to the declaration and consent statement</span>
+    <span className="ml-2">I hereby declare that the information provided above is accurate and complete to the best of my knowledge. I understand that any false information may result in the rejection of my application.</span>
   </div>
   <div className='flex justify-center' >
   <button type="submit" className="text-white bg-lime-600 hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5">Submit</button>
   </div>
+ </div>
   
 </div>
 )}
