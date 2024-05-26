@@ -217,79 +217,79 @@ const Dashboard = () => {
 
 
 
-
-
-
-            <div className='mt-20 flex flex-wrap justify-around items-start shadow-md rounded-xl p-5'>
-  <div className='w-full sm:w-auto mb-10 sm:mb-0'>
-    <h1 className='text-2xl font-bold'>Loan Status Breakdown</h1>
-    <div className='flex flex-col gap-2 mt-2'>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Active Loans:</span>
-        <span className='font-semibold'>5</span>
+<div className="mt-20 p-6 shadow-lg rounded-xl flex flex- justify-around items-start">
+  {/* Loan Status Breakdown */}
+  <div className="  min-h-40 mb-10 sm:mb-0 bg-gray-50 p-4 rounded-lg shadow-md">
+    <h1 className="text-2xl font-bold mb-4 text-gray-800">Loan Status Breakdown</h1>
+    <div className="flex flex-col gap-3">
+      <div className="flex justify-between items-center">
+        <span className="font-semibold text-lime-700">Active Loans:</span>
+        <span className="font-semibold text-gray-700">5</span>
       </div>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Defaulted Loans:</span>
-        <span className='font-semibold'>1</span>
+      <div className="flex justify-between items-center">
+        <span className="font-semibold text-lime-700">Defaulted Loans:</span>
+        <span className="font-semibold text-gray-700">1</span>
       </div>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Fully Repaid Loans:</span>
-        <span className='font-semibold'>0</span>
+      <div className="flex justify-between items-center">
+        <span className="font-semibold text-lime-700">Fully Repaid Loans:</span>
+        <span className="font-semibold text-gray-700">0</span>
       </div>
     </div>
   </div>
 
-  <div className='w-full sm:w-auto mb-10 sm:mb-0'>
-    <h1 className='text-2xl font-bold'>Returns Breakdown</h1>
-    <div className='flex flex-col gap-2 mt-2'>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Total Expected Returns:</span>
-        <span className='font-semibold'>₹60,300</span>
+  {/* Returns Breakdown */}
+  <div className="   min-h-44 mb-10 sm:mb-0 bg-gray-50 p-4 rounded-lg shadow-md">
+    <h1 className="text-2xl font-bold mb-4 text-gray-800">Returns Breakdown</h1>
+    <div className="flex flex-col gap-3">
+      <div className="flex gap-5  items-center">
+        <span className="font-semibold text-lime-700">Total Expected Returns:</span>
+        <span className="font-semibold text-gray-700">₹60,300</span>
       </div>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Total Received Returns:</span>
-        <span className='font-semibold'>₹1,20,000</span>
+      <div className="flex gap-5 justify-between items-center">
+        <span className="font-semibold text-lime-700">Total Received Returns:</span>
+        <span className="font-semibold text-gray-700">₹1,20,000</span>
       </div>
     </div>
   </div>
 
-  <div className='w-full sm:w-auto'>
-    <h1 className='text-2xl font-bold'>Default Analysis</h1>
-    <div className='flex flex-col gap-2 mt-2'>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Average Default Chance:</span>
-        <span className='font-semibold'>7.3%</span>
+  {/* Default Analysis */}
+  <div className="   min-h-40 bg-gray-50 p-4 rounded-lg shadow-md">
+    <h1 className="text-2xl text-center font-bold mb-4 text-gray-800">Default Analysis</h1>
+    <div className="flex flex-col gap-3">
+      <div className="flex gap-5  items-center">
+        <span className="font-semibold text-lime-700">Average Default Chance:</span>
+        <span className="font-semibold text-gray-700">7.3%</span>
       </div>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Highest Default Chance:</span>
-        <span className='font-semibold'>15% (Anil Kumar)</span>
+      <div className="flex gap-5 justify-between items-center">
+        <span className="font-semibold text-lime-700">Highest Default Chance:</span>
+        <span className="font-semibold text-gray-700">15% (Anil Kumar)</span>
       </div>
-      <div className='flex gap-5'>
-        <span className='font-semibold text-lime-700'>Lowest Default Chance:</span>
-        <span className='font-semibold'>2% (Kavita Yadav)</span>
+      <div className="flex gap-5 justify-between items-center">
+        <span className="font-semibold text-lime-700">Lowest Default Chance:</span>
+        <span className="font-semibold text-gray-700">2% (Kavita Yadav)</span>
       </div>
     </div>
   </div>
 </div>
 
-
-<div className='w-full mx-10 sm:w-auto mt-10'>
-      <h1 className='text-2xl font-bold'>Recommendations</h1>
-      <div className='flex flex-col gap-2 mt-2'>
-        <div className='flex gap-5'>
-          <span className='font-semibold text-lime-700'>Monitor High-Risk Loans:</span>
-          <span className='font-semibold'>Pay close attention to loans with higher default chances (e.g., Anil Kumar's loan with a 15% chance of default).</span>
-        </div>
-        <div className='flex gap-5'>
-          <span className='font-semibold text-lime-700'>Diversify Investments:</span>
-          <span className='font-semibold'>Consider diversifying future investments to lower overall portfolio risk.</span>
-        </div>
-        <div className='flex gap-5'>
-          <span className='font-semibold text-lime-700'>Structured Document:</span>
-          <span className='font-semibold'>This structured document provides a comprehensive overview of the loan investments, allowing the investor to quickly assess the status and performance of each loan.</span>
-        </div>
-      </div>
+<div className="w-full mx-10 sm:w-auto mt-10 p-6 shadow-lg rounded-xl bg-white">
+  <h1 className="text-2xl font-bold mb-4 text-gray-800">Recommendations</h1>
+  <div className="flex flex-col gap-3">
+    <div className="flex gap-3 items-start">
+      <span className="font-semibold text-lime-700">Monitor High-Risk Loans:</span>
+      <span className="text-gray-700">Pay close attention to loans with higher default chances (e.g., Anil Kumar's loan with a 15% chance of default).</span>
     </div>
+    <div className="flex gap-3 items-start">
+      <span className="font-semibold text-lime-700">Diversify Investments:</span>
+      <span className="text-gray-700">Consider diversifying future investments to lower overall portfolio risk.</span>
+    </div>
+    <div className="flex gap-3 items-start">
+      <span className="font-semibold text-lime-700">Structured Document:</span>
+      <span className="text-gray-700">This structured document provides a comprehensive overview of the loan investments, allowing the investor to quickly assess the status and performance of each loan.</span>
+    </div>
+  </div>
+</div>
+
         </div>
     )
 }
