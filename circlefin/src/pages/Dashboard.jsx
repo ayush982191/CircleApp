@@ -16,20 +16,20 @@ const Dashboard = () => {
 
             <div className='flex justify-around mt-20'>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
-                    <p>Annualized Returns</p>
-                    <p className='font-bold'>2.55%</p>
+                    <p>Total Number of Investment</p>
+                    <p className='font-bold'>6</p>
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
-                    <p>Account Value</p>
-                    <p className='font-bold text-lime-600'>₹6,00,000</p>
+                    <p>Annualized Return on Portfolio Level</p>
+                    <p className='font-bold text-lime-600'>10.08%</p>
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
-                    <p>Investments</p>
-                    <p className='font-bold'>3</p>
+                    <p>Account Value (Balance)</p>
+                    <p className='font-bold'> ₹113,000</p>
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
-                    <p>Total Payments</p>
-                    <p className='font-bold'>₹1,24,367</p>
+                    <p>Total Repayments</p>
+                    <p className='font-bold'>₹152,000</p>
                 </div>
             </div>
             

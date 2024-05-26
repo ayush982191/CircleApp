@@ -91,7 +91,7 @@ const Statistics = () => {
           </div>
         </div>
        
-      <div className='mt-24 flex justify-evenly'>
+      {/* <div className='mt-24 flex justify-evenly'>
        
         <div>
         <Chart options={getChartOptions()} series={getChartOptions().series} type="pie" height={420} />
@@ -109,11 +109,11 @@ const Statistics = () => {
       </div>
       <div className='mx-10' >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis maxime architecto eaque alias exercitationem temporibus placeat natus voluptatum, soluta, eos consequuntur nihil assumenda deserunt asperiores magni. Cumque neque rerum suscipit quaerat eaque iusto quam dolorum quo magnam laudantium ullam nemo delectus, vitae minima quasi sit eum repellendus accusantium aspernatur perspiciatis debitis voluptatem deleniti iste harum. Sit ducimus cupiditate, nostrum, sed aspernatur corrupti distinctio eligendi cumque, voluptas quae tempore optio quisquam qui iste saepe illo ad commodi veritatis. Libero officiis, at facere ipsa autem voluptate aliquid nulla, veniam rerum animi amet eveniet asperiores corporis dolorem assumenda necessitatibus quibusdam itaque natus odio?
-      </div>
+      </div> */}
 
      <div> 
 
-     <div className='mx-10 flex flex-wrap  justify-evenly gap-5' >
+     {/* <div className='mx-10 flex flex-wrap  justify-evenly gap-5' >
         {
           agriCompanies.map((company,idx)=>(
             <div key={idx} className='p-7 rounded-xl w-[15rem] bg-lime-200'>
@@ -123,7 +123,7 @@ const Statistics = () => {
             </div>
           ))
         }
-      </div>
+      </div> */}
 
 
 

@@ -196,6 +196,43 @@ const MerchantApplicationForm = () => {
             <option value="Others">Others</option>
           </>
         )}
+          {formData.businessType === "Non-Perishable Agri Food Crops Trader" && (
+          <>
+            <option value="">Select Subcategory</option>
+            <option value="foodGrains">Food Grains</option>
+            <option value="Lentils">Lentils</option>
+            <option value="Pulses">Pulses</option>
+             <option value="Others">Others</option>
+          </>
+        )}
+          {formData.businessType === "Spices Trader" && (
+          <>
+            <option value="">Select Subcategory</option>
+            <option value="Pepper">Pepper</option>
+            <option value="Turmeric">Turmeric</option>
+            <option value="Cardamom">Cardamom</option>
+            <option value="Cumin">Cumin</option>
+             <option value="Others">Others</option>
+          </>
+        )}
+                 {formData.businessType === "Dry Fruits Trader" && (
+          <>
+            <option value="">Select Subcategory</option>
+            <option value="Almonds">Almonds</option>
+            <option value="Cashews">Cashews</option>
+            <option value="Walnuts">Walnuts</option>
+            <option value="Raisins">Raisins</option>
+             <option value="Others">Others</option>
+          </>
+        )}
+          {formData.businessType === "Online Agricultural Seller" && (
+          <>
+            <option value="">Select Subcategory</option>
+            <option value="Seeds">Seeds</option>
+            <option value="Fertilizers">Fertilizers</option> 
+             <option value="Others">Others</option>
+          </>
+        )}
         {/* Add options for other business types similarly */}
       </select>
     </div>

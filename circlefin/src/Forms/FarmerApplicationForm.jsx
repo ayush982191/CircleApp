@@ -809,7 +809,7 @@ const FarmerApplicationForm = () => {
       />
     </div>
 
-<div className="mb-5">
+{/* <div className="mb-5">
   <label htmlFor="interestRate" className="block text-sm font-medium text-gray-700">Rate of Interest<span className='text-red-500' >*</span></label>
   <input
     type="text"
@@ -819,7 +819,7 @@ const FarmerApplicationForm = () => {
     readOnly
     className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
   />
-</div>
+</div> */}
 
 <div className="mb-5">
   <label htmlFor="processingFees" className="block text-sm font-medium text-gray-700">Processing Fees<span className='text-red-500' >*</span></label>
@@ -833,7 +833,7 @@ const FarmerApplicationForm = () => {
   />
 </div>
 
-<div className="mb-5">
+{/* <div className="mb-5">
   <label htmlFor="emiAmount" className="block text-sm font-medium text-gray-700">EMI Amount<span className='text-red-500' >*</span></label>
   <input
     type="text"
@@ -843,9 +843,9 @@ const FarmerApplicationForm = () => {
     readOnly
     className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
   />
-</div>
+</div> */}
 
-<div className="mb-5">
+{/* <div className="mb-5">
   <label htmlFor="firstEmiDate" className="block text-sm font-medium text-gray-700">First EMI Date (Tentative)<span className='text-red-500' >*</span></label>
   <input
     type="text"
@@ -854,7 +854,7 @@ const FarmerApplicationForm = () => {
     placeholder="DD/MM/YYYY"
     className="mt-1 p-2 w-full border-gray-300 rounded-md"
   />
-</div>
+</div> */}
 
  
 
