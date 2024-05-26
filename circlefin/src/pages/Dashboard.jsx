@@ -10,7 +10,7 @@ const Dashboard = () => {
                 </div>
                 <div className='flex gap-5 items-center'>
                     <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400' >Add Funds</button>
-                    <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400' >Withdraw Funds</button>
+                    {/* <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400' >Withdraw Funds</button> */}
                 </div>
             </div>
 
@@ -33,7 +33,7 @@ const Dashboard = () => {
                 </div>
             </div>
             
-            <div className='mt-20 flex justify-around'>
+            {/* <div className='mt-20 flex justify-around'>
                 <div className='bg-lime-100 shadow-md'>
                     <h1 className='my-2 ml-2 font-bold text-2xl'>Portfolio</h1>
                     <hr />
@@ -72,15 +72,7 @@ const Dashboard = () => {
                                 </div>
                                 <p className='font-semibold'>60%</p>
                             </div>
-                            {/* <div className='flex justify-evenly items-center w-72'>
-                                <div className='bg-blue-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>B2</h1>
-                                </div>
-                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
-                                    <div className='bg-blue-300 h-2.5 rounded-full' style={{ width: '25%' }}></div>
-                                </div>
-                                <p className='font-semibold'>25%</p>
-                            </div> */}
+                           
                         </div>
                         <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
@@ -92,15 +84,7 @@ const Dashboard = () => {
                                 </div>
                                 <p className='font-semibold'>70%</p>
                             </div>
-                            {/* <div className='flex justify-evenly items-center w-72'>
-                                <div className='bg-orange-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>B3</h1>
-                                </div>
-                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
-                                    <div className='bg-orange-300 h-2.5 rounded-full' style={{ width: '95%' }}></div>
-                                </div>
-                                <p className='font-semibold'>95%</p>
-                            </div> */}
+                           
                         </div>
                     </div>
                 </div>
@@ -126,103 +110,113 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className='mt-20 mx-16 shadow-md'>
-                <h1 className='text-2xl font-bold mb-5 text-center'>Loan Details</h1>
-                <div className='overflow-x-auto bg-white'>
-                    <table className='min-w-full '>
-                        <thead>
-                            <tr>
-                                <th className='py-2 px-4 border-b'>Loan ID</th>
-                                <th className='py-2 px-4 border-b'>Borrower Name</th>
-                                <th className='py-2 px-4 border-b'>Loan Amount (₹)</th>
-                                <th className='py-2 px-4 border-b'>Interest Rate (%)</th>
-                                <th className='py-2 px-4 border-b'>Start Date</th>
-                                <th className='py-2 px-4 border-b'>End Date</th>
-                                <th className='py-2 px-4 border-b'>Total Return (₹)</th>
-                                <th className='py-2 px-4 border-b'>Remaining Payment (₹)</th>
-                                <th className='py-2 px-4 border-b'>Default Chance (%)</th>
-                                <th className='py-2 px-4 border-b'>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className='py-2 px-4 border-b'>1</td>
-                                <td className='py-2 px-4 border-b'>Ramesh Singh</td>
-                                <td className='py-2 px-4 border-b'>50,000</td>
-                                <td className='py-2 px-4 border-b'>7.5</td>
-                                <td className='py-2 px-4 border-b'>Jan 2023</td>
-                                <td className='py-2 px-4 border-b'>Dec 2024</td>
-                                <td className='py-2 px-4 border-b'>7,500</td>
-                                <td className='py-2 px-4 border-b'>30,000</td>
-                                <td className='py-2 px-4 border-b'>10</td>
-                                <td className='py-2 px-4 border-b'>Active</td>
-                            </tr>
-                            <tr>
-                                <td className='py-2 px-4 border-b'>2</td>
-                                <td className='py-2 px-4 border-b'>Sita Devi</td>
-                                <td className='py-2 px-4 border-b'>70,000</td>
-                                <td className='py-2 px-4 border-b'>8</td>
-                                <td className='py-2 px-4 border-b'>Feb 2022</td>
-                                <td className='py-2 px-4 border-b'>Jan 2024</td>
-                                <td className='py-2 px-4 border-b'>14,000</td>
-                                <td className='py-2 px-4 border-b'>20,000</td>
-                                <td className='py-2 px-4 border-b'>5</td>
-                                <td className='py-2 px-4 border-b'>Active</td>
-                            </tr>
-                            <tr>
-                                <td className='py-2 px-4 border-b'>3</td>
-                                <td className='py-2 px-4 border-b'>Anil Kumar</td>
-                                <td className='py-2 px-4 border-b'>30,000</td>
-                                <td className='py-2 px-4 border-b'>7</td>
-                                <td className='py-2 px-4 border-b'>Mar 2023</td>
-                                <td className='py-2 px-4 border-b'>Feb 2025</td>
-                                <td className='py-2 px-4 border-b'>3,500</td>
-                                <td className='py-2 px-4 border-b'>25,000</td>
-                                <td className='py-2 px-4 border-b'>15</td>
-                                <td className='py-2 px-4 border-b'>Active</td>
-                            </tr>
-                            <tr>
-                                <td className='py-2 px-4 border-b'>4</td>
-                                <td className='py-2 px-4 border-b'>Kavita Yadav</td>
-                                <td className='py-2 px-4 border-b'>80,000</td>
-                                <td className='py-2 px-4 border-b'>8.5</td>
-                                <td className='py-2 px-4 border-b'>Apr 2022</td>
-                                <td className='py-2 px-4 border-b'>Mar 2024</td>
-                                <td className='py-2 px-4 border-b'>17,000</td>
-                                <td className='py-2 px-4 border-b'>10,000</td>
-                                <td className='py-2 px-4 border-b'>2</td>
-                                <td className='py-2 px-4 border-b'>Active</td>
-                            </tr>
-                            <tr>
-                                <td className='py-2 px-4 border-b'>5</td>
-                                <td className='py-2 px-4 border-b'>Mahesh Patel</td>
-                                <td className='py-2 px-4 border-b'>35,000</td>
-                                <td className='py-2 px-4 border-b'>7.8</td>
-                                <td className='py-2 px-4 border-b'>May 2023</td>
-                                <td className='py-2 px-4 border-b'>Apr 2025</td>
-                                <td className='py-2 px-4 border-b'>6,300</td>
-                                <td className='py-2 px-4 border-b'>28,000</td>
-                                <td className='py-2 px-4 border-b'>12</td>
-                                <td className='py-2 px-4 border-b'>Active</td>
-                            </tr>
-                            <tr>
-                                <td className='py-2 px-4 border-b'>6</td>
-                                <td className='py-2 px-4 border-b'>Radha Sharma</td>
-                                <td className='py-2 px-4 border-b'>60,000</td>
-                                <td className='py-2 px-4 border-b'>8</td>
-                                <td className='py-2 px-4 border-b'>Jun 2022</td>
-                                <td className='py-2 px-4 border-b'>May 2024</td>
-                                <td className='py-2 px-4 border-b'>12,000</td>
-                                <td className='py-2 px-4 border-b'>0</td>
-                                <td className='py-2 px-4 border-b'>0</td>
-                                <td className='py-2 px-4 border-b'>Defaulted</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
+
+
+
+
+<div class="mt-20 mx-16 shadow-md">
+    <h1 class="text-3xl font-bold mb-5 text-center text-lime-600">Loan Details</h1>
+    <div class="overflow-x-auto bg-white rounded-lg">
+        <table class="min-w-full bg-gray-100">
+            <thead>
+                <tr class="bg-lime-500 text-white">
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Loan ID</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Borrower Name</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Loan Amount (₹)</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Interest Rate (%)</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Start Date</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">End Date</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Total Return (₹)</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Remaining Payment (₹)</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Default Chance (%)</th>
+                    <th class="py-3 px-4 border-b-2 border-gray-200">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-lime-100">
+                    <td class="py-3 px-4 border-b">1</td>
+                    <td class="py-3 px-4 border-b">Ramesh Singh</td>
+                    <td class="py-3 px-4 border-b">50,000</td>
+                    <td class="py-3 px-4 border-b">7.5</td>
+                    <td class="py-3 px-4 border-b">Jan 2023</td>
+                    <td class="py-3 px-4 border-b">Dec 2024</td>
+                    <td class="py-3 px-4 border-b">7,500</td>
+                    <td class="py-3 px-4 border-b">30,000</td>
+                    <td class="py-3 px-4 border-b">10</td>
+                    <td class="py-3 px-4 border-b text-green-500">Active</td>
+                </tr>
+                <tr class="hover:bg-lime-100">
+                    <td class="py-3 px-4 border-b">2</td>
+                    <td class="py-3 px-4 border-b">Sita Devi</td>
+                    <td class="py-3 px-4 border-b">70,000</td>
+                    <td class="py-3 px-4 border-b">8</td>
+                    <td class="py-3 px-4 border-b">Feb 2022</td>
+                    <td class="py-3 px-4 border-b">Jan 2024</td>
+                    <td class="py-3 px-4 border-b">14,000</td>
+                    <td class="py-3 px-4 border-b">20,000</td>
+                    <td class="py-3 px-4 border-b">5</td>
+                    <td class="py-3 px-4 border-b text-green-500">Active</td>
+                </tr>
+                <tr class="hover:bg-lime-100">
+                    <td class="py-3 px-4 border-b">3</td>
+                    <td class="py-3 px-4 border-b">Anil Kumar</td>
+                    <td class="py-3 px-4 border-b">30,000</td>
+                    <td class="py-3 px-4 border-b">7</td>
+                    <td class="py-3 px-4 border-b">Mar 2023</td>
+                    <td class="py-3 px-4 border-b">Feb 2025</td>
+                    <td class="py-3 px-4 border-b">3,500</td>
+                    <td class="py-3 px-4 border-b">25,000</td>
+                    <td class="py-3 px-4 border-b">15</td>
+                    <td class="py-3 px-4 border-b text-green-500">Active</td>
+                </tr>
+                <tr class="hover:bg-lime-100">
+                    <td class="py-3 px-4 border-b">4</td>
+                    <td class="py-3 px-4 border-b">Kavita Yadav</td>
+                    <td class="py-3 px-4 border-b">80,000</td>
+                    <td class="py-3 px-4 border-b">8.5</td>
+                    <td class="py-3 px-4 border-b">Apr 2022</td>
+                    <td class="py-3 px-4 border-b">Mar 2024</td>
+                    <td class="py-3 px-4 border-b">17,000</td>
+                    <td class="py-3 px-4 border-b">10,000</td>
+                    <td class="py-3 px-4 border-b">2</td>
+                    <td class="py-3 px-4 border-b text-green-500">Active</td>
+                </tr>
+                <tr class="hover:bg-lime-100">
+                    <td class="py-3 px-4 border-b">5</td>
+                    <td class="py-3 px-4 border-b">Mahesh Patel</td>
+                    <td class="py-3 px-4 border-b">35,000</td>
+                    <td class="py-3 px-4 border-b">7.8</td>
+                    <td class="py-3 px-4 border-b">May 2023</td>
+                    <td class="py-3 px-4 border-b">Apr 2025</td>
+                    <td class="py-3 px-4 border-b">6,300</td>
+                    <td class="py-3 px-4 border-b">28,000</td>
+                    <td class="py-3 px-4 border-b">12</td>
+                    <td class="py-3 px-4 border-b text-green-500">Active</td>
+                </tr>
+                <tr class="hover:bg-lime-100">
+                    <td class="py-3 px-4 border-b">6</td>
+                    <td class="py-3 px-4 border-b">Radha Sharma</td>
+                    <td class="py-3 px-4 border-b">60,000</td>
+                    <td class="py-3 px-4 border-b">8</td>
+                    <td class="py-3 px-4 border-b">Jun 2022</td>
+                    <td class="py-3 px-4 border-b">May 2024</td>
+                    <td class="py-3 px-4 border-b">12,000</td>
+                    <td class="py-3 px-4 border-b">0</td>
+                    <td class="py-3 px-4 border-b">0</td>
+                    <td class="py-3 px-4 border-b text-red-500">Defaulted</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
 
 
 

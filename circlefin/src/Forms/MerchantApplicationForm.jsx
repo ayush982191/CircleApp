@@ -92,7 +92,7 @@ const MerchantApplicationForm = () => {
               <div className="flex mb-2 items-center justify-between">
                 <div className="text-right">
                   <span className="text-xs font-semibold inline-block text-lime-700">
-                    Step {currentPage+1} of 5
+                    Step {currentPage+1} of 6
                   </span>
                 </div>
               </div>
