@@ -21,7 +21,7 @@ const Dashboard = () => {
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
                     <p>Account Value</p>
-                    <p className='font-bold text-lime-600'>$6,00,000</p>
+                    <p className='font-bold text-lime-600'>₹6,00,000</p>
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
                     <p>Investments</p>
@@ -29,7 +29,7 @@ const Dashboard = () => {
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
                     <p>Total Payments</p>
-                    <p className='font-bold'>$1,243,67</p>
+                    <p className='font-bold'>₹1,243,67</p>
                 </div>
             </div>
 {/* ------------------------------------------------------------ */}
@@ -114,19 +114,19 @@ const Dashboard = () => {
                    <div className=' flex flex-col justify-between h-60  w-96  '>
                    <div className=' flex my-2 mx-10 justify-between   ' >
                         <h1>Account Cash</h1>
-                        <p className='text-lime-700'>$2,34,000</p>
+                        <p className='text-lime-700'>₹2,34,000</p>
                     </div>
                     <div className=' flex my-4 mx-10 justify-between   ' >
                         <h1>Pending</h1>
-                        <p className='text-lime-700'>$33,000</p>
+                        <p className='text-lime-700'>₹33,000</p>
                     </div>
                     <div className=' flex my-4 mx-10 justify-between  ' >
                         <h1>Invested</h1>
-                        <p className='text-lime-700'>$70,000</p>
+                        <p className='text-lime-700'>₹70,000</p>
                     </div>
                     <div className=' flex my-4 mx-10 justify-between  ' >
                         <h1>Account Value</h1>
-                        <p className='text-lime-700'>$12,000</p>
+                        <p className='text-lime-700'>₹12,000</p>
                     </div>
                    </div>
                 </div>

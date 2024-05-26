@@ -8,6 +8,9 @@ const MerchantApplicationForm = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [showAadharOtpBox,setShowAadharOtpBox] = useState(false)
   const [showPanOtpBox,setShowPanOtpBox] = useState(false)
+  const [showPhoneOtpBox,setShowPhoneOtpBox] = useState(false);
+  const [showDigiLockerOtpBox,setShowDigiLockerOtpBox] = useState(false);
+  const [showEmailOtpBox,setShowEmailOtpBOx] = useState(false) 
   const progressPercentage =  (currentPage  / 5) * 100;
   const [formData, setFormData] = useState({
     fullName: '',
@@ -68,12 +71,13 @@ const MerchantApplicationForm = () => {
     for (let i = 2; i <= totalSteps; i++) {
       circles.push(
         <div
-          key={i}
-          className={`w-4 h-4 flex justify-center text-white font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
-            i <= currentPage+1 ? 'bg-lime-700' : 'bg-lime-200'
-          }`}
-          style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
-        >&#10003;</div>
+            key={i}
+            onClick={()=>setCurrentPage(i-1)}
+            className={`w-4 h-4 cursor-pointer flex justify-center items-center text-lime-700 font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+              i <= currentPage+1 ? 'bg-lime-700 text-white' : 'bg-lime-200 border-2 border-lime-700 text-transparent'
+            }`}
+            style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
+          >&#10003;</div>
       );
     }
     return circles;
@@ -88,7 +92,7 @@ const MerchantApplicationForm = () => {
               <div className="flex mb-2 items-center justify-between">
                 <div className="text-right">
                   <span className="text-xs font-semibold inline-block text-lime-700">
-                    Step {currentPage} of 5
+                    Step {currentPage+1} of 5
                   </span>
                 </div>
               </div>
@@ -207,9 +211,10 @@ const MerchantApplicationForm = () => {
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
   </div>
-  <div className="mb-4">
+  <div >
     <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700">Contact Number:<span className='text-red-500' >*</span></label>
-    <input
+   <div className="flex items-center sm:col-span-4">
+   <input
       type="text"
       id="contactNumber"
       name="contactNumber"
@@ -217,10 +222,17 @@ const MerchantApplicationForm = () => {
       onChange={handleChange}
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
+    <button type='button' onClick={()=>setShowPhoneOtpBox(prev=>!prev)} className='ml-2 bg-lime-600 text-white p-2 rounded-lg' >Verify</button>
+  
+   </div>
+   </div>
+  <div className='mt-5'>
+      { showPhoneOtpBox && <OtpBox/> }
   </div>
   <div className="mb-4">
     <label htmlFor="emailAddress" className="block text-sm font-medium text-gray-700">Email Address:<span className='text-red-500' >*</span></label>
-    <input
+<div className='flex items-center sm:col-span-4'>
+<input
       type="email"
       id="emailAddress"
       name="emailAddress"
@@ -228,7 +240,12 @@ const MerchantApplicationForm = () => {
       onChange={handleChange}
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
+    <button onClick={()=>setShowEmailOtpBOx(prev=>!prev)} type='button' className='ml-2 bg-lime-600 text-white p-2 rounded-lg' >verify</button>
+</div>
   </div>
+  <div>
+     { showEmailOtpBox && <OtpBox/> }
+  </div >
  {/* <div className="mb-5">
     <label
      htmlFor="aadharNumber"
@@ -493,15 +510,20 @@ const MerchantApplicationForm = () => {
    </div>
    <br />
    <div className='flex justify-end'>
-   <button type='button' className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
+   <button type='button' onClick={()=>setShowDigiLockerOtpBox(prev=>!prev)} className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
    </div>
+  
     
     </div>
+
     <div>
       <img src={digilocker} className='w-[10rem]' alt="" />
 
     </div>
   </div>
+  <div>
+    {showDigiLockerOtpBox && <OtpBox/>}
+   </div>
   <h1 className='text-3xl text-center' >OR</h1>
   <div>
   <div className="mb-5">

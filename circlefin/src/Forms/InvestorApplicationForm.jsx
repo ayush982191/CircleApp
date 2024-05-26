@@ -73,12 +73,13 @@ const InvestorApplicationForm = () => {
       for (let i = 2; i <= totalSteps; i++) {
         circles.push(
           <div
-            key={i}
-            className={`w-4 h-4 flex justify-center text-white font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
-              i <= currentPage+1 ? 'bg-lime-700' : 'bg-lime-200'
-            }`}
-            style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
-          >&#10003;</div>
+          key={i}
+          onClick={()=>setcurrentPage(i-1)}
+          className={`w-4 h-4 cursor-pointer flex justify-center items-center text-lime-700 font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+            i <= currentPage+1 ? 'bg-lime-700 text-white' : 'bg-lime-200 border-2 border-lime-700 text-transparent'
+          }`}
+          style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
+        >&#10003;</div>
         );
       }
       return circles;
@@ -312,7 +313,7 @@ const InvestorApplicationForm = () => {
       )}
       <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">
-          Are you planning to invest more than $10,00,000 across P2P platforms?<span className='text-red-500' >*</span>
+          Are you planning to invest more than ₹10,00,000 across P2P platforms?<span className='text-red-500' >*</span>
         </label>
         <div>
           <label className="inline-flex items-center mt-1">
@@ -362,7 +363,7 @@ const InvestorApplicationForm = () => {
 
        <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">
-          I hereby give explicit consent to use my data for the purpose of matching with suitable borrowers in compliance with data protection laws.
+          I hereby give explicit consent to use my data for the purpose of matching with suitable borrowers in compliance with data protection laws.<span className='text-red-500' >*</span>
         </label>
         <div>
           <label className="inline-flex items-center mt-1">
@@ -391,7 +392,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">
-          I declare that I understand the terms of the platform, the risks involved, and my rights and responsibilities as an investor.
+          I declare that I understand the terms of the platform, the risks involved, and my rights and responsibilities as an investor.<span className='text-red-500' >*</span>
         </label>
         <div>
           <label className="inline-flex items-center mt-1">
@@ -420,7 +421,7 @@ const InvestorApplicationForm = () => {
       </div>
       <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700">
-          I acknowledge that I have been informed about the grievance redressal mechanism and understand how to report any issues or complaints.
+          I acknowledge that I have been informed about the grievance redressal mechanism and understand how to report any issues or complaints.<span className='text-red-500' >*</span>
         </label>
         <div>
           <label className="inline-flex items-center mt-1">
@@ -451,20 +452,23 @@ const InvestorApplicationForm = () => {
       <h2>Signature</h2>
       <div className="mb-5">
         <label htmlFor="signature" className="block text-sm font-medium text-gray-700">
-          Investor’s Signature
+          Investor’s Signature<span className='text-red-500' >*</span>
         </label>
-        <input
-          type="text"
+       <div>
+       <input
+          type="file"
           id="signature"
           name="signature"
           value={investorFormData.signature}
           onChange={handleInputChange}
           className="mt-1 p-2 w-full border-gray-300 rounded-md"
         />
+        <p className='text-xs ml-5'>(maximum file size 4kb)</p>
+       </div>
       </div>
       <div className="mb-5">
         <label htmlFor="date" className="block text-sm font-medium text-gray-700">
-          Date
+          Date<span className='text-red-500' >*</span>
         </label>
         <input
           type="date"

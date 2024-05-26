@@ -11,6 +11,7 @@ const FarmerApplicationForm = () => {
     const [showOptBox,setShowOtpBox] = useState(false);
     const [showAadharOtpBox,setShowAadharOtpBox] = useState(false);
     const [showPanOtpBox,setShowPanOtpBox]= useState(false)
+    const [showDigilockerOtpbox , setShowDigilockerOtpbox] = useState(false)
     const [farmerFormData, setfarmerFormData] = useState({
         fullName: '',
         dob: '',
@@ -84,7 +85,7 @@ const FarmerApplicationForm = () => {
     };
   
     const nextStep = () => {
-      setcurrentPage((prevStep) => Math.min(prevStep + 1, 9));
+      setcurrentPage((prevStep) => Math.min(prevStep + 1, 8));
     };
   
     const prevStep = () => {
@@ -92,14 +93,14 @@ const FarmerApplicationForm = () => {
     };
     const renderCircles = () => {
       const circles = [];
-      const totalSteps = 9; // Change this if you have more steps
+      const totalSteps = 8; // Change this if you have more steps
       for (let i = 2; i <= totalSteps; i++) {
         circles.push(
           <div
             key={i}
             onClick={()=>setcurrentPage(i-1)}
-            className={`w-4 h-4 flex justify-center items-center text-lime-700 font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
-              i <= currentPage+1 ? 'bg-lime-700 text-white' : 'bg-lime-200 border-2 border-lime-700'
+            className={`w-4 h-4 cursor-pointer flex justify-center items-center text-lime-700 font-bold rounded-full absolute top-1/2 transform -translate-y-1/2 ${
+              i <= currentPage+1 ? 'bg-lime-700 text-white' : 'bg-lime-200 border-2 border-lime-700 text-transparent'
             }`}
             style={{ left: `${(i - 1) * (100 / (totalSteps - 1))}%` }}
           >&#10003;</div>
@@ -109,7 +110,7 @@ const FarmerApplicationForm = () => {
     };
   
   
-    const progressPercentage = (currentPage / 8) * 100;
+    const progressPercentage = (currentPage / 7) * 100;
   return (
     <>
     <div>
@@ -121,7 +122,7 @@ const FarmerApplicationForm = () => {
               <div className="flex mb-2 items-center justify-between">
                 <div className="text-right">
                   <span className="text-xs font-semibold inline-block text-lime-700">
-                    Step {currentPage+1} of 9
+                    Step {currentPage+1} of 8
                   </span>
                 </div>
               </div>
@@ -132,20 +133,20 @@ const FarmerApplicationForm = () => {
                 ></div>
                 {renderCircles()}
               </div>
-             <div className='flex justify-end  ' style={{ width: `${Math.floor((currentPage / 9) * 100)+currentPage +5}%`  }}>
+             <div className={`  flex justify-end `} style={{ width: `${Math.floor((currentPage / 9) * 100)+3*currentPage +5}%`  }}>
              <h2
-                className={`text-sm font-semibold mb-3 text-center  w-20 ${currentPage !=8 ? "ml-[4rem]":""}`}
+                className={`text-sm font-semibold mb-3 text-center  w-20 `}
                 
               >
                 {currentPage === 0 && 'Personal Information'}
                 {currentPage === 1 && 'Additional Information'}
                 {currentPage === 2 && 'Additional Information'}
-                {currentPage === 3 && 'Documentation Details'}
+                {currentPage === 3 && 'Financial Details'}
                 { currentPage ===4 && 'Loan Information' }
-                {currentPage === 5 && ''}
+                {currentPage === 5 && 'Eligiblity Check'}
                 {currentPage === 6 && 'Documentation'}
                 {currentPage === 7 && 'Repayment Bank Details'}
-                {currentPage === 8 && 'Income Details'}
+                {/* {currentPage === 8 && 'Income Details'} */}
               </h2>
              </div>
             </div>
@@ -298,7 +299,7 @@ const FarmerApplicationForm = () => {
    </div>
    <br />
    <div className='flex justify-end'>
-   <button type='button' className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
+   <button type='button' onClick={()=>setShowDigilockerOtpbox(prev=>!prev)} className='text-white bg-lime-600  hover:bg-lime-800 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5'>verify</button>
    </div>
     
     </div>
@@ -307,9 +308,11 @@ const FarmerApplicationForm = () => {
 
     </div>
   </div>
-  <h1 className='text-5xl text-center my-4 font-semibold' >OR</h1>
+  {showDigilockerOtpbox && <OtpBox type={"Digilocker"}  />}
+  <h1 className='text-3xl text-center my-4 font-semibold' >OR</h1>
 </div>
 <div> 
+
 {/* <h2 className="text-xl font-semibold mb-3">Additional Information</h2> */}
 
   <div className="mb-5">
@@ -620,6 +623,10 @@ const FarmerApplicationForm = () => {
       <input type="checkbox" name="livestockTypes" value="None" checked={farmerFormData.livestockTypes.includes('None')} onChange={handleChange} /> None
     </label>
   </div>
+  <div className="mb-5 flex items-center gap-10">
+      <label htmlFor="khasraKhatauni" className=" text-sm font-medium text-gray-700 sm:mb-0">Khasra Khatauni:<span className='text-red-500' >*</span></label>
+      <input type="file" id="khasraKhatauni" name="khasraKhatauni" onChange={handleChange} className="mt-1 p-2 border-gray-300 rounded-md"   />
+    </div>
 </div>
 
 
@@ -642,6 +649,29 @@ const FarmerApplicationForm = () => {
     className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
   />
 </div>
+<div className="mb-5">
+      <label htmlFor="annualIncome" className="block text-sm font-medium text-gray-700 sm:mb-0">Annual Income from Farming:<span className='text-red-500' >*</span></label>
+      <input type="number" id="annualIncome" name="annualIncome" value={farmerFormData.annualIncome} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Annual Income"   />
+    </div>
+
+    <div className="mb-5">
+      <label htmlFor="otherIncome" className="block text-sm font-medium text-gray-700 sm:mb-0">Other Income:<span className='text-red-500' >*</span></label>
+      <input type="number" id="otherIncome" name="otherIncome" value={farmerFormData.otherIncome} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Other Income"   />
+    </div>
+
+    <div className="mb-5">
+      <label htmlFor="monthlyEMI" className="block text-sm font-medium text-gray-700 sm:mb-0">Existing Monthly EMI:<span className='text-red-500' >*</span></label>
+      <input type="number" id="monthlyEMI" name="monthlyEMI" value={farmerFormData.monthlyEMI} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Monthly EMI"   />
+    </div>
+
+    {/* <div className="mb-5">
+      <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700 sm:mb-0">Loan Amount  :<span className='text-red-500' >*</span></label>
+      <input type="number" id="loanAmount" name="loanAmount" value={farmerFormData.loanAmount} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Loan Amount"   />
+    </div> */}
+
+   
+
+    
 
 <div className="mb-5">
   <label className="block text-sm font-medium text-gray-700">Upload previous 2 Years ITR<span className='text-red-500' >*</span></label>
@@ -1028,6 +1058,14 @@ currentPage ===5 && (
           </div>
         </div>
       </div>
+      <div className="mb-5  flex gap-2">
+      
+      <input type="checkbox" id="declaration" name="declaration" checked={farmerFormData.declaration} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block"   />
+      <label htmlFor="declaration" className="block text-sm font-medium text-gray-700 sm:mb-0">By submitting this form, I declare that the information provided is accurate and complete to the best of my knowledge</label>
+    </div>
+    <div className='flex justify-center'>
+    <button onSubmit={handleSubmit} className='ml-2 bg-lime-500 text-white p-2 rounded-lg hover:bg-lime-600' >Submit From</button>
+    </div>
     </>
   )
 }
@@ -1036,48 +1074,16 @@ currentPage ===5 && (
 
 
 
-{currentPage === 8 && (
+{/* {currentPage === 8 && (
             <>
-              {/* Page 3 fields */}
-              
+               
 
-    <div className="mb-5">
-      <label htmlFor="annualIncome" className="block text-sm font-medium text-gray-700 sm:mb-0">Annual Income from Farming:<span className='text-red-500' >*</span></label>
-      <input type="number" id="annualIncome" name="annualIncome" value={farmerFormData.annualIncome} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Annual Income"   />
-    </div>
-
-    <div className="mb-5">
-      <label htmlFor="otherIncome" className="block text-sm font-medium text-gray-700 sm:mb-0">Other Income:<span className='text-red-500' >*</span></label>
-      <input type="number" id="otherIncome" name="otherIncome" value={farmerFormData.otherIncome} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Other Income"   />
-    </div>
-
-    <div className="mb-5">
-      <label htmlFor="monthlyEMI" className="block text-sm font-medium text-gray-700 sm:mb-0">Existing Monthly EMI:<span className='text-red-500' >*</span></label>
-      <input type="number" id="monthlyEMI" name="monthlyEMI" value={farmerFormData.monthlyEMI} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Monthly EMI"   />
-    </div>
-
-    <div className="mb-5">
-      <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700 sm:mb-0">Loan Amount  :<span className='text-red-500' >*</span></label>
-      <input type="number" id="loanAmount" name="loanAmount" value={farmerFormData.loanAmount} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Loan Amount"   />
-    </div>
-
-    <div className="mb-5">
-      <label htmlFor="khasraKhatauni" className="block text-sm font-medium text-gray-700 sm:mb-0">Khasra Khatauni:<span className='text-red-500' >*</span></label>
-      <input type="file" id="khasraKhatauni" name="khasraKhatauni" onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md"   />
-    </div>
-
-    <div className="mb-5  flex gap-2">
-      
-      <input type="checkbox" id="declaration" name="declaration" checked={farmerFormData.declaration} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block"   />
-      <label htmlFor="declaration" className="block text-sm font-medium text-gray-700 sm:mb-0">By submitting this form, I declare that the information provided is accurate and complete to the best of my knowledge</label>
-    </div>
-    <div className='flex justify-center'>
-    <button onSubmit={handleSubmit} className='ml-2 bg-lime-500 text-white p-2 rounded-lg hover:bg-lime-600' >Submit From</button>
-    </div>
+    
+  
 
 
             </>
-          )}
+          )} */}
 
           <div className="mb-5 flex justify-between">
             {currentPage > 0 && (
@@ -1085,7 +1091,7 @@ currentPage ===5 && (
                 Previous
               </button>
             )}
-            {currentPage < 8 && (
+            {currentPage < 7 && (
               <button type="button" onClick={nextStep} className="bg-lime-600 text-white p-2 rounded-lg">
                 Next
               </button>

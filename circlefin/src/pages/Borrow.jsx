@@ -8,20 +8,22 @@ const Borrow = () => {
     const selectForm = (formType) => {
         setSelectedForm(formType);
     }
-
+// rounded-s-none ${selectedForm?"bg-lime-200":""} w-[40vw] text-2xl bg-gray-300   p-3 rounded-md   font-bold border-black
+    // rounded-s-none ${!selectedForm?"bg-lime-200":""} w-[40vw] text-2xl bg-gray-300   p-3 rounded-md   font-bold border-black
+   
     return (
         <>
             <div className='mt-32 text-center'>
                 <h1 className='font-bold text-3xl mb-6'>Loan Application For</h1>
-                <div className='flex justify-around'>
+                <div className='flex justify-center'>
                     <button
-                        className={`font-bold text-3xl px-28 py-2 rounded-full focus:outline-none transition duration-300 ${selectedForm === "farmer" ? 'bg-lime-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+                        className={`w-[40vw] text-2xl bg-gray-300   p-3 rounded-md rounded-e-none   font-bold border-blackduration-300 ${selectedForm === "farmer" ? 'bg-lime-200 ' : 'bg-gray-300 text-gray-700'}`}
                         onClick={() => selectForm("farmer")}
                     >
                         Farmer
                     </button>
                     <button
-                        className={`font-bold text-3xl px-28 py-2 rounded-full focus:outline-none transition duration-300 ${selectedForm === "merchant" ? 'bg-lime-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+                        className={`w-[40vw] text-2xl bg-gray-300   p-3 rounded-md rounded-s-none   font-bold border-black duration-300 ${selectedForm === "merchant" ? 'bg-lime-200 ' : 'bg-gray-300 text-gray-700'}`}
                         onClick={() => selectForm("merchant")}
                     >
                         Merchant

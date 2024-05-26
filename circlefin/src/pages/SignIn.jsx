@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { MyContext } from '../context/context';
-
+import OtpBox from "../components/OtpBox"
 const SignIn = () => {
     const {investorRegistered,setInvestorRegistered} = useContext(MyContext);
     const params = useParams();
     const {type} = params;
     const navigate = useNavigate();
+    const [showEmailOptBox,setShowEmailOtpBox] = useState(false)
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -73,7 +74,7 @@ const SignIn = () => {
 
                         <div className="mt-6">
                             <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-700">Email address</label>
-                            <div className="mt-1 relative rounded-md shadow-sm flex gap-2">
+                            <div className="mt-1 mb-5 relative rounded-md shadow-sm flex gap-2">
                                 <input
                                     id="email"
                                     name="email"
@@ -84,8 +85,9 @@ const SignIn = () => {
                                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                     placeholder="ramKumar@gmail.com"
                                 />
-                                <button className='bg-lime-300 px-2 hover:bg-lime-400 rounded-md ' >Verify</button>
+                                <button type='button' onClick={()=>setShowEmailOtpBox(prev=>!prev)} className='bg-lime-300 px-2 hover:bg-lime-400 rounded-md ' >Verify</button>
                             </div>
+                            { showEmailOptBox && <OtpBox type={"Email"}/> }
                         </div>
 
                         <div className="mt-6">

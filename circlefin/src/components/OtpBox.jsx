@@ -131,15 +131,16 @@ const OtpBox = ({ type }) => {
                   Verify Account
                 </button>
               </div>
-            </>
-          )}
-        </div>
-        <div className="text-sm text-slate-500 mt-4">
+              <div className="text-sm text-slate-500 mt-4">
           Didn't receive code?{' '}
           <Link className="font-medium text-lime-500 hover:text-lime-600" to="">
             Resend
           </Link>
         </div>
+            </>
+          )}
+        </div>
+        
       </div>
     </div>
   );
