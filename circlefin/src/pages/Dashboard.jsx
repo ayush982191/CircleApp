@@ -9,12 +9,12 @@ const Dashboard = () => {
                     <p>Here is your account Overview</p>
                 </div>
                 <div className='flex gap-5 items-center'>
-                    <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400 ' >Add Funds</button>
-                    <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400 ' >Withdraw Funds</button>
+                    <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400' >Add Funds</button>
+                    <button className='bg-lime-300 p-2 font-semibold rounded-md hover:bg-lime-400' >Withdraw Funds</button>
                 </div>
             </div>
 
-            <div className='flex justify-around mt-20' >
+            <div className='flex justify-around mt-20'>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
                     <p>Annualized Returns</p>
                     <p className='font-bold'>2.55%</p>
@@ -29,38 +29,35 @@ const Dashboard = () => {
                 </div>
                 <div className='bg-lime-100 shadow-md rounded-xl p-5'>
                     <p>Total Payments</p>
-                    <p className='font-bold'>₹1,243,67</p>
+                    <p className='font-bold'>₹1,24,367</p>
                 </div>
             </div>
-{/* ------------------------------------------------------------ */}
+            
             <div className='mt-20 flex justify-around'>
-
-                <div className='bg-lime-100 shadow-md ' >
-                    <h1 className='my-2 ml-2 font-bold text-2xl  ' >Portfolio</h1>
+                <div className='bg-lime-100 shadow-md'>
+                    <h1 className='my-2 ml-2 font-bold text-2xl'>Portfolio</h1>
                     <hr />
-                                    {/* ------------------------------- */}
-                    <div className=' flex flex-col justify-between h-60 '>
+                    <div className='flex flex-col justify-between h-60'>
                         <div className='mt-5 flex justify-around'>
-                            <h3 className='text-center font-semibold' >Individual</h3>
-                            <h3 className='text-center font-semibold' >Funds</h3>
+                            <h3 className='text-center font-semibold'>Individual</h3>
+                            <h3 className='text-center font-semibold'>Funds</h3>
                         </div>
                         <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
                                 <div className='bg-red-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
                                     <h1 className='text-center font-bold'>A1</h1>
                                 </div>
-                                <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-red-300 h-2.5 rounded-full" style={{ width: "80%" }}></div>
+                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                                    <div className='bg-red-300 h-2.5 rounded-full' style={{ width: '80%' }}></div>
                                 </div>
                                 <p className='font-semibold'>80%</p>
                             </div>
-
                             <div className='flex justify-evenly items-center w-72'>
                                 <div className='bg-violet-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
                                     <h1 className='text-center font-bold'>B1</h1>
                                 </div>
-                                <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-violet-300 h-2.5 rounded-full" style={{ width: "90%" }}></div>
+                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                                    <div className='bg-violet-300 h-2.5 rounded-full' style={{ width: '90%' }}></div>
                                 </div>
                                 <p className='font-semibold'>90%</p>
                             </div>
@@ -68,79 +65,237 @@ const Dashboard = () => {
                         <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
                                 <div className='bg-yellow-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
-                                    <h1 className='text-center font-bold'>A3</h1>
+                                    <h1 className='text-center font-bold'>A2</h1>
                                 </div>
-                                <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-yellow-300 h-2.5 rounded-full" style={{ width: "60%" }}></div>
+                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                                    <div className='bg-yellow-300 h-2.5 rounded-full' style={{ width: '60%' }}></div>
                                 </div>
                                 <p className='font-semibold'>60%</p>
                             </div>
-
-                            <div className='flex justify-evenly items-center w-72'>
+                            {/* <div className='flex justify-evenly items-center w-72'>
                                 <div className='bg-blue-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
                                     <h1 className='text-center font-bold'>B2</h1>
                                 </div>
-                                <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-blue-300 h-2.5 rounded-full" style={{ width: "25%" }}></div>
+                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                                    <div className='bg-blue-300 h-2.5 rounded-full' style={{ width: '25%' }}></div>
                                 </div>
                                 <p className='font-semibold'>25%</p>
-                            </div>
+                            </div> */}
                         </div>
-                   
-                    <div className='my-3 flex'>
+                        <div className='my-3 flex'>
                             <div className='ml-5 flex justify-between items-center w-72'>
                                 <div className='bg-lime-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
                                     <h1 className='text-center font-bold'>A3</h1>
                                 </div>
-                                <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-lime-300 h-2.5 rounded-full" style={{ width: "70%" }}></div>
+                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                                    <div className='bg-lime-300 h-2.5 rounded-full' style={{ width: '70%' }}></div>
                                 </div>
                                 <p className='font-semibold'>70%</p>
                             </div>
-
-                            <div className='flex justify-evenly items-center w-72'>
+                            {/* <div className='flex justify-evenly items-center w-72'>
                                 <div className='bg-orange-200 rounded-full p-3 flex items-center justify-center h-7 w-7'>
                                     <h1 className='text-center font-bold'>B3</h1>
                                 </div>
-                                <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-orange-300 h-2.5 rounded-full" style={{ width: "95%" }}></div>
+                                <div className='w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                                    <div className='bg-orange-300 h-2.5 rounded-full' style={{ width: '95%' }}></div>
                                 </div>
                                 <p className='font-semibold'>95%</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
-              
                 <div className='bg-lime-100 shadow-md'>
-                    <h1 className='my-2 ml-2 font-bold text-2xl  '>Account Summary</h1>
+                    <h1 className='my-2 ml-2 font-bold text-2xl'>Account Summary</h1>
                     <hr />
-                      {/* ---------------------------------------- */}
-                   <div className=' flex flex-col justify-between h-60  w-96  '>
-                   <div className=' flex my-2 mx-10 justify-between   ' >
-                        <h1>Account Cash</h1>
-                        <p className='text-lime-700'>₹2,34,000</p>
+                    <div className='flex flex-col justify-between h-60 w-96'>
+                        <div className='flex my-2 mx-10 justify-between'>
+                            <h1>Account Cash</h1>
+                            <p className='text-lime-700'>₹2,34,000</p>
+                        </div>
+                        <div className='flex my-4 mx-10 justify-between'>
+                            <h1>Pending</h1>
+                            <p className='text-lime-700'>₹33,000</p>
+                        </div>
+                        <div className='flex my-4 mx-10 justify-between'>
+                            <h1>Invested</h1>
+                            <p className='text-lime-700'>₹70,000</p>
+                        </div>
+                        <div className='flex my-4 mx-10 justify-between'>
+                            <h1>Account Value</h1>
+                            <p className='text-lime-700'>₹12,000</p>
+                        </div>
                     </div>
-                    <div className=' flex my-4 mx-10 justify-between   ' >
-                        <h1>Pending</h1>
-                        <p className='text-lime-700'>₹33,000</p>
-                    </div>
-                    <div className=' flex my-4 mx-10 justify-between  ' >
-                        <h1>Invested</h1>
-                        <p className='text-lime-700'>₹70,000</p>
-                    </div>
-                    <div className=' flex my-4 mx-10 justify-between  ' >
-                        <h1>Account Value</h1>
-                        <p className='text-lime-700'>₹12,000</p>
-                    </div>
-                   </div>
                 </div>
-                
-                
+            </div>
+
+            <div className='mt-20 mx-16 shadow-md'>
+                <h1 className='text-2xl font-bold mb-5 text-center'>Loan Details</h1>
+                <div className='overflow-x-auto bg-white'>
+                    <table className='min-w-full '>
+                        <thead>
+                            <tr>
+                                <th className='py-2 px-4 border-b'>Loan ID</th>
+                                <th className='py-2 px-4 border-b'>Borrower Name</th>
+                                <th className='py-2 px-4 border-b'>Loan Amount (₹)</th>
+                                <th className='py-2 px-4 border-b'>Interest Rate (%)</th>
+                                <th className='py-2 px-4 border-b'>Start Date</th>
+                                <th className='py-2 px-4 border-b'>End Date</th>
+                                <th className='py-2 px-4 border-b'>Total Return (₹)</th>
+                                <th className='py-2 px-4 border-b'>Remaining Payment (₹)</th>
+                                <th className='py-2 px-4 border-b'>Default Chance (%)</th>
+                                <th className='py-2 px-4 border-b'>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className='py-2 px-4 border-b'>1</td>
+                                <td className='py-2 px-4 border-b'>Ramesh Singh</td>
+                                <td className='py-2 px-4 border-b'>50,000</td>
+                                <td className='py-2 px-4 border-b'>7.5</td>
+                                <td className='py-2 px-4 border-b'>Jan 2023</td>
+                                <td className='py-2 px-4 border-b'>Dec 2024</td>
+                                <td className='py-2 px-4 border-b'>7,500</td>
+                                <td className='py-2 px-4 border-b'>30,000</td>
+                                <td className='py-2 px-4 border-b'>10</td>
+                                <td className='py-2 px-4 border-b'>Active</td>
+                            </tr>
+                            <tr>
+                                <td className='py-2 px-4 border-b'>2</td>
+                                <td className='py-2 px-4 border-b'>Sita Devi</td>
+                                <td className='py-2 px-4 border-b'>70,000</td>
+                                <td className='py-2 px-4 border-b'>8</td>
+                                <td className='py-2 px-4 border-b'>Feb 2022</td>
+                                <td className='py-2 px-4 border-b'>Jan 2024</td>
+                                <td className='py-2 px-4 border-b'>14,000</td>
+                                <td className='py-2 px-4 border-b'>20,000</td>
+                                <td className='py-2 px-4 border-b'>5</td>
+                                <td className='py-2 px-4 border-b'>Active</td>
+                            </tr>
+                            <tr>
+                                <td className='py-2 px-4 border-b'>3</td>
+                                <td className='py-2 px-4 border-b'>Anil Kumar</td>
+                                <td className='py-2 px-4 border-b'>30,000</td>
+                                <td className='py-2 px-4 border-b'>7</td>
+                                <td className='py-2 px-4 border-b'>Mar 2023</td>
+                                <td className='py-2 px-4 border-b'>Feb 2025</td>
+                                <td className='py-2 px-4 border-b'>3,500</td>
+                                <td className='py-2 px-4 border-b'>25,000</td>
+                                <td className='py-2 px-4 border-b'>15</td>
+                                <td className='py-2 px-4 border-b'>Active</td>
+                            </tr>
+                            <tr>
+                                <td className='py-2 px-4 border-b'>4</td>
+                                <td className='py-2 px-4 border-b'>Kavita Yadav</td>
+                                <td className='py-2 px-4 border-b'>80,000</td>
+                                <td className='py-2 px-4 border-b'>8.5</td>
+                                <td className='py-2 px-4 border-b'>Apr 2022</td>
+                                <td className='py-2 px-4 border-b'>Mar 2024</td>
+                                <td className='py-2 px-4 border-b'>17,000</td>
+                                <td className='py-2 px-4 border-b'>10,000</td>
+                                <td className='py-2 px-4 border-b'>2</td>
+                                <td className='py-2 px-4 border-b'>Active</td>
+                            </tr>
+                            <tr>
+                                <td className='py-2 px-4 border-b'>5</td>
+                                <td className='py-2 px-4 border-b'>Mahesh Patel</td>
+                                <td className='py-2 px-4 border-b'>35,000</td>
+                                <td className='py-2 px-4 border-b'>7.8</td>
+                                <td className='py-2 px-4 border-b'>May 2023</td>
+                                <td className='py-2 px-4 border-b'>Apr 2025</td>
+                                <td className='py-2 px-4 border-b'>6,300</td>
+                                <td className='py-2 px-4 border-b'>28,000</td>
+                                <td className='py-2 px-4 border-b'>12</td>
+                                <td className='py-2 px-4 border-b'>Active</td>
+                            </tr>
+                            <tr>
+                                <td className='py-2 px-4 border-b'>6</td>
+                                <td className='py-2 px-4 border-b'>Radha Sharma</td>
+                                <td className='py-2 px-4 border-b'>60,000</td>
+                                <td className='py-2 px-4 border-b'>8</td>
+                                <td className='py-2 px-4 border-b'>Jun 2022</td>
+                                <td className='py-2 px-4 border-b'>May 2024</td>
+                                <td className='py-2 px-4 border-b'>12,000</td>
+                                <td className='py-2 px-4 border-b'>0</td>
+                                <td className='py-2 px-4 border-b'>0</td>
+                                <td className='py-2 px-4 border-b'>Defaulted</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
 
 
+            <div className='mt-20 flex flex-wrap justify-around items-start shadow-md rounded-xl p-5'>
+  <div className='w-full sm:w-auto mb-10 sm:mb-0'>
+    <h1 className='text-2xl font-bold'>Loan Status Breakdown</h1>
+    <div className='flex flex-col gap-2 mt-2'>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Active Loans:</span>
+        <span className='font-semibold'>5</span>
+      </div>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Defaulted Loans:</span>
+        <span className='font-semibold'>1</span>
+      </div>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Fully Repaid Loans:</span>
+        <span className='font-semibold'>0</span>
+      </div>
+    </div>
+  </div>
 
+  <div className='w-full sm:w-auto mb-10 sm:mb-0'>
+    <h1 className='text-2xl font-bold'>Returns Breakdown</h1>
+    <div className='flex flex-col gap-2 mt-2'>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Total Expected Returns:</span>
+        <span className='font-semibold'>₹60,300</span>
+      </div>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Total Received Returns:</span>
+        <span className='font-semibold'>₹1,20,000</span>
+      </div>
+    </div>
+  </div>
+
+  <div className='w-full sm:w-auto'>
+    <h1 className='text-2xl font-bold'>Default Analysis</h1>
+    <div className='flex flex-col gap-2 mt-2'>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Average Default Chance:</span>
+        <span className='font-semibold'>7.3%</span>
+      </div>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Highest Default Chance:</span>
+        <span className='font-semibold'>15% (Anil Kumar)</span>
+      </div>
+      <div className='flex gap-5'>
+        <span className='font-semibold text-lime-700'>Lowest Default Chance:</span>
+        <span className='font-semibold'>2% (Kavita Yadav)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='w-full mx-10 sm:w-auto mt-10'>
+      <h1 className='text-2xl font-bold'>Recommendations</h1>
+      <div className='flex flex-col gap-2 mt-2'>
+        <div className='flex gap-5'>
+          <span className='font-semibold text-lime-700'>Monitor High-Risk Loans:</span>
+          <span className='font-semibold'>Pay close attention to loans with higher default chances (e.g., Anil Kumar's loan with a 15% chance of default).</span>
+        </div>
+        <div className='flex gap-5'>
+          <span className='font-semibold text-lime-700'>Diversify Investments:</span>
+          <span className='font-semibold'>Consider diversifying future investments to lower overall portfolio risk.</span>
+        </div>
+        <div className='flex gap-5'>
+          <span className='font-semibold text-lime-700'>Structured Document:</span>
+          <span className='font-semibold'>This structured document provides a comprehensive overview of the loan investments, allowing the investor to quickly assess the status and performance of each loan.</span>
+        </div>
+      </div>
+    </div>
         </div>
     )
 }

@@ -139,7 +139,7 @@ const FarmerApplicationForm = () => {
                 
               >
                 {currentPage === 0 && 'Personal Information'}
-                {currentPage === 1 && 'Additional Information'}
+                {currentPage === 1 && 'Aadhar Verification'}
                 {currentPage === 2 && 'Additional Information'}
                 {currentPage === 3 && 'Financial Details'}
                 { currentPage ===4 && 'Loan Information' }
@@ -638,7 +638,7 @@ const FarmerApplicationForm = () => {
 {/* -------------------------------------------------- */}
 {currentPage === 3 && (
   <>
-   <div className="mb-5">
+   {/* <div className="mb-5">
   <label htmlFor="applicantName" className="block text-sm font-medium text-gray-700">Name of the Firm / Applicant<span className='text-red-500' >*</span></label>
   <input
     type="text"
@@ -648,7 +648,7 @@ const FarmerApplicationForm = () => {
     readOnly
     className="mt-1 p-2 w-full border-gray-300 rounded-md bg-gray-100"
   />
-</div>
+</div> */}
 <div className="mb-5">
       <label htmlFor="annualIncome" className="block text-sm font-medium text-gray-700 sm:mb-0">Annual Income from Farming:<span className='text-red-500' >*</span></label>
       <input type="number" id="annualIncome" name="annualIncome" value={farmerFormData.annualIncome} onChange={handleChange} className="mt-1 p-2 w-full border-gray-300 rounded-md" placeholder="Annual Income"   />

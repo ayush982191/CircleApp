@@ -108,7 +108,7 @@ const MerchantApplicationForm = () => {
                 className={`text-sm font-semibold mb-3 text-center  w-20 ${currentPage !=6 ? "ml-[4rem]":""}`}
                 
               >
-                {currentPage === 0 && 'Personal and Business Information'}
+                {currentPage === 0 && 'Business Information'}
                 {currentPage === 1 && 'Business Details'}
                 {currentPage === 2 && 'Financial Information'}
                 {currentPage === 3 && 'Loan Details'}
