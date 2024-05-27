@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import ShowEligiblity from '../components/ShowEligiblity';
 import digilocker from "../assets/images/digilocker.png"
 import ENashForm from './ENashForm';
+import privacyPdf from "../assets/documents/concentDocument.pdf"
 
 const FarmerApplicationForm = () => {
   const navigate = useNavigate();
@@ -270,6 +271,19 @@ const FarmerApplicationForm = () => {
        
     />
   </div>
+  <div className='mb-4'>
+    <div>
+    <input type="checkbox" name="" id="" />
+    <span className="ml-2">I agree to applicable T&Cs and <i><a className='text-blue-500' href={privacyPdf} target="_blank" rel="noopener noreferrer">Privacy Policy</a></i> </span>
+
+    </div>
+    <div>
+    <input type="checkbox" name="" id="" />
+    <span className="ml-2">I agree to  receive communication and authorise CircleFin to contact me.</span>
+
+    </div>
+  </div>
+
  
 </>
 )}
@@ -943,7 +957,7 @@ currentPage ===5 && (
         </td>
       </tr>
       <tr>
-        <td className="border border-gray-300 p-2">Penal Charges</td>
+        <td className="border border-gray-300 p-2">Penal Charges<span className='text-red-500' >*</span></td>
         <td className="border border-gray-300 p-2">
           <input
             type="text"
@@ -954,7 +968,7 @@ currentPage ===5 && (
         </td>
       </tr>
       <tr>
-        <td className="border border-gray-300 p-2">Bounce Charges</td>
+        <td className="border border-gray-300 p-2">Bounce Charges<span className='text-red-500' >*</span></td>
         <td className="border border-gray-300 p-2">
           <input
             type="text"
@@ -977,6 +991,10 @@ currentPage ===5 && (
       </tr>
     </tbody>
   </table>
+  <div className='mt-3'>
+  <span className='text-red-500' >*</span> 
+  <span> These charges are applicable only on applicant missing repayment</span>
+  </div>
 </div>
 
 <div className="mb-5 text-center">

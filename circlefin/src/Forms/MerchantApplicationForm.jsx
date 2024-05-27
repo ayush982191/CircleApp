@@ -3,6 +3,8 @@ import OtpBox from '../components/OtpBox';
 import digilocker from "../assets/images/digilocker.png"
 import { useNavigate } from 'react-router-dom';
 import ENashForm from './ENashForm';
+
+import privacyPdf from "../assets/documents/concentDocument.pdf"
 const MerchantApplicationForm = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(0);
@@ -12,6 +14,7 @@ const MerchantApplicationForm = () => {
   const [showDigiLockerOtpBox,setShowDigiLockerOtpBox] = useState(false);
   const [showEmailOtpBox,setShowEmailOtpBOx] = useState(false) 
   const progressPercentage =  (currentPage  / 5) * 100;
+  
   const [formData, setFormData] = useState({
     fullName: '',
     businessName: '',
@@ -116,7 +119,7 @@ const MerchantApplicationForm = () => {
                 {currentPage === 2 && 'Financial Information'}
                 {currentPage === 3 && 'Loan Details'}
                 {currentPage === 4 && 'Aadhar Info'}
-                {currentPage === 5 && 'Decleration'}
+                {currentPage === 5 && 'Repayment Details'}
                 {/* {currentPage === 7 && 'Repayment Bank Details'}
                 {currentPage === 8 && 'Income Details'} */}
               </h2>
@@ -342,18 +345,17 @@ const MerchantApplicationForm = () => {
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
   </div>
-  <div className="mb-4">
-    <label htmlFor="accountAggregatorConsent" className="flex items-center">
-      <input
-        type="checkbox"
-        id="accountAggregatorConsent"
-        name="accountAggregatorConsent"
-        checked={formData.accountAggregatorConsent}
-        onChange={handleChange}
-        className="mr-2"
-      />
-      <span className="text-sm font-medium text-gray-700">I consent to share my banking and GST data via the account aggregator</span>
-    </label>
+  <div className='mb-4'>
+    <div>
+    <input type="checkbox" name="" id="" />
+    <span className="ml-2">I agree to applicable T&Cs and <i><a className='text-blue-500' href={privacyPdf} target="_blank" rel="noopener noreferrer">Privacy Policy</a></i> </span>
+
+    </div>
+    <div>
+    <input type="checkbox" name="" id="" />
+    <span className="ml-2">I agree to  receive communication and authorise CircleFin to contact me.</span>
+
+    </div>
   </div>
 </div>
 )}
@@ -395,7 +397,7 @@ const MerchantApplicationForm = () => {
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
   </div>
-  <div className="mb-4">
+  {/* <div className="mb-4">
     <label htmlFor="averageMonthlyTransactions" className="block text-sm font-medium text-gray-700">Average Monthly Transactions:<span className='text-red-500' >*</span></label>
     <input
       type="text"
@@ -405,7 +407,7 @@ const MerchantApplicationForm = () => {
       onChange={handleChange}
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
-  </div>
+  </div> */}
 </div>
 )}
       {/* Section 3: Financial Information */}
@@ -445,7 +447,7 @@ const MerchantApplicationForm = () => {
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
   </div>
-  <div className="mb-4">
+  {/* <div className="mb-4">
     <label htmlFor="goodsAndSalesTaxData" className="block text-sm font-medium text-gray-700">Goods and Sales Tax Data</label>
     <input
       type="checkbox"
@@ -455,8 +457,8 @@ const MerchantApplicationForm = () => {
       onChange={handleChange}
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
-  </div>
-  <div className="mb-4">
+  </div> */}
+  {/* <div className="mb-4">
     <label htmlFor="ondcTransactionData" className="block text-sm font-medium text-gray-700">ONDC Transaction Data</label>
     <input
       type="checkbox"
@@ -466,7 +468,7 @@ const MerchantApplicationForm = () => {
       onChange={handleChange}
       className="mt-1 p-2 w-full border-gray-300 rounded-md"
     />
-  </div>
+  </div> */}
 </div>
 )}
 
@@ -475,7 +477,7 @@ const MerchantApplicationForm = () => {
 <div>
   {/* <h2 className="text-xl font-semibold mb-3">Loan Requirement</h2> */}
   <div className="mb-4">
-    <label htmlFor="requestedLoanAmount" className="block text-sm font-medium text-gray-700">Requested Loan Amount</label>
+    <label htmlFor="requestedLoanAmount" className="block text-sm font-medium text-gray-700">Loan Amount Required</label>
     <input
       type="text"
       id="requestedLoanAmount"
@@ -510,7 +512,7 @@ const MerchantApplicationForm = () => {
     </select>
   </div>
   <div className="mb-4">
-    <label htmlFor="repaymentPeriodPreference" className="block text-sm font-medium text-gray-700">Repayment Period Preference</label>
+    <label htmlFor="repaymentPeriodPreference" className="block text-sm font-medium text-gray-700">Preffered Tenure</label>
     <input
       type="text"
       id="repaymentPeriodPreference"

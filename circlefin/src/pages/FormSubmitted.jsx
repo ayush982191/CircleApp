@@ -21,9 +21,10 @@ const FormSubmitted = () => {
                 <h1 className='  text-4xl text-lime-500 font-bold'>
                     Congratulations!!
                 </h1>
-                <h3 className=' mt-4 text-2xl font-bold text-lime-500'>
-                    We have submitted your Application, we will get back to you soon
+                <h3 className=' mt-4 text-2xl font-bold'>
+                    We have submitted your Application , we will get back to you soon 
                 </h3>
+                <h1 className='mt-4 text-xl font-bold' > Application No: CFSA4298A</h1>
                 <div className='mt-5 flex gap-5 items-center '>
                 <h2>Go to Home Page </h2>
                <Link to='/'> <button className='p-2 rounded-md bg-lime-300 hover:bg-lime-400' >Home</button></Link>
