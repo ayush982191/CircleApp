@@ -15,23 +15,23 @@ import farmerImg14 from "../assets/farmerImages/farmerImg14.jpg"
 import farmerImg15 from "../assets/farmerImages/farmerImg15.jpg"
 import farmerImg16 from "../assets/farmerImages/farmerImg16.jpg"
 import farmerImg17 from "../assets/farmerImages/farmerImg17.jpg"
-// import farmerImg18 from "../assets/farmerImages/farmerImg6.jpg"
-// import farmerImg19 from "../assets/farmerImages/farmerImg6.jpg"
+import farmerImg18 from "../assets/farmerImages/farmerImg18.jpg"
+import farmerImg19 from "../assets/farmerImages/farmerImg19.jpg"
 import farmerImg20 from "../assets/farmerImages/farmerImg20.jpg"
-import farmerImg21 from "../assets/farmerImages/farmerImg21.jpg"
-import farmerImg22 from "../assets/farmerImages/farmerImg22.jpg"
-import farmerImg23 from "../assets/farmerImages/farmerImg23.jpg"
-import farmerImg24 from "../assets/farmerImages/farmerImg24.jpg"
-import farmerImg25 from "../assets/farmerImages/farmerImg25.jpg"
-import farmerImg26 from "../assets/farmerImages/farmerImg26.jpg"
-import farmerImg27 from "../assets/farmerImages/farmerImg27.jpg"
-import farmerImg28 from "../assets/farmerImages/farmerImg28.jpg"
-import farmerImg29 from "../assets/farmerImages/farmerImg29.jpg"
-import farmerImg30 from "../assets/farmerImages/farmerImg30.jpg"
-import farmerImg31 from "../assets/farmerImages/farmerImg31.jpg"
-import farmerImg32 from "../assets/farmerImages/farmerImg32.jpg"
-import farmerImg33 from "../assets/farmerImages/farmerImg33.jpg"
-import farmerImg34 from "../assets/farmerImages/farmerImg34.jpg"
+// import farmerImg21 from "../assets/farmerImages/farmerImg21.jpg"
+// import farmerImg22 from "../assets/farmerImages/farmerImg22.jpg"
+// import farmerImg23 from "../assets/farmerImages/farmerImg23.jpg"
+// import farmerImg24 from "../assets/farmerImages/farmerImg24.jpg"
+// import farmerImg25 from "../assets/farmerImages/farmerImg25.jpg"
+// import farmerImg26 from "../assets/farmerImages/farmerImg26.jpg"
+// import farmerImg27 from "../assets/farmerImages/farmerImg27.jpg"
+// import farmerImg28 from "../assets/farmerImages/farmerImg28.jpg"
+// import farmerImg29 from "../assets/farmerImages/farmerImg29.jpg"
+// import farmerImg30 from "../assets/farmerImages/farmerImg30.jpg"
+// import farmerImg31 from "../assets/farmerImages/farmerImg31.jpg"
+// import farmerImg32 from "../assets/farmerImages/farmerImg32.jpg"
+// import farmerImg33 from "../assets/farmerImages/farmerImg33.jpg"
+// import farmerImg34 from "../assets/farmerImages/farmerImg34.jpg"
 
 
 import crop from "../assets/CarouselLogo/crop.png";
@@ -2761,8 +2761,7 @@ export const farmerFundImages = [sowing,preharvesting,postHarvesting];
 export const merchantFundImages = [inventory,marketExpansion];
 
 export const farmerImageArray  = [
-  farmerImg1,farmerImg2,farmerImg3,farmerImg4,farmerImg5,farmerImg6,farmerImg7,farmerImg8,farmerImg9,farmerImg10,farmerImg11,farmerImg12,farmerImg13,farmerImg14,farmerImg15,farmerImg16,farmerImg17,farmerImg20,farmerImg21,farmerImg22,farmerImg23,farmerImg24,farmerImg25,farmerImg26,farmerImg27,farmerImg28,farmerImg29,farmerImg30,farmerImg31,farmerImg32,farmerImg33,farmerImg34
-];
+  farmerImg1,farmerImg1,farmerImg2,farmerImg3,farmerImg4,farmerImg5,farmerImg6,farmerImg7,farmerImg8,farmerImg9,farmerImg10,farmerImg11,farmerImg12,farmerImg13,farmerImg14,farmerImg15,farmerImg16,farmerImg17,farmerImg18,farmerImg19, farmerImg20];
 
  export const farmerCarouselIconArray = [crop,farmIncome];
 
@@ -2873,7 +2872,7 @@ export const farmerProfiles = [
     ">5 lakhs": false,
     "less than 50,000": true,
     "more than 50,000": false,
-    "image": "farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]"
+    // "image": "farmerImageArray[Math.floor(Math.random() * farmerImageArray.length)]"
 }
 ,
 {
