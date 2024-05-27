@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { merchantProfiles } from '../utils/data';
 import { farmerImageArray } from '../utils/data';
-import { tempMerchantProfile } from '../utils/data';
+// import { tempMerchantProfile } from '../utils/data';
 import { Link } from 'react-router-dom';
 
 const SingleMerchantDetails = () => {
@@ -10,8 +10,8 @@ const SingleMerchantDetails = () => {
   const [investedAmount, setInvestedAmount] = useState("");
 
   const randomNumber = Math.floor(Math.random() * (100 - 75 + 1)) + 75;
-  const merchant = tempMerchantProfile.find((singleMerchant) => singleMerchant.id == id);
-  const { "PRIMARY GOODS TRADED": primaryGoodsTraded, EXPERIENCE, "CREDIT SCORE": creditScore, "MARKET ACCESS": marketAccess, "TECHNOLOGY USE": technologyUse, "SUSTAINABILITY PRACTICES": sustanablityPractice, "FINANCIAL HEALTH": financialHealth, "RISK FACTORS": riskFactor, "LOAN AMOUNT RECOMMENDED": loanAmountRecommended, REPAYMENT_STRUCTURE, "Overall Rating": overallRating, Recommendation, name, state, "Amount Required": amountRequired, amountReceived, "Annual Revenue": annualRevenue } = merchant;
+  const merchant = merchantProfiles.find((singleMerchant) => singleMerchant.id == id);
+  const { "PRIMARY GOODS TRADED": primaryGoodsTraded, EXPERIENCE,assessmentSummary, "CREDIT SCORE": creditScore, "MARKET ACCESS": marketAccess, "TECHNOLOGY USE": technologyUse, "SUSTAINABILITY PRACTICES": sustanablityPractice, "FINANCIAL HEALTH": financialHealth, "RISK FACTORS": riskFactor, "LOAN AMOUNT RECOMMENDED": loanAmountRecommended, REPAYMENT_STRUCTURE, "Overall Rating": overallRating, Recommendation, name, location, "Amount Required": amountRequired, amountReceived, "Annual Revenue": annualRevenue } = merchant;
   const percent = Math.floor((amountReceived / amountRequired) * 100);
   const handleChange = (e) => {
     setInvestedAmount(e.target.value);
@@ -37,25 +37,25 @@ const SingleMerchantDetails = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <p><span className=' r-3  font-semibold text-lime-700 '>State:</span> <span className="mr-3  font-semibold">{state}</span></p>
+              <p><span className=' r-3  font-semibold text-lime-700 '>Location:</span> <span className="mr-3  font-semibold">{location}</span></p>
             </div>
             <div>
               <p><span className=' r-3  font-semibold text-lime-700 '>Country:</span> <span className="text-2xl mr-3  font-semibold">India</span></p>
             </div>
             <div>
-              <p><span className=' r-3  font-semibold text-lime-700 '>Loan Amount: </span><span className="mr-3  font-semibold ">${amountRequired}</span></p>
+              <p><span className=' r-3  font-semibold text-lime-700 '>Loan Amount: </span><span className="mr-3  font-semibold ">₹{amountRequired}</span></p>
             </div>
             <div className="flex gap-4">
-              <p className=' r-3  font-semibold text-lime-700 '>Amount Required</p>
-              <p className="mr-3  font-semibold">{amountRequired}</p>
+              <p className=' r-3  font-semibold text-lime-700 '>Amount Received</p>
+              <p className="mr-3  font-semibold">₹{amountReceived}</p>
             </div>
             <div className="flex gap-4">
               <p className=' r-3  font-semibold text-lime-700 '>Returns:</p>
-              <p className="mr-3  font-semibold">6% p.a.</p>
+              <p className="mr-3  font-semibold">{Math.floor(Math.random() * (12 - 8 + 1)) + 8}% p.a.</p>
             </div>
             <div className="flex gap-4">
               <p className=' r-3  font-semibold text-lime-700 '>Annual Revenue</p>
-              <p className="mr-3  font-semibold">{annualRevenue} </p>
+              <p className="mr-3  font-semibold">₹{annualRevenue} </p>
             </div>
             <div className="flex gap-4">
               <p className=' mr-3  font-semibold text-lime-700 '>Farming Experience:</p>
@@ -75,10 +75,10 @@ const SingleMerchantDetails = () => {
             <p className='mr-3  font-semibold'>{marketAccess}</p>
           </div>
           {/* ---------------------------  */}
-          <div className='my-5 flex gap-5'>
+          {/* <div className='my-5 flex gap-5'>
             <h1 className=' mr-3  font-semibold text-lime-700 '>Sustainablity Practices</h1>
             <p className='mr-3  font-semibold'>{sustanablityPractice}</p>
-          </div>
+          </div> */}
           <div className='my-5 flex gap-5'>
             <h1 className=' mr-3  font-semibold text-lime-700 '>Risk Factor:</h1>
             <p className='mr-3  font-semibold'>{riskFactor}</p>
@@ -114,12 +114,12 @@ const SingleMerchantDetails = () => {
           {/* <h1 className='mr-3  font-semibold text-lime-700'>About {name}</h1>
           <p className='space-x-1'>{name} a resident of {state}, comes from a family deeply rooted in farming for the past seven years. While agriculture has been their mainstay, {name} envisions expanding their operations. To achieve this, he seeks a loan to invest in crucial farming inputs like irrigation systems, pesticides, and other necessities. By scaling up his cultivation, {name} aims to significantly boost her family's income. Your investment in {name} not only supports her aspirations but also enhances agricultural productivity in his community</p> */}
           <div className='my-5 flex gap-5'>
-            <h1 className=' mr-3  font-semibold text-lime-700 '>Repayment Structure</h1>
-            <p className='mr-3  font-semibold'>{REPAYMENT_STRUCTURE}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '>Risk Factor</h1>
+            <p className='mr-3  font-semibold'>{assessmentSummary.riskFactors.description}</p>
           </div>
           <div className='my-5 flex gap-5'>
-            <h1 className=' mr-3  font-semibold text-lime-700 '>Loan Amount Recommended</h1>
-            <p className='mr-3  font-semibold'>{loanAmountRecommended}</p>
+            <h1 className=' mr-3  font-semibold text-lime-700 '> Recommendation</h1>
+            <p className='mr-3  font-semibold'>{Recommendation}</p>
           </div>
         </div>
       </div>
