@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { merchantImageArray } from '../utils/data';
 import { Link } from 'react-router-dom';
 import { farmerImageArray } from '../utils/data';
 
@@ -9,7 +9,7 @@ const MerchantCard = ({merchant}) => {
   return (
     <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
     <div className='flex justify-center'>
-    <img className="w-[16rem] h-[12rem] rounded-t-xl" src={farmerImageArray[id]} alt="Image Description"/>
+    <img className="w-[16rem] h-[12rem] rounded-t-xl" src={merchantImageArray[id]} alt="Image Description"/>
     </div>
     <div className="p-4 md:p-5">
       <h3 className="text-lg text-center font-bold text-gray-800 dark:text-white">{name}

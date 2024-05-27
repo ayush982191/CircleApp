@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { merchantProfiles } from '../utils/data';
+import { merchantImageArray, merchantProfiles } from '../utils/data';
 import { farmerImageArray } from '../utils/data';
 // import { tempMerchantProfile } from '../utils/data';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ const SingleMerchantDetails = () => {
     <div className='mt-32'>
       <div className="mx-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <img src={farmerImageArray[id]} alt="" className="w-[30rem] h-[30rem]" />
+          <img src={merchantImageArray[id]} alt="" className="w-[30rem] h-[30rem]" />
         </div>
         <div>
           <h1 className="text-4xl   font-semibold">{name}</h1>
