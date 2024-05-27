@@ -2772,7 +2772,7 @@ export const merchantFundImages = [inventory,marketExpansion];
 
 export const farmerImageArray  = [
   farmerImg1,farmerImg1,farmerImg2,farmerImg3,farmerImg4,farmerImg5,farmerImg6,farmerImg7,farmerImg8,farmerImg9,farmerImg10,farmerImg11,farmerImg12,farmerImg13,farmerImg14,farmerImg15,farmerImg16,farmerImg17,farmerImg18,farmerImg19, farmerImg20];
-export const merchantImageArray = [fmer1,fmer1,mer1,mer2,fmer2,mer1,fmer1,fmer2,fmer2,mer1,fmer1,mer2,fmer2 , mer1,fmer1,mer2,fmer2 ]
+export const merchantImageArray = [fmer1,fmer1,mer3,mer2,fmer2,mer1,fmer1,fmer2,fmer2,mer1,fmer1,mer2,fmer2 , mer3,fmer1,mer3,fmer2 ]
 
 
  export const farmerCarouselIconArray = [crop,farmIncome];
