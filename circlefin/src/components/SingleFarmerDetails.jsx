@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { farmerProfiles } from '../utils/data';
+import { farmerImageArray } from '../utils/data';
 
 const SingleFarmerDetails = () => {
   const { id } = useParams();
   const [investedAmount, setInvestedAmount] = useState("");
 
   const farmer = farmerProfiles.find((singleFarmer) => singleFarmer.id == id);
+  // console.log("farmer =",farmer)
   const {
     name,
     location,
@@ -40,7 +42,7 @@ const SingleFarmerDetails = () => {
     <div className='mt-32'>
       <div className="mx-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <img src={farmer.image} alt={name} className="w-[30rem] h-[30rem]" />
+          <img src={farmerImageArray[id]} alt={name} className="w-[30rem] h-[30rem]" />
           <div className='mt-10'>
             <div className='flex gap-4'>
               <input type="text" onChange={handleChange} value={investedAmount} placeholder='&nbsp; Enter Amount' className='w-[20rem] h-[2.5rem] rounded-md' />

@@ -17,7 +17,7 @@ const FarmerCard = ({farmer}) => {
   return (
     <div className=" flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
     <div className='flex justify-center'>
-    <img className="w-[16rem] h-[12rem] rounded-t-xl bg-cover" src={image} alt="Image Description"/>
+    <img className="w-[16rem] h-[12rem] rounded-t-xl bg-cover" src={farmerImageArray[id]} alt="Image Description"/>
     </div>
     <div className="p-4 md:p-5">
       <h3 className="text-lg font-bold text-gray-800 dark:text-white">{state}

@@ -69,7 +69,7 @@ const Statistics = () => {
        <div className='mt-32 flex flex-wrap gap-2 justify-evenly'>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
             <h1 className='font-bold'>Average loan amount</h1>
-            <p>₹1,00,0000</p>
+            <p>₹1,00,000</p>
 
           </div>
           <div className='rounded-md border-2 w-[12rem] border-lime-400  p-2'>
