@@ -38,7 +38,7 @@ const ENashForm = () => {
                             <input
                                 type="text"
                                 id="los_id"
-                                value={losId}
+                                value="CFSA4298A"
                                 onChange={(e) => setLosId(e.target.value)}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="LOS ID"
