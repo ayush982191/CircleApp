@@ -512,7 +512,7 @@ const MerchantApplicationForm = () => {
     </select>
   </div>
   <div className="mb-4">
-    <label htmlFor="repaymentPeriodPreference" className="block text-sm font-medium text-gray-700">Preffered Tenure</label>
+    <label htmlFor="repaymentPeriodPreference" className="block text-sm font-medium text-gray-700">Preferred Tenure</label>
     <input
       type="text"
       id="repaymentPeriodPreference"

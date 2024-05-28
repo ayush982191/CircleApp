@@ -1088,7 +1088,7 @@ currentPage ===5 && (
     </div>
    
     <div className='flex justify-center'>
-    <button onSubmit={handleSubmit} className='ml-2 bg-lime-500 text-white p-2 rounded-lg hover:bg-lime-600' >Submit From</button>
+    <button onSubmit={handleSubmit} className='ml-2 bg-lime-500 text-white p-2 rounded-lg hover:bg-lime-600' >Submit</button>
     </div>
    
     </>
